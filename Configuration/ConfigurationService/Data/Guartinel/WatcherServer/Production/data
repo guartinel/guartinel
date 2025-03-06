@@ -1,0 +1,38 @@
+{
+   "QueueServiceAddress":"http://docker1.guartinel.com:5672/",
+   "QueueServiceUserName":"queue.prod",
+   "ServerAddress":"https://watcherserver.guartinel.com:5566/",
+   "WatcherServerID":"C2gWnkMhU8uZF4swQ",
+   
+   "RegistrationUserName":"guartadmin",
+   "RegistrationPasswordHash":"FF6340D46098C733C8CBBD3B036BC8C54DCB3DC916BF1178F59CF81CDBB5A124BA28390BD4CC921BEBB617F",
+   "ManagementServerID":"6fad63ca-546c-4bf1-9eb5-c69cd3697cdb",
+   "ManagementServerUID":"0FABFBFF000306F2",
+   "ManagementServerAddress":"https://backend.guartinel.com:9090",
+   "ManagementServerRegistrationToken":"j8L9sdYzZTQCUow",
+   
+   "LogLevel":"Debug",
+   "LogFolder":"D:\\GuartinelLogs\\WatcherServer",
+   "WatcherRunnerCount":10,
+   "Categories":"free;trial;xl;l;m;s;premium;home;business;test",
+   
+   "Decimals":"2",
+   "TokenExpirySeconds":"10800",   
+   
+   "WebsiteChecker":"ChromeRemote",
+   "WebsiteCheckerPoolSize":30,
+   "WebsiteCheckRequestCount":2,
+   
+   "EmailCheckerEmailAddress":"guartinel@sysment.info",
+   "EmailCheckerFingerprintToken":"774ed86f-4af4-4f91-b1a7-bdde48c9314c",
+   
+   "EmailCheckerSmtpServerAddress":"mail.sysment.info",
+   "EmailCheckerSmtpServerPort":465,
+   "EmailCheckerSmtpUseSSL":true,
+   "EmailCheckerSmtpUser":"guartinel",
+   
+   "EmailCheckerImapServerAddress":"mail.sysment.info",
+   "EmailCheckerImapServerPort":993,
+   "EmailCheckerImapUseSSL":true,
+   "EmailCheckerImapUser":"guartinel",
+}

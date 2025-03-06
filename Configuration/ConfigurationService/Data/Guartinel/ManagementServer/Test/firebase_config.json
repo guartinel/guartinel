@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "guartinel-test",
+  "private_key_id": "33ea3eeb6741213b613f6c91fd64d80",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIAAoIBAQCKEYQCJwmHV4nE\n0NtOMDiEwQwK1BAF2UOnaa1I9nZJ21YId\nsIkZ4j/RhGoS+cML6H9srQrGgMPlzzu7ctCZHSdv9r6GS9wWTzlAcsExgIUyNpA4\nDPTl/T1RDx7quWUrhXQPn5wxtT5jON17Exce8TG3eokTrPbchqjMnscxv+mgG7Hd\nd8eR+X5wFpOn9NEjyx0x9oehazHocnOW4uT681Yo7CepNTRyWdCK/xr8YH38tLwv\nfi1+MWIt/5mN/p71owhX6IBXE1fw328Jxe0/50DyVbQEN7HxArM565KsMpYnPTUw\nYNy/4IRNAgMBAAECggEANSuqqUOMVV0+VpfSJQnH8kP/1bm2E/KILdQyIhucETRR\nLQBwmqjxxIkL0/axpmUwJguOi5woiISBVN/j5J5vUkoKqZUa6p6WV+1J7YkQKBPH\nHpiIQbbrBaDB3akgME1BMJMg2GX0pZJCtvsyYtHEB8/paZ6NGhYSTKP8fF4ekQn3\n06/vKDDwPAIVob0LKVp3kU86/ZwLcp35KdjxC43qP9IN1HX7/DWu6j6HdLVV7bST\n6G2l9+ZIGydYQrCq6aiVg7FTsDdtOXXlQNfZ04RL15EaDTVnoVDmy8tJd8HIG51Q\nbHQohx4KQF2Va8E+eR7LiVJB6V/G+DjJ/qaRRPgnRwKBgQDA0BY0bdExsrW2E9Cq\nkhApFDBs/TNvgKpnY7OJw+hie2PR76OWiKQHUnnpksGGRJjr65aZC07+ffT0PM8H\nDd8Ygkc8JXpsqlt1t7Dtz2StDPZ0z7uv86wVNyKi8OBkiftUQUE2KuYozZlEIqJQ\nnDBCKkTHKi0Eo17sON3aKrpMBwKBgQC3UK4S/NVH286mzqODGx+EM3Cqw7MoXeFI\n2sPnGHZ494e83HmImwYwjjWp2KwmK310H4DgCCpvmficlUMKRKuTu9Lxp5rOMzFM\ncerpMqfFutaQJt57U7GEpVv9/8ZzMpP+M7YWaRIZzDzwUk8E9AW+mZOFO/cxJO4Z\n6G2ahdbACwKBgQCvG4w++0kUiIfMn3xPnK1+kS5VnTKcXk7j7ME+KaSf5A3IuIlq\nChhl6fp8LWMCTMRQ5jl0LrgEGmJfeeZPMsLdIFwPfL4NeD3tz/CoWUTGgNJHTe3X\no0YyUktrjbVMuZ9+anEN/7HddrNuFMIy0VZmkLq74krWPoTTpeWd4FYm+wKBgH2O\nrSwkMJE/ZJOsBSLPeQ67jPfpgtSrOJsF/BhVERBZuocJG9UNGXg4b1keJwsdzpey\n3DqWXTqDY10cfwaRclOF2j3aZpXFSobpn9SJ9Y/hIQUrGkeuU3BfMlsOzYYppmP+\nV0GSReuVkEeqmKTz3ttlpT0kjXMDsHHeWPP1p9lxAoGAbEuxSC7QUJgKqtNHaI81\nrakkSxwGm87a7wos/AVs2mR4hwyKCphtVv9LQ1Qwh6YdC8FthBLD86RoGl1u6mBF\n8kogBEYd3eNGdb8/DAfkumN+lAG+uORsM0\nugpxmm6JiU4fgR2ieUjRNWc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-g4pqg@guartinel-test.iam.gserviceaccount.com",
+  "client_id": "105458894743391749348",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-g4pqg%40guartinel-test.iam.gserviceaccount.com"
+}

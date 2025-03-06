@@ -1,0 +1,7 @@
+{
+   "QueueServiceAddress":"http://test-docker.guartinel:5672/",
+   "QueueServiceUserName":"queue.test",
+   "SeleniumServiceAddress":"http://test-docker.guartinel:4444/",
+   "LogLevel":"Debug",
+   "XLogFolder":"D:\\GuartinelLogs\\WatcherServer"
+}

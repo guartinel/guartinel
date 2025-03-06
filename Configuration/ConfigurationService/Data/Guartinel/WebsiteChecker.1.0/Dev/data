@@ -1,0 +1,7 @@
+{
+   "QueueServiceAddress":"http://queue:5672/",
+   "QueueServiceUserName": "queue.dev",
+   "SeleniumServiceAddress":"http://selenium-hub:4444/",
+   "LogLevel":"Debug",
+   "XLogFolder":"D:\\GuartinelLogs\\WatcherServer"
+}

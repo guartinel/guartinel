@@ -1,0 +1,6 @@
+            public const string TARGET = "target" ;
+            public const string CAPTION = "caption" ;
+
+ping|x5gym Router|x5gym.dyndns.org:8900
+ping|Sysment Homepage|www.sysment.com:80
+ping|x5gym Alarm|x5gym.dyndns.org:8892
