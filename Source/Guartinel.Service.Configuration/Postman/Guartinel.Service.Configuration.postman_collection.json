@@ -1,0 +1,946 @@
+{
+	"info": {
+		"_postman_id": "97debf94-8615-44ea-82ac-a4fdcbe5000c",
+		"name": "Guartinel.Service.Configuration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manage",
+			"item": [
+				{
+					"name": "/manage/reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/manage/reset",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"manage",
+								"reset"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "manage/reset",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\"\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/manage/reset",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"manage",
+										"reset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:49:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"message\":\"Reset done!\"}"
+						}
+					]
+				},
+				{
+					"name": "/manage/setMasterkey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"old_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"new_key\":\"asdasd\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/manage/setMasterkey",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"manage",
+								"setMasterkey"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "manage/setMasterkey",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"old_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"new_key\":\"asdasd\"\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/manage/setMasterkey",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"manage",
+										"setMasterkey"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:51:19 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"message\":\"MasterKey set!\"}"
+						}
+					]
+				},
+				{
+					"name": "/manage/status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/manage/status",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"manage",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/manage/status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/manage/status",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"manage",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:48:37 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"result\":{\"data_hash\":\"d41d8cd98f00b204e9800998ecf8427e\",\"version\":\"0.0.0.1\"}}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Replica",
+			"item": [
+				{
+					"name": "/replica/sync",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/replica/sync",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"replica",
+								"sync"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/replica/sync",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\"\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/replica/sync",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"replica",
+										"sync"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:53:20 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"message\":\"Replicas synced!\"}"
+						}
+					]
+				},
+				{
+					"name": "/replica/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5002\",\n\t\"overwrite\":true\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/replica/add",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"replica",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/replica/add",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/manage/status",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"manage",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:52:15 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"result\":{\"data_hash\":\"d41d8cd98f00b204e9800998ecf8427e\",\"version\":\"0.0.0.1\"}}"
+						}
+					]
+				},
+				{
+					"name": "/replica/status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/manage/status",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"manage",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/manage/status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/manage/status",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"manage",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:48:37 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"result\":{\"data_hash\":\"d41d8cd98f00b204e9800998ecf8427e\",\"version\":\"0.0.0.1\"}}"
+						},
+						{
+							"name": "/replica/status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"replica_master_key\" :\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5001\",\n\t\"overwrite\":true\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/replica/status",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"replica",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:55:14 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"result\":{\"data_hash\":\"d41d8cd98f00b204e9800998ecf8427e\",\"version\":\"0.0.0.1\",\"replicas\":[{\"data_hash\":\"d41d8cd98f00b204e9800998ecf8427e\",\"version\":\"0.0.0.1\",\"url\":\"http://192.168.95.128:5002\"}]}}"
+						}
+					]
+				},
+				{
+					"name": "/replica/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5002\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5000/replica/delete",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5000",
+							"path": [
+								"replica",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/replica/delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"url\":\"http://192.168.95.128:5002\"\n}"
+								},
+								"url": {
+									"raw": "http://192.168.95.128:5000/replica/delete",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"95",
+										"128"
+									],
+									"port": "5000",
+									"path": [
+										"replica",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Sep 2018 15:56:55 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"success\":true,\"message\":\"Replica deleted!\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/set/value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"asdasd\",\n\t\"value\":{\"tevems\":\"patatest\"},\n\t\"key\":\"/asdasd1/asdasd/asdasd/asssd\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.95.128:5000/set/value",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"95",
+						"128"
+					],
+					"port": "5000",
+					"path": [
+						"set",
+						"value"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/set/value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"asdasd\",\n\t\"master_key\":\"b4c8fb84-bee5-4c51-ba53-78d509584304\",\n\t\"value\":{\"tevems\":\"asdasdasd\"},\n\t\"key\":\"/asdasd1/asdasd/asdasd/asssd/asd\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5001/set/value",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5001",
+							"path": [
+								"set",
+								"value"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Sep 2018 15:57:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"body": "{\"success\":true,\"message\":\"Key set!\"}"
+				}
+			]
+		},
+		{
+			"name": "/get/value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\":\"asdasd\",\n\t\"key\":\"/asdasd1/asdasd/asdasd/asssd\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.95.128:5000/get/value",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"95",
+						"128"
+					],
+					"port": "5000",
+					"path": [
+						"get",
+						"value"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/get/value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"asdasd\",\n\t\"key\":\"/asdasd1/asdasd/asdasd/asssd/asd\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.95.128:5001/get/value",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"95",
+								"128"
+							],
+							"port": "5001",
+							"path": [
+								"get",
+								"value"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Sep 2018 15:57:45 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"body": "{\"success\":true,\"result\":{\"tevems\":\"asdasdasd\"}}"
+				}
+			]
+		}
+	]
+}

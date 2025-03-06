@@ -1,0 +1,35 @@
+﻿<div layout="column" layout-align="start stretch">
+    <b show-xl show-lg show-md hide-sm hide-xs>Check interval</b>
+    <div layout="row" layout-align="center center">
+        <ng-md-icon flex="5" flex-xs="10" flex-sm="10" icon="schedule" style="fill: grey; padding-right:5px;"></ng-md-icon>
+
+        <div layout="column" layout-fill layout-align="start center">
+            <div class="top_padding_small" layout="row" layout-fill>
+                <md-slider flex="100" min="0" max="{{checkIntervals.length-1}}" ng-model="$parent.checkIntervalIndex" aria-label="checkInterval"></md-slider>
+            </div>
+            <div layout="row">
+                <p class="no_margin">{{checkIntervalLabels[checkIntervalIndex]}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div layout="column" layout-align="start stretch">
+    <b show-xl show-lg show-md hide-sm hide-xs >Timeout interval</b>
+    <div layout="row" layout-align="start center" >
+        <b style="margin-right: 20px;">Use default timeout</b>
+        <md-switch style="margin:0px;" ng-model="useDefaultTimeoutValue" ng-change="onDefaultTimeoutSelected(useDefaultTimeoutValue)" md-theme="green" aria-label="isEnabled">
+        </md-switch>
+    </div>
+    <div ng-show="!useDefaultTimeoutValue" layout="row" layout-align="center center">
+        <ng-md-icon flex="5" flex-xs="10" flex-sm="10" icon="schedule" style="fill: grey; padding-right:5px;"></ng-md-icon>
+
+        <div layout="column" layout-fill layout-align="start center">
+            <div class="top_padding_small" layout="row" layout-fill>
+                <md-slider flex="100" min="0" max="{{timeoutIntervals.length-1}}" ng-model="$parent.timeoutIntervalIndex" aria-label="timeoutInterval"></md-slider>
+            </div>
+            <div layout="row">
+                <p class="no_margin">{{timeoutIntervalLabels[timeoutIntervalIndex]}}</p>
+            </div>
+        </div>
+    </div>
+</div>

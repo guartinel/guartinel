@@ -1,0 +1,56 @@
+﻿using System ;
+using System.Collections.Generic ;
+using System.Linq ;
+using System.Text ;
+
+namespace Guartinel.WatcherServer {
+   public class View {
+
+      protected List<string> _messages = new List<string>() ;
+      private MainForm _mainForm ;
+
+      private delegate void AddMsgToListCallback(string text) ;
+
+      private delegate void ButtonCallback() ;
+
+      public View (MainForm mainForm) {
+         _mainForm = mainForm ;
+      }
+
+      public void Started() {
+         if (_mainForm.startButton.InvokeRequired) {
+            ButtonCallback btCallback = new ButtonCallback (Started) ;
+            _mainForm.Invoke (btCallback, new object[] {}) ;
+         } else {
+            _mainForm.startButton.Enabled = false ;
+            _mainForm.stopButton.Enabled = true ;
+         }
+      }
+
+      public void Stopped() {
+         if (_mainForm.startButton.InvokeRequired) {
+            ButtonCallback btCallback = new ButtonCallback (Stopped) ;
+            _mainForm.Invoke (btCallback, new object[] {}) ;
+         } else {
+            _mainForm.startButton.Enabled = true ;
+            _mainForm.stopButton.Enabled = false ;
+         }
+      }
+
+      public void AddLogMessage (string message) {
+         if (_mainForm.IsDisposed || _mainForm.Disposing) {
+            return ;
+         }
+
+         if (_mainForm.msgListView.InvokeRequired) {
+            AddMsgToListCallback callback = new AddMsgToListCallback (AddLogMessage) ;
+            _mainForm.Invoke (callback, new object[] {message}) ;
+         } else {
+            _mainForm.msgListView.Items.Insert (0, "(" + DateTime.Now.ToShortTimeString() + ") " + message) ;
+            if (_mainForm.msgListView.Items.Count > 500) {
+               _mainForm.msgListView.Items.Clear() ;
+            }
+         }
+      }
+   }
+}

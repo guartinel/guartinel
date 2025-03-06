@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{796C30F2-9977-4862-BCF7-B1A1E9A7F8B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Guartinel.Website.Admin</RootNamespace>
+    <AssemblyName>Guartinel.Website.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\References\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\References\WebGrease\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\References\Antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\HandleExceptionAttribute.cs" />
+    <Compile Include="Attributes\IpAddressAttribute.cs" />
+    <Compile Include="Attributes\IsManagementServerAvailable.cs" />
+    <Compile Include="Attributes\ValidateModelStateAttribute.cs" />
+    <Compile Include="Attributes\ValidateWebsiteTokenAttribute.cs" />
+    <Compile Include="Persistance\GuartinelAdminWebSiteSettings.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagementServerController.cs" />
+    <Compile Include="Controllers\ManagementServerDatabaseController.cs" />
+    <Compile Include="Controllers\ManagementServerStatusController.cs" />
+    <Compile Include="Controllers\UserWebServerController.cs" />
+    <Compile Include="Controllers\WatcherServerController.cs" />
+    <Compile Include="Controllers\WebServerStatusController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GuartinelApp.cs" />
+    <Compile Include="Misc\ValidatorConstants.cs" />
+    <Compile Include="Models\AdminTokenModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Config.Designer.cs">
+      <DependentUpon>Config.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\background_alt.jpg" />
+    <Content Include="Content\Images\dashboard.png" />
+    <Content Include="Content\Images\exit.png" />
+    <Content Include="Content\Images\guartinel_white.png" />
+    <Content Include="Content\Images\login_background.png" />
+    <Content Include="Content\Images\myaccount.png" />
+    <Content Include="Content\Images\office.jpg" />
+    <Content Include="Content\Images\office_blurred.jpg" />
+    <Content Include="Content\Images\watcher_logo.jpg" />
+    <Content Include="Content\Scripts\Components\barIndicator-2015_08_24\css\bi-style.css" />
+    <Content Include="Content\Scripts\Components\barIndicator-2015_08_24\jquery-barIndicator.js" />
+    <Content Include="Content\Scripts\Components\ngclipboard\clipboard.min.js" />
+    <Content Include="Content\Scripts\Components\ngclipboard\ngclipboard.js" />
+    <Content Include="Content\Scripts\Components\qrcode\qrcodeGenerator.js" />
+    <Content Include="Content\Scripts\Components\round-progressbar-0.3.9\roundProgress.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-animate-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-aria-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-cookies-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-messages-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-ui-router-0.2.15.js" />
+    <Content Include="Content\Scripts\Libraries\AngularMaterial\angular-material-1.0.0-rc4.css" />
+    <Content Include="Content\Scripts\Libraries\AngularMaterial\angular-material-1.0.0-rc4.js" />
+    <Content Include="Content\Scripts\Libraries\crypto-js\crypto-js-sha512-3.1.2.js" />
+    <Content Include="Content\Scripts\Libraries\jQuery\jquery-2.1.4.js" />
+    <Content Include="Content\Scripts\Libraries\jQuery\jquery.easing.1.3.js" />
+    <Content Include="Content\Scripts\Libraries\MaterialIcons\angular-material-icons-0.6.0.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\adminpage\adminpage.css" />
+    <Content Include="Content\Styles\adminpage\dashboard\dashboard.css" />
+    <Content Include="Content\Styles\adminpage\managementServer\management_server.css" />
+    <Content Include="Content\Styles\form.css" />
+    <Content Include="Content\Styles\homepage\homepage.css" />
+    <Content Include="Content\Styles\roboto_draft.css" />
+    <Content Include="Content\Styles\userpage\devices.css" />
+    <Content Include="Content\Styles\userpage\package.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\DIALOGS.js" />
+    <Content Include="Scripts\app\routing.js" />
+    <Content Include="Scripts\app\STATES.js" />
+    <Content Include="Scripts\app\theme.js" />
+    <Content Include="Scripts\constants\clientConstants.js" />
+    <Content Include="Scripts\constants\generatedConstants.js" />
+    <Content Include="Scripts\controllers\account\adminAccountController.js" />
+    <Content Include="Scripts\controllers\adminLoginController.js" />
+    <Content Include="Scripts\controllers\adminpageController.js" />
+    <Content Include="Scripts\controllers\dashboard\dashboardController.js" />
+    <Content Include="Scripts\controllers\dashboard\directives\propertyDirective.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\addManagementServerCard.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\addManagementServer.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\updateDatabaseDialogController.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\editManagementServer.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\managementServerEvents.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\managementServerInvalidRequests.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\managementServerLog.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\dialogs\removeManagementServer.js" />
+    <Content Include="Scripts\controllers\dashboard\managementServer\managementServerCardController.js" />
+    <Content Include="Scripts\controllers\dashboard\userWebServer\dialogs\addUserWebServerDialogController.js" />
+    <Content Include="Scripts\controllers\dashboard\userWebServer\dialogs\updateUserWebServerDialogController.js" />
+    <Content Include="Scripts\controllers\dashboard\userWebServer\dialogs\removeUserWebServerDialogController.js" />
+    <Content Include="Scripts\controllers\dashboard\userWebServer\userWebServerCardController.js" />
+    <Content Include="Scripts\controllers\dashboard\watcherServer\addWatcherServerCard.js" />
+    <Content Include="Scripts\controllers\dashboard\watcherServer\dialogs\addWatcherServer.js" />
+    <Content Include="Scripts\controllers\dashboard\watcherServer\dialogs\editWatcherServer.js" />
+    <Content Include="Scripts\controllers\dashboard\watcherServer\dialogs\removeWatcherServer.js" />
+    <Content Include="Scripts\controllers\dashboard\watcherServer\watcherServerCard.js" />
+    <Content Include="Scripts\controllers\dashboard\userWebServer\addUserWebServerCardController.js" />
+    <Content Include="Scripts\controllers\dashboard\webServer\webServerCardController.js" />
+    <Content Include="Scripts\controllers\dialogs\configureAdminController.js" />
+    <Content Include="Scripts\controllers\applicationController.js" />
+    <Content Include="Scripts\controllers\baseDialogController.js" />
+    <Content Include="Scripts\controllers\communicationErrorController.js" />
+    <Content Include="Scripts\controllers\logoutController.js" />
+    <Content Include="Scripts\directives\dialogDirective.js" />
+    <Content Include="Scripts\directives\loadingForm.js" />
+    <Content Include="Scripts\directives\passwordCheck.js" />
+    <Content Include="Scripts\directives\progressBar.js" />
+    <Content Include="Scripts\directives\qrcode.js" />
+    <Content Include="Scripts\services\admin\adminService.js" />
+    <Content Include="Scripts\services\admin\databaseService.js" />
+    <Content Include="Scripts\services\admin\managementServerService.js" />
+    <Content Include="Scripts\services\admin\managementServerStatusService.js" />
+    <Content Include="Scripts\services\admin\userWebServerService.js" />
+    <Content Include="Scripts\services\admin\watcherServerService.js" />
+    <Content Include="Scripts\services\admin\adminWebServerService.js" />
+    <Content Include="Scripts\services\api\apiService.js" />
+    <Content Include="Scripts\services\dataService.js" />
+    <Content Include="Scripts\services\dialogService.js" />
+    <Content Include="templates\account\account.html" />
+    <Content Include="templates\adminLogin.html" />
+    <Content Include="templates\adminpage.html" />
+    <Content Include="templates\baseDialog.html" />
+    <Content Include="templates\dashboard\dashboard.html" />
+    <Content Include="templates\dashboard\directives\property.html" />
+    <Content Include="templates\dashboard\managementServer\addManagementServerCard.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\addManagementServer.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\editManagementServer.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\managementServerEvents.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\managementServerInvalidRequests.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\managementServerLog.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\removeManagementServer.html" />
+    <Content Include="templates\dashboard\managementServer\dialogs\updateDatabaseDialog.html" />
+    <Content Include="templates\dashboard\managementServer\managementServerCard.html" />
+    <Content Include="templates\dashboard\userWebServer\addUserWebServerCard.html" />
+    <Content Include="templates\dashboard\userWebServer\dialogs\addUserWebServerDialog.html" />
+    <Content Include="templates\dashboard\userWebServer\dialogs\updateUserWebServerDialog.html" />
+    <Content Include="templates\dashboard\userWebServer\dialogs\removeUserWebServerDialog.html" />
+    <Content Include="templates\dashboard\userWebServer\userWebServerCard.html" />
+    <Content Include="templates\dashboard\watcherServer\addWatcherServerCard.html" />
+    <Content Include="templates\dashboard\watcherServer\dialogs\addWatcherServer.html" />
+    <Content Include="templates\dashboard\watcherServer\dialogs\editWatcherServer.html" />
+    <Content Include="templates\dashboard\watcherServer\dialogs\removeWatcherServer.html" />
+    <Content Include="templates\dashboard\watcherServer\watcherServerCard.html" />
+    <Content Include="templates\dashboard\webServer\webServerCard.html" />
+    <Content Include="templates\dialogs\configureAdmin.html" />
+    <Content Include="templates\dialogs\connectionErrorDialog.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Icons\" />
+    <Folder Include="Content\Styles\adminpage\account\" />
+    <Folder Include="Views\UserWebServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Config.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\PROD-Aruba Cloud-manage.guartinel.com.pubxml" />
+    <None Include="Properties\PublishProfiles\DEV-LocalVM-localip.pubxml" />
+    <None Include="Properties\PublishProfiles\TEST-Titan-trial.sysment.hu.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Communication\Guartinel.Communication.csproj">
+      <Project>{2adeda9f-809a-41ab-abb0-f03f908687d9}</Project>
+      <Name>Guartinel.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj">
+      <Project>{3194ff1e-65cf-4c80-be3a-7796e2d539fe}</Project>
+      <Name>Guartinel.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Website.Common\Guartinel.Website.Common.csproj">
+      <Project>{ad2b56f3-4ee8-4fa3-a69c-8bdb1511400d}</Project>
+      <Name>Guartinel.Website.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52046</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50141/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

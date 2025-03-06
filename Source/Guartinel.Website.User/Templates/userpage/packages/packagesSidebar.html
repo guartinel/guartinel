@@ -1,0 +1,74 @@
+﻿<md-sidenav layout="column"
+            layout-fill
+            class="md-sidenav-right"
+            md-component-id="right"
+            layout-margin
+            md-is-locked-open="$mdMedia('gt-md')">
+      <md-content class="md-whiteframe-z2" layout="column"   layout-align="start stretch">
+         <md-toolbar layout="row" class="{{dialog.headerStyle}}" >
+            <div layout="row" layout-align="center center" >
+               <p align="center" class="md-title">Add New Package</p>
+            </div>
+         </md-toolbar>
+        
+         <md-divider></md-divider>
+         <md-list layout="column" class="md-whiteframe-z2 no_padding" layout-align="start stretch">
+            <div layout="column" ng-repeat="availablePackage in availablePackages" layout-align="start stretch">
+               <md-button layout="row" ng-click="showCreateDialog(availablePackage)" class="no_margin" md-ink-ripple style="margin:0px;" layout-align="start center">
+                  <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak(availablePackage.description)"></div></md-tooltip>
+                   <img layout-margin layout-align="start center" src="{{availablePackage.image}}" flex-xs="20" flex-sm="20" flex="30">
+                  <span flex="grow" style="color: dimgray; word-wrap: break-word;white-space:normal;text-align:center; text-transform: uppercase;" ng-class="getRightSideBarClass()">{{availablePackage.name}}</span>
+               </md-button>
+               <md-divider></md-divider>
+            </div>
+         </md-list>
+      </md-content>
+</md-sidenav>
+<!-- Existing packages -->
+<!--<md-toolbar class="md-theme-light">
+   <div layout="row" layout layout-align="center center">
+      <h1 class="md-toolbar-tools">Modify existing packages</h1>
+   </div>
+</md-toolbar>
+
+
+<div ng-if="!selectMode" layout layout-align="center center">
+
+   <md-button layout="row" layout-align="start center" flex ng-click="toggleSelectMode()">
+      <ng-md-icon icon="select_all"></ng-md-icon>
+      <p class="noncaption-text">Enable select mode</p>
+   </md-button>
+
+</div>
+
+<div layout="column" ng-if="selectMode" layout layout-align="center center">
+
+   <div ng-if="selectedPackagesCount < 2" layout-margin>
+      <p>Please select at least 2 packages, to modify them simultaneously!</p>
+   </div>
+
+   <md-button ng-if="selectedPackagesCount >= 2" layout="row" layout-align="start center" flex ng-click="modifyPackages()">
+      <ng-md-icon icon="create"></ng-md-icon>
+      <p class="noncaption-text">Modify</p>
+   </md-button>
+
+   <div layout="row">
+
+      <md-button layout="row" layout-align="start center" flex ng-click="selectAll()">
+         <ng-md-icon icon="done_all"></ng-md-icon>
+         <p class="noncaption-text">Select all</p>
+      </md-button>
+
+      <md-button layout="row" layout-align="start center" flex ng-click="deselectAll()">
+         <ng-md-icon icon="clear_all"></ng-md-icon>
+         <p class="noncaption-text">Deselect all</p>
+      </md-button>
+
+   </div>
+
+   <md-button layout="row" layout-align="start center" flex ng-click="toggleSelectMode()">
+      <ng-md-icon icon="clear"></ng-md-icon>
+      <p class="noncaption-text">Disable select mode</p>
+   </md-button>
+
+</div>-->

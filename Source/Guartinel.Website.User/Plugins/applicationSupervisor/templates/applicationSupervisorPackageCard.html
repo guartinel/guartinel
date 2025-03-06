@@ -1,0 +1,60 @@
+﻿    <md-card ng-controller="applicationSupervisorPackageCardController"
+         class="package_card md-whiteframe-z2" layout="column" id="{{package.id}}" name="{{package.id}}" ng-attr-id="{{package.id}}">
+
+   <md-card-title class="package_card_header" flex="25" ng-style="getCardStyle()" layout="column" layout-align="center stretch">
+      <div flex="100" ng-include="'plugins/common/templates/card/cardHeaderControlsAndMenu.html'" />
+      <!--<div layout="column" layout-align="center">
+         <span style="color: white" class="md-subhead">Application Supervisor Package</span>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is an application supervisor package. With this package you can monitor your application presence and get notifications about problems on the fly.')"></div></md-tooltip>
+      </div>-->
+   </md-card-title>
+
+   <md-card-content flex="75" class="cardContentStyle" layout-align="center center" layout-wrap>
+      <md-tabs layout-fill>
+         <md-tab label="Check" layout="row">
+            <md-tab-content layout="column" layout-align="start stretch" layout-fill>
+               <!-- CHECK INTERVAL -->
+               <div layout="row" flex="10" layout-align="start center">
+                   <md-tooltip class="md-caption">
+                       <div ng-bind-html="insertLineBreak('We check your application availability and the incoming measurements according this time interval.')"></div>
+                   </md-tooltip>
+                  <ng-md-icon icon="schedule" size="25" layout-margin style="fill: royalblue"></ng-md-icon>
+                  <label>Check interval: {{package.checkIntervalLabel}}</label>
+               </div>
+               <div layout="row" flex="10" layout-align="start center" ng-if="package.owner!=null && package.owner != currentUserEmail">
+                  <md-tooltip class="md-caption">The owner of this package.</md-tooltip>
+                  <ng-md-icon icon="assignment_ind" size="25" layout-margin style="fill: royalblue"></ng-md-icon>
+                  <label> {{package.owner}}</label>
+               </div>
+               <md-content layout="column" layout-align="start stretch" ng-style="package.ui.packageParts.style" ng-if="package.configuration.instances!=null && package.configuration.instances.length != 0">
+                  <div ng-style="packagePart.rowStyle" layout="row" layout-align="start center" ng-repeat="packagePart in package.ui.packageParts.data">
+                  <div layout="column" layout-align="start stretch">
+                      <md-tooltip ng-if="package.isEnabled" class="md-caption">
+                          <div ng-bind-html="insertLineBreak(packagePart.state.package_part_details_built)"></div>
+                      </md-tooltip>
+                      
+                      <div layout="row" layout-align="start center">
+                          <ng-md-icon icon="donut_large" size="25"  ng-style="packagePart.iconStyle"></ng-md-icon>
+                          <span>{{packagePart.data.name}} </span>
+                      </div>
+                      <label ng-if="!package.ui.isStateUnknown && package.isEnabled && !isEmptyOrNull(packagePart.state.package_part_extract_built)" class="grtnl-text-xs" style="padding-left: 10px;">{{trimTextShort(packagePart.state.package_part_extract_built)}}</label>
+
+                  </div>
+                  </div>
+               </md-content>
+               <div flex="20" ng-if="package.configuration.instances ==null || package.configuration.instances.length == 0" style="text-align:center"><i><p>Nothing to check. <br>Register an app instance!</p></i></div>
+
+               <md-divider></md-divider>
+               <div layout="column" flex="grow" layout-align="center center" ng-include="'plugins/common/templates/card/cardState.html'" />
+
+            </md-tab-content>
+         </md-tab>
+         <md-tab label="Alert">
+            <div ng-include="'plugins/common/templates/card/cardAlertTab.html'" />
+         </md-tab>
+         <md-tab label="More">
+            <div ng-include="'plugins/common/templates/card/cardDetailsTab.html'" />
+         </md-tab>
+      </md-tabs>
+   </md-card-content>
+</md-card>

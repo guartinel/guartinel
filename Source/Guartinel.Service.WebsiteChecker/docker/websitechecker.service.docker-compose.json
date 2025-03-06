@@ -1,0 +1,37 @@
+{
+   "version": "3.6",   
+   "services": {
+      "selenium-hub": {
+         "image": "selenium/hub:3.14.0-helium",        
+         "networks": {
+            "default": null
+         }
+      },
+      "selenium-chrome-service": {
+         "image": "guartinel1/selenium.chrome",          
+         "environment": {
+            "HUB_HOST": "selenium-hub",
+            "HUB_PORT": 4444
+         },
+         "deploy": {
+            "replicas": 3,
+            "resources": {
+               "limits": {
+                  "memory": "300M"
+               }
+            }
+         },
+         "entrypoint": "bash -c 'SE_OPTS=\"-host $$HOSTNAME\" /opt/bin/entry_point.sh'",
+         "networks": {
+            "default": null
+         },
+       "volumes": ["/dev/shm:/dev/shm"]
+      },
+      "websitechecker-service": {
+         "depends_on": ["selenium-chrome-service"],
+         "networks": {
+            "default": null
+         }         
+      }
+   }
+}

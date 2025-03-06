@@ -1,0 +1,37 @@
+﻿<form layout="column" name="updateDatabaseForm" layout-padding loading-form
+      submit-method="updateDatabase(database.url,database.userName, database.password)">
+
+    <p>Please fill in the form with your <b>Database</b> details.</p>
+  
+      <md-input-container>
+        <label>URL</label>
+        <input required type="text" ng-model="database.url" name="userNameField" class="input">
+        <div ng-messages="updateDatabaseForm.userNameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Password</label>
+        <input required type="text" ng-model="database.password" name="passwordField" class="input">
+        <div ng-messages="updateDatabaseForm.passwordField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>User Name</label>
+        <input required type="text" ng-model="database.userName" name="userNameField" class="input">
+        <div ng-messages="updateDatabaseForm.userNameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+    
+
+    <div class="form_actions">
+        <md-button class="md-primary md-raised" type="submit" ng-disabled="updateDatabaseForm.$invalid">
+            Update Database 
+        </md-button>
+    </div>
+
+</form>

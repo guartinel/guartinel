@@ -1,0 +1,36 @@
+{
+  "version": "3.2",  
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-config"
+         }
+      }
+   },
+  "services": {   
+   "reverse-proxy": {
+         "command": ["--api",
+                  "--docker",   
+                  "--logLevel=DEBUG",
+                  "--entryPoints=Name:management Address::1234 Compress:true",
+                  "--entryPoints=Name:config Address::5558  Compress:true TLS:/cert/guartinel.cert,/cert/guartinel.key"
+                  ],   
+         
+         "labels":[
+            "traefik.frontend.rule=Host:test-docker.guartinel",   
+            "traefik.frontend.entryPoints=management",   
+            "traefik.port=8080",
+            "traefik.docker.network=guartinel-config",   
+         ]         
+      },  
+  "configuration-service": {  
+   "labels":[
+         "traefik.frontend.rule=Host:config8215.guartinel.com",   
+         "traefik.frontend.entryPoints=config",            
+         "traefik.backend=configuration-service",
+         "traefik.port=5000",
+         "traefik.docker.network=guartinel-config"      
+      ]       
+  }    
+  }  
+}

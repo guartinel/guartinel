@@ -1,0 +1,69 @@
+﻿<md-card ng-controller="licenseCardController"
+         class="device_card md-whiteframe-z2" layout="column">
+
+   <div class="title" ng-style="getCardStyle()" layout-align="center stretch">
+      <div layout="row"  layout-align="start center">
+         <img flex="20" src="../../Content/Images/licenses/{{licenseItem.license.name}}-icon.png"/>
+         <p flex="80" class="md-headline white_text">{{getTitleText()}}</p>
+      </div>
+
+      <!--<md-menu class="more_menu">
+          <md-button class="expand_button md-icon-button" ng-click="$mdOpenMenu(ev)" aria-label="more">
+              <ng-md-icon md-menu-origin icon="more_vert" style="fill: white"></ng-md-icon>
+          </md-button>
+          <md-menu-content width="3">
+              <md-menu-item>
+                  <md-button layout-align="start center" layout="row" ng-click="showEditDeviceDialog(device)">
+                      <ng-md-icon icon="edit" style="fill: green"></ng-md-icon>
+                      <label>&nbspEdit</label>
+                  </md-button>
+              </md-menu-item>
+
+              <div ng-hide="device.device_type != 'android_device'">
+                  <md-menu-item>
+                      <md-button layout-align="start center" layout="row" style="text-transform: none" ng-click="showTestDialog(device)">
+                          <ng-md-icon icon="autorenew" md-menu-align-target style="fill: orange"></ng-md-icon>
+                          <label>&nbspTest</label>
+                      </md-button>
+                  </md-menu-item>
+                  <md-menu-divider></md-menu-divider>
+              </div>
+
+              <md-menu-item>
+                  <md-button layout-align="start center" layout="row" ng-click="showDeleteDialog(device)">
+                      <ng-md-icon icon="remove" style="fill: red"></ng-md-icon>
+                      <label>&nbspRemove</label>
+                  </md-button>
+              </md-menu-item>
+          </md-menu-content>
+      </md-menu>-->
+   </div>
+   <md-divider></md-divider>
+   <md-card-content>
+      <div layout="row" layout-align="start center">
+         <ng-md-icon flex="20" icon="date_range" size="25" style="fill: cornflowerblue"></ng-md-icon>
+         <p class="tileText no_margin">Started at <b>{{licenseItem.startDate |date:'yyyy.MM.d.'}}</b></p>
+         <md-tooltip class="md-caption "> <div ng-bind-html="insertLineBreak('Start time of your license.')"></div></md-tooltip>
+      </div>
+      <div ng-if="licenseItem.license.name != 'free'" layout="row" layout-align="start center">
+         <ng-md-icon flex="20" icon="date_range" size="25" style="fill: cornflowerblue"></ng-md-icon>
+         <p class="tileText no_margin">Valid until <b>{{licenseItem.expiryDate |date:'yyyy.MM.d.'}}</b></p>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Expiry date of this license.')"></div></md-tooltip>
+      </div>
+      <div layout="row" layout-align="start center">
+         <ng-md-icon flex="20" icon="alarm" size="25" style="fill: cornflowerblue"></ng-md-icon>
+         <p class="tileText no_margin">Minimum check is <b>{{ licenseItem.license.minimumCheckIntervalSec/60 }}</b> min</p>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('The smallest check interval.')"></div></md-tooltip>
+      </div>
+      <div layout="row" layout-align="start center">
+         <ng-md-icon flex="20" icon="devices" size="25" style="fill: cornflowerblue"></ng-md-icon>
+         <p class="tileText no_margin">Maximum <b>{{ licenseItem.license.maximumPackagePartCount }}</b> package parts</p>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Maximum registered devices count four your account.')"></div></md-tooltip>
+      </div>
+      <div layout="row" layout-align="start center">
+         <ng-md-icon flex="20" icon="border_all" size="25" style="fill: cornflowerblue"></ng-md-icon>
+         <p class="tileText no_margin">Maximum <b>{{ licenseItem.license.maximumPackages }}</b> packages</p>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Maximum packages count.')"></div></md-tooltip>
+      </div>
+   </md-card-content>
+</md-card>

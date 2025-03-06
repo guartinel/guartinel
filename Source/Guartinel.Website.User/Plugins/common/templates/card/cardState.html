@@ -1,0 +1,24 @@
+﻿
+<div layout="column" layout-align="start center" ng-if="package.ui.isStateNotChecked && package.isEnabled ">
+   <ng-md-icon icon="sync" ng-style="package.ui.notCheckedIconStyle" size="75"></ng-md-icon>
+   <label>Check is running.</label>
+</div>
+
+<div layout="column" layout-align="start center" ng-if="isStateOK() && package.isEnabled">
+   <ng-md-icon icon="check_circle" ng-style="package.ui.okIconStyle" size="75"></ng-md-icon>
+   {{package.state.message_built}}
+</div>
+
+<div layout="column" layout-align="start center" ng-if="!package.isEnabled">
+   <ng-md-icon icon="sync_disabled" ng-style="package.ui.notCheckedIconStyle" size="75"></ng-md-icon>
+  Package is disabled.
+</div>
+
+<div layout="column" layout-align="start center" ng-if="package.ui.isStateAlerting && package.isEnabled">
+   <ng-md-icon icon="report_problem" ng-style="package.ui.alertIconStyle" size="75"></ng-md-icon>
+   <md-tooltip class="md-caption" ng-if="package.isEnabled"> <div ng-bind-html="insertLineBreak(package.state.message_details_built)"></div></md-tooltip>
+
+   {{package.state.message_built}}
+   <!-- <p flex="70" class="grtnl-text-justify">{{package.state.message_built}}</p>-->
+</div>
+<p class="md-caption" ng-if="package.state.timeStamp != null && package.isEnabled">Updated on: {{package.state.timeStamp |date:'medium'}}</p>

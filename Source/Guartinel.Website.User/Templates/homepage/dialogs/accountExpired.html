@@ -1,0 +1,25 @@
+﻿<div layout="column" layout-margin layout-align="start center">
+
+   <p>
+      To confirm it, click the link in the registration email or if you didn't find the email please type in your email address below
+      and request a new email containing your activation code.
+   </p>
+
+   <form name="requestCodeForm" submit-method="resendActivationCode(email)" loading-form flex>
+
+      <md-input-container flex>
+         <label class="grtnl-text-m">E-mail</label>
+         <input required type="email" ng-model="email" name="emailField" autocomplete="on">
+         <div ng-messages="requestCodeForm.emailField.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="email">Invalid email</div>
+         </div>
+      </md-input-container>
+
+      <div class="form_actions">
+         <md-button style="text-transform: none" class="md-primary md-raised" type="submit" ng-disabled="requestCodeForm.$invalid">
+            Send a new email confirmation code to my email!
+         </md-button>
+      </div>
+   </form>
+</div>

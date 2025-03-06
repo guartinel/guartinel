@@ -1,0 +1,8 @@
+﻿<div layout="column" layout-algin="start center" layout-margin>
+   <div flex="50" layout="column" layout-align="start center">
+      <p>The statistics contains the dates of the alert events for a specific package.</p>
+      <md-progress-circular ng-if="isLoading" md-mode="indeterminate"></md-progress-circular>
+      <md-button style="text-transform: none" class="md-primary md-raised" ng-if="!isLoading && !notFound" ng-click="saveToPc()">Download</md-button>
+      <b ng-if="notFound">There is currently no statistics from this package.</b>
+   </div>
+</div>

@@ -1,0 +1,74 @@
+﻿<md-card ng-controller="deviceCardController"
+         class="device_card md-whiteframe-z2" layout="column">
+
+   <md-card-title class="title" layout-align="center center" ng-style="getCardTitleStyle(device)">
+      <md-card-title-text>
+         <span class="md-headline">{{device.name.length > 15 ? device.name.substring(0,15) + '...' : device.name }}</span>
+      </md-card-title-text>
+
+      <md-menu class="more_menu">
+         <md-button class="expand_button md-icon-button" ng-click="$mdOpenMenu(ev)" aria-label="more">
+            <ng-md-icon md-menu-origin icon="more_vert" style="fill: white"></ng-md-icon>
+         </md-button>
+         <md-menu-content width="3">
+             <md-menu-item>
+                 <md-button layout-align="start center" layout="row" ng-click="showEditDeviceDialog(device)">
+                     <ng-md-icon icon="edit" style="fill: green"></ng-md-icon>
+                     <label>&nbspEdit</label>
+                 </md-button>
+             </md-menu-item>
+
+             <div ng-hide="isHardwareSensor(device) ">
+                 <md-menu-item>
+                     <md-button layout-align="start center" layout="row" style="text-transform: none" ng-click="showTestDialog(device)">
+                         <ng-md-icon icon="autorenew" md-menu-align-target style="fill: orange"></ng-md-icon>
+                         <label>&nbspTest</label>
+                     </md-button>
+                 </md-menu-item>
+                 <md-menu-divider></md-menu-divider>
+             </div>
+             <div ng-hide="isAndroidDevice(device) || device.isDisconnected || device.is_disconnected">
+                 <md-menu-item>
+                     <md-button layout-align="start center" layout="row" style="text-transform: none" ng-click="showDisconnectHardwareSensorDialog(device)">
+                         <ng-md-icon icon="autorenew" md-menu-align-target style="fill: orange"></ng-md-icon>
+                         <label>&nbspDisconnect from wifi</label>
+                     </md-button>
+                 </md-menu-item>
+                 <md-menu-divider></md-menu-divider>
+             </div>
+             <md-menu-item>
+                 <md-button layout-align="start center" layout="row" ng-click="showDeleteDialog(device)">
+                     <ng-md-icon icon="remove" style="fill: red"></ng-md-icon>
+                     <label>&nbspRemove</label>
+                 </md-button>
+             </md-menu-item>
+         </md-menu-content>
+      </md-menu>
+   </md-card-title>
+   <md-divider></md-divider>
+   <md-card-content>
+       <div ng-if="isAndroidDevice(device)">
+           <ng-md-icon icon="android" ng-style="getCardIconFillStyle(device)"></ng-md-icon> Android device
+       </div>
+       <div ng-if="isHardwareSensor(device)">
+           <ng-md-icon icon="network_check" ng-style="getCardIconFillStyle(device)"></ng-md-icon> Hardware sensor
+       </div>
+       <div ng-if="isHardwareSensor(device) && device.is_disconnected">
+           <ng-md-icon icon="signal_wifi_off" ng-style="getCardIconFillStyle(device)"></ng-md-icon> Waiting for configuration.
+       </div>
+       <div>
+           <md-tooltip class="md-caption">
+               Registration time of this device.
+           </md-tooltip>
+           <ng-md-icon icon="access_time" ng-style="getCardIconFillStyle(device)"></ng-md-icon> {{device.created_on |date:'medium'}}
+
+       </div>
+       <div ng-hide="device.categories == null || device.categories.length == 0">
+           <md-tooltip class="md-caption">
+               Category of the device which is defined at registration time.
+           </md-tooltip>
+           <ng-md-icon icon="border_all" ng-style="getCardIconFillStyle(device)"></ng-md-icon> {{device.categories.join(", ")}}
+       </div>
+   </md-card-content>
+
+</md-card>

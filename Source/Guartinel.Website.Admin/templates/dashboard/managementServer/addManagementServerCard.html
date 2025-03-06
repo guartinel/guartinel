@@ -1,0 +1,31 @@
+﻿<md-card ng-controller="addManagementServerCardController"
+         class="dashboard_card md-whiteframe-z1" layout="column">
+
+    <md-card-title class="title">
+        <md-card-title-text>
+            <div layout="row" layout-align="center center">
+                <span class="md-headline">Management server</span>
+            </div>
+        </md-card-title-text>
+    </md-card-title>
+    <md-divider></md-divider>
+
+   <md-card-content ng-if="!managementServerStatus.isPresent">
+      <div layout="row" layout-align="center center">
+         <p>Please add the Management Server.</p>
+      </div>
+      <div layout="row" layout-align="center center">
+         <md-button class="md-primary md-raised" ng-click="showAddDialog()">Add Management Server</md-button>
+      </div>
+   </md-card-content>
+
+   <md-card-content ng-if="managementServerStatus.isPresent">
+      <div layout="row" layout-align="center center">
+         <p>Management Server already added</p>
+      </div>
+      <div layout="row" layout-align="center center">
+         <md-button ng-disabled="managementServerStatus.isPresent" class="md-primary md-raised" ng-click="showAddDialog()">Add Management Server</md-button>
+      </div>
+   </md-card-content>
+
+</md-card>

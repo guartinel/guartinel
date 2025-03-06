@@ -1,0 +1,22 @@
+﻿<div layout="column" layout-margin layout-align="start center">
+   <p>In order to use Guartinel please activate your account by confirming your email address with the activation code that sent to it.</p>
+   <form layout="column" layout-align="start center" name="activateAcccountForm" submit-method="activateAccount(activationCode)" loading-form flex="50">
+      <br/>
+      <md-input-container>
+         <label class="grtnl-text-m">Activation Code</label>
+         <input required type="text" ng-model="activationCode" ng-minlength="6" name="activationCodeField">
+         <div ng-messages="activateAcccountForm.activationCodeField.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="minlength">Minimum 6 characters long</div>
+         </div>
+      </md-input-container>
+
+      <md-button layout="row" layout-align="center start"ng-disabled="activateAcccountForm.$invalid" class="form_actions md-primary md-raised" style="text-transform: none" type="submit">
+         <p class="no_margin grtnl-text-m">Activate Now!</p>
+      </md-button>
+
+      <label class="md-button" ng-disabled="isResendLimitActive" ng-click="resendActivationCode()" style="text-transform: none" ng-click="forgotYourPasswordClicked(email)">Resend Activation</label>
+
+   </form>
+   <p style="color: darkred" ng-disabled="!isError">{{error}}</p>
+</div>

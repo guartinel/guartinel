@@ -1,0 +1,58 @@
+﻿<md-card ng-controller="webServerCardController" class="dashboard_card md-whiteframe-z1" layout="column">
+
+   <md-card-title layout-align="center center">
+      <md-card-title-text>
+         <span class="md-headline">Admin site</span>
+         <span class="md-subhead">Admin Web Server</span>
+      </md-card-title-text>
+
+
+      <md-menu class="more_menu">
+         <md-button class="expand_button md-icon-button" ng-click="$mdOpenMenu(ev)" aria-label="more">
+            <ng-md-icon md-menu-origin icon="more_vert"></ng-md-icon>
+         </md-button>
+         <md-menu-content width="3">
+            <md-menu-item>
+               <md-button ng-click="showEditDialog(userWebServer)">
+                  <ng-md-icon icon="edit" md-menu-align-target style="fill: grey"></ng-md-icon>
+                  Edit
+               </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+               <md-button ng-click="showRemoveDialog(userWebServer)">
+                  <ng-md-icon icon="remove" style="fill: red"></ng-md-icon>
+                  Remove
+               </md-button>
+            </md-menu-item>
+         </md-menu-content>
+      </md-menu>
+   </md-card-title>
+   <md-divider></md-divider>
+
+   <md-card-content ng-if="adminWebServerStatus.isLoading">
+      <p>Loading...</p>
+   </md-card-content>
+
+   <md-card-content ng-if="!adminWebServerStatus.isPresent">
+      <p>Cannot load web server status.</p>
+   </md-card-content>
+
+   <md-card-content ng-if="adminWebServerStatus.isPresent">
+      <md-tabs md-dynamic-height md-border-bottom>
+         <md-tab label="Stress">
+            <h4>Current performance</h4>
+            <div class="properties_container">
+               <property name="CPU" current="adminWebServerStatus.cpu" flex></property>
+               <property name="Memory" current="adminWebServerStatus.memory" flex></property>
+               <property name="Storage" current="adminWebServerStatus.storage" flex></property>
+            </div>
+         </md-tab>
+         <md-tab label="Actions">
+            <div class="info_buttons" layout="row" layout-align="center center">
+               <md-button class="md-primary md-raised" ng-click="showEventsDialog()">Events</md-button>
+            </div>
+         </md-tab>
+      </md-tabs>
+   </md-card-content>
+</md-card>

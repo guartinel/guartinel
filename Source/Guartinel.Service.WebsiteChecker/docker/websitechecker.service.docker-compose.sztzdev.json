@@ -1,0 +1,10 @@
+{  
+   "services": {
+      "websitechecker-service": {        
+         "environment": [
+            "GUARTINEL_CONFIGURATION_NAME=SzTZDevelopment",
+            "GUARTINEL_CONFIGURATION_TOKEN=68e13ac4-3ac8-4f6a-a75a-e147a579d89c"
+         ]
+      }
+   }   
+}

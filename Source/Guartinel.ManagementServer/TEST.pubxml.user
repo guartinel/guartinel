@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzMsiowsJEkiRAfUEZtt/EwAAAAACAAAAAAAQZgAAAAEAACAAAACbNJVIY7MVubjmR1M3o8kjb9KDsKCCwxzb+gcY8ds1lwAAAAAOgAAAAAIAACAAAADbT2HwNxAN3f11MamV+t/qp+6V8NnWSCSXlBG/RZ/RFzAAAAC4VbatCkQNCi5UuQM6woqHKbnnfjGDRbP2QCsvs3Uvkkbeu04rb8ywkZHytd4R151AAAAAC9295vBzDYEyZSoHIFvxnjB2oBTxCQoPXkhwM6lq0Ps6Jqq7laOExyOIXWzqyEp7YvMtb52RSMRVD009Z7uaTg==</EncryptedPassword>
+    <_PublishTargetUrl>ftps://backend2.guartinel.com:21/ManagementServer/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="build/app.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/app.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/appEventHandlers.js">
+      <publishTime>10/27/2017 16:08:19</publishTime>
+    </File>
+    <File Include="build/appMaster.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/appSlave.js">
+      <publishTime>10/29/2017 16:39:42</publishTime>
+    </File>
+    <File Include="build/common/constants.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/common/constants.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/config/config.json">
+      <publishTime>10/26/2017 16:12:44</publishTime>
+    </File>
+    <File Include="build/diagnostics/Logger.js">
+      <publishTime>10/27/2017 16:24:17</publishTime>
+    </File>
+    <File Include="build/diagnostics/Logger.js.map">
+      <publishTime>10/27/2017 16:24:17</publishTime>
+    </File>
+    <File Include="build/diagnostics/LoggerFactory.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/diagnostics/LoggerFactory.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/diagnostics/PerformanceMeterFactory.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/diagnostics/PerformanceMeterFactory.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/error/Errors.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/error/Errors.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/GruntFile.js">
+      <publishTime>10/26/2017 18:50:40</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/configuration/configurationController.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/configuration/watcherServerController.js">
+      <publishTime>10/28/2017 21:48:01</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/eventsInformer.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/jobs/jobRunner.js">
+      <publishTime>10/26/2017 16:12:42</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/jobs/validateLicensesJob.js">
+      <publishTime>10/28/2017 21:45:13</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/jobs/warnAboutLicenseExpirationJob.js">
+      <publishTime>10/28/2017 21:38:00</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/requestStat.js">
+      <publishTime>10/26/2017 16:12:42</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/statusInformer.js">
+      <publishTime>10/29/2017 16:47:44</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/loadBalancerMonitor.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/monitorController.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/packageTimeStampMonitor.js">
+      <publishTime>10/29/2017 16:50:52</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/serverAvailabilityMonitor.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/unassignedPackageMonitor.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/watcherServerIdMonitor.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/guartinel/admin/watcherServerMonitors/watcherServerPerformanceMonitor.js">
+      <publishTime>10/29/2017 13:53:40</publishTime>
+    </File>
+    <File Include="build/guartinel/connection/emailer.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/guartinel/connection/gcmManager.js">
+      <publishTime>10/28/2017 19:08:20</publishTime>
+    </File>
+    <File Include="build/guartinel/connection/httpRequester.js">
+      <publishTime>10/29/2017 16:44:42</publishTime>
+    </File>
+    <File Include="build/guartinel/constants.js">
+      <publishTime>10/26/2017 16:12:42</publishTime>
+    </File>
+    <File Include="build/guartinel/database/admin/databaseConnector.js">
+      <publishTime>10/29/2017 16:29:25</publishTime>
+    </File>
+    <File Include="build/guartinel/database/admin/schemas/adminAccountSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/admin/schemas/localConfigurationSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/admin/schemas/watcherServerSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/databaseJanitor.js">
+      <publishTime>10/27/2017 16:08:20</publishTime>
+    </File>
+    <File Include="build/guartinel/database/inMemory/databaseConnector.js">
+      <publishTime>10/29/2017 16:28:08</publishTime>
+    </File>
+    <File Include="build/guartinel/database/public/databaseConnector.js">
+      <publishTime>10/29/2017 16:39:42</publishTime>
+    </File>
+    <File Include="build/guartinel/database/public/schemas/accountSchema.js">
+      <publishTime>10/27/2017 16:08:19</publishTime>
+    </File>
+    <File Include="build/guartinel/database/public/schemas/controlledEmailSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/public/schemas/licenseOrderSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/public/schemas/licenseSchema.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/database/transaction/databaseConnector.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/guartinel/guartinelError.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/guartinel/license/licenseController.js">
+      <publishTime>10/26/2017 18:52:25</publishTime>
+    </File>
+    <File Include="build/guartinel/response/Response.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/guartinel/response/Response.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/guartinel/security/abuseDetector.js">
+      <publishTime>10/27/2017 14:52:40</publishTime>
+    </File>
+    <File Include="build/guartinel/security/authenticator.js">
+      <publishTime>10/29/2017 16:59:38</publishTime>
+    </File>
+    <File Include="build/guartinel/security/sessionManager.js">
+      <publishTime>10/29/2017 16:45:32</publishTime>
+    </File>
+    <File Include="build/guartinel/security/tool.js">
+      <publishTime>10/26/2017 16:12:42</publishTime>
+    </File>
+    <File Include="build/guartinel/utils/alertMessageBuilder.js">
+      <publishTime>10/27/2017 16:08:20</publishTime>
+    </File>
+    <File Include="build/guartinel/utils/commonUtils.js">
+      <publishTime>10/27/2017 16:08:19</publishTime>
+    </File>
+    <File Include="build/guartinel/utils/fileTool.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/guartinel/utils/fileTool.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/guartinel/utils/timeTool.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/helper.js">
+      <publishTime>10/28/2017 20:29:31</publishTime>
+    </File>
+    <File Include="build/Logger.js">
+      <publishTime>10/27/2017 12:41:25</publishTime>
+    </File>
+    <File Include="build/Logger.js.map">
+      <publishTime>10/27/2017 12:41:25</publishTime>
+    </File>
+    <File Include="build/logs/error.log">
+      <publishTime>10/29/2017 14:22:39</publishTime>
+    </File>
+    <File Include="build/PerformanceMeterFactory.js">
+      <publishTime>10/27/2017 12:41:25</publishTime>
+    </File>
+    <File Include="build/PerformanceMeterFactory.js.map">
+      <publishTime>10/27/2017 12:41:25</publishTime>
+    </File>
+    <File Include="build/routes/account/activateAccount.js">
+      <publishTime>10/29/2017 16:39:42</publishTime>
+    </File>
+    <File Include="build/routes/account/create.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/delete.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/freeze.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/getStatus.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/routes/account/login.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/logout.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/resendActivationCode.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/sendNewPassword.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/routes/account/update.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/validateToken.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/account/verifySendNewPassword.js">
+      <publishTime>10/29/2017 16:42:00</publishTime>
+    </File>
+    <File Include="build/routes/admin/database/getStatus.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/database/remove.js">
+      <publishTime>10/28/2017 19:56:14</publishTime>
+    </File>
+    <File Include="build/routes/admin/database/update.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/getSupervisorStatus.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/login.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/logout.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/sendMaintenanceEmail.js">
+      <publishTime>10/29/2017 16:42:45</publishTime>
+    </File>
+    <File Include="build/routes/admin/setWebsiteAddress.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/status/getEvents.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/status/getInvalidRequests.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/status/getLog.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/status/getStatus.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/update.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/getAvailable.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/getEvents.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/getStatus.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/register.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/remove.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/admin/watcherServer/update.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/confirmDeviceAlert.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/confirmEmail.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/sendDeviceAlert.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/sendEmail.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/unsubscribeAllEmail.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/alert/unsubscribeFromPackageEmail.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/api/DTOBuilder.js">
+      <publishTime>10/26/2017 16:12:44</publishTime>
+    </File>
+    <File Include="build/routes/api/getToken.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/api/package/delete.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/api/package/getAll.js">
+      <publishTime>10/29/2017 16:56:04</publishTime>
+    </File>
+    <File Include="build/routes/api/package/getPackage.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/api/package/getVersion.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/api/package/save.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/applicationSupervisor/configManager.js">
+      <publishTime>10/26/2017 16:12:45</publishTime>
+    </File>
+    <File Include="build/routes/applicationSupervisor/getApplicationInstanceIds.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/applicationSupervisor/registerMeasurement.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/computerSupervisor/getAgentDevices.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/computerSupervisor/registerMeasurement.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/android/sync.js">
+      <publishTime>10/26/2017 16:12:44</publishTime>
+    </File>
+    <File Include="build/routes/device/android/test.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/delete.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/edit.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/getAvailable.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/login.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/device/register.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/emailSupervisor/registerMeasurement.js">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/routes/emailSupervisor/registerMeasurement.js.map">
+      <publishTime>10/29/2017 17:02:51</publishTime>
+    </File>
+    <File Include="build/routes/getVersion.js">
+      <publishTime>10/28/2017 20:31:17</publishTime>
+    </File>
+    <File Include="build/routes/license/activateLicense.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/license/addToAccount.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/license/getAvailable.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/license/getLicenseOrder.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/license/saveLicenseOrder.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/license/startBuyingLicense.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/delete.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/getavailable.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/getStatistics.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/save.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/sendTestEmail.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/storeMeasurement.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/package/storeState.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/routeResponse.js">
+      <publishTime>10/26/2017 16:12:46</publishTime>
+    </File>
+    <File Include="build/routes/routes.js">
+      <publishTime>10/29/2017 16:43:28</publishTime>
+    </File>
+    <File Include="build/routes/watcherServer/login.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/watcherServer/register.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/routes/watcherServer/requestSynchronization.js">
+      <publishTime>10/28/2017 20:31:19</publishTime>
+    </File>
+    <File Include="build/scriptTools/encryptText.js">
+      <publishTime>10/26/2017 16:12:42</publishTime>
+    </File>
+    <File Include="build/service.js">
+      <publishTime>10/26/2017 16:12:44</publishTime>
+    </File>
+    <File Include="build/tests/guartinel/admin/jobs/testJobs.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/tests/guartinel/utils/alertMessageHelperTest.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/tests/guartinel/utils/commonUtilsTest.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/tests/guartinel/utils/timeToolTest.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/tests/mariaDBTest.js">
+      <publishTime>10/26/2017 16:12:44</publishTime>
+    </File>
+    <File Include="build/tests/routes/routeResponsetest.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/routes/routeResponsetest.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/testIfArrayReferenceChangeTheOriginal.js">
+      <publishTime>10/26/2017 16:12:43</publishTime>
+    </File>
+    <File Include="build/tests/ts/apptest.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/apptest.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/instanceDef.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/instanceDef.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/instanceHolder.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/instanceHolder.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/user1.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/user1.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/user2.js">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+    <File Include="build/tests/ts/user2.js.map">
+      <publishTime>10/29/2017 15:22:39</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

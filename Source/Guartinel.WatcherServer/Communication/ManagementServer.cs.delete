@@ -1,0 +1,68 @@
+﻿using System ;
+using System.Collections.Specialized ;
+using System.Linq ;
+using System.Net ;
+using System.Text ;
+using Guartinel.WatcherServer.Logic ;
+using Newtonsoft.Json.Linq ;
+using RestSharp ;
+
+namespace Guartinel.WatcherServer.Communication {
+   public class ManagementServer : IManagementServer {
+      public static class Constants {
+         public static class Requests {
+            public const string SEND_DEVICE_ALERT = "alert/gcm/" ;
+            public const string SEND_EMAIL_ALERT = "alert/email" ;
+         }
+      }
+
+
+      private static string SendRequest (string request,
+                                         NameValueCollection keyValues) {
+
+         var restClient = new RestClient (RunningConfig.ManagementServerAddress) ;
+         var restRequest = new RestRequest (request, Method.POST) ;
+
+         foreach (string key in keyValues.AllKeys) {
+            restRequest.AddParameter (key, keyValues.Get (key)) ;
+         }
+
+         restRequest.RequestFormat = DataFormat.Json ;
+         IRestResponse response = restClient.Execute (restRequest) ;
+
+         if (response.StatusCode != HttpStatusCode.OK) {
+            throw new Exception (String.Format ("Request to {0} failed. Status code: {1} ", request, response.StatusCode)) ;
+         }
+         return response.Content ;
+      }
+
+      private static JToken ParseResponse (string response) {
+         if (string.IsNullOrEmpty (response)) {
+            return null ;
+         }
+
+         //try {
+            return JObject.Parse (response) ;
+         //} catch (Exception e) {
+         //   MainForm.View.AddMsgToList ("Error while parsing response: " + e.Message) ;
+         //   return null ;
+         //}
+      }
+
+      public JToken SendAlertToDevice (string alertDeviceId,
+                                       string message) {
+         var parameters = new NameValueCollection() ;
+         parameters.Add (ConnectionVars.Parameter.ALERT_DEVICE_ID, alertDeviceId) ;
+         parameters.Add (ConnectionVars.Parameter.MESSAGE, message) ;
+         return ParseResponse (SendRequest (Constants.Requests.SEND_DEVICE_ALERT, parameters)) ;
+      }
+
+      public JToken SendEmailAlert (string email,
+                                    string message) {
+         var parameters = new NameValueCollection() ;
+         parameters.Add (ConnectionVars.Parameter.EMAIL, email) ;
+         parameters.Add (ConnectionVars.Parameter.MESSAGE, message) ;
+         return ParseResponse (SendRequest (Constants.Requests.SEND_EMAIL_ALERT, parameters)) ;
+      }
+   }
+}

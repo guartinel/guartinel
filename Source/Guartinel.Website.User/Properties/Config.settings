@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Guartinel.Website.User.Properties" GeneratedClassName="Config">
+  <Profiles />
+  <Settings>
+    <Setting Name="ENABLE_DEBUG_LOG" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DEFAULT_ADMIN_USERNAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">guartadmin</Value>
+    </Setting>
+    <Setting Name="DEFAULT_ADMIN_PASSWORD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">guar!tadminX12</Value>
+    </Setting>
+    <Setting Name="LOG_FOLDER" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Guartinel\Test\WebSite\Guartinel\Log</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

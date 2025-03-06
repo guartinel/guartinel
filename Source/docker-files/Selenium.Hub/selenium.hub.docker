@@ -1,0 +1,7 @@
+FROM selenium/hub:latest
+USER root
+
+RUN apt-get update
+
+RUN apt-get install -y curl
+HEALTHCHECK CMD curl --fail http://`awk 'END{print $1}' /etc/hosts`:4444/ || exit 1

@@ -1,0 +1,23 @@
+{
+   "version": "3.5", 
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-test"
+         }
+      }
+   },   
+   "services": {     
+      "queue": {    
+         "environment": {
+            "RABBITMQ_USERNAME=queue.test",
+            "RABBITMQ_PASSWORD=VLTWnQ3eW6T1MOJsmMwI",            
+            "RABBITMQ_DEFAULT_USER=queue.test",
+            "RABBITMQ_DEFAULT_PASS=VLTWnQ3eW6T1MOJsmMwI",
+            "RABBITMQ_NODE_NAME=rabbit@queue",
+            "RABBITMQ_NODE_TYPE=stats",
+            "RABBITMQ_ERL_COOKIE=v7H8HjXhrgSPKetfDmJn"
+         },
+   }   
+}
+}

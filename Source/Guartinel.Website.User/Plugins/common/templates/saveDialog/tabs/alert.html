@@ -1,0 +1,130 @@
+﻿<div ng-controller="alertTabController" layout="column" layout-margin layout-align="start strech" class="tab_content">
+   <div ng-if="alertDevices.length != 0" layout-align="start strech" layout="column">
+      <b>Alert devices</b>
+      <div layout="row" layout-align="space-between center">
+         <md-input-container md-no-float flex="75">
+            <md-tooltip ng-if="package.owner!=null && package.owner != currentUser">Only the owner can alter this property.</md-tooltip>
+            <!--<md-select placeholder="Click here to select!" ng-disabled="package.owner!=null && package.owner != currentUser" ng-model="selectedAlertDevice">-->
+            <md-select placeholder="Click here to select!" ng-model="selectedAlertDevice">
+               <md-option  ng-repeat="device in availableAlertDevices | notInArray: package.alertDeviceIds: 'id'" value="{{device.id}}">{{device.name}} from {{device.owner}}</md-option>
+            </md-select>
+         </md-input-container>
+         <md-button flex="15" style="text-transform: none" class="md-primary md-raised" ng-disabled="!selectedAlertDevice" ng-click="package.addAlertDevice(selectedAlertDevice)">Add</md-button>
+      </div>
+      <div ng-hide="hasAvailableAlertDevice()">
+         <p><i>You don't have any alert device. Register one to receive fast and free notifications to your phone from the alerts.</i></p>
+      </div>
+       <div ng-show="hasAvailableAlertDevice()" layout="column" layout-align="start stretch">
+           <p class="md-caption" ng-if="package.alertDeviceIds.length == 0">No selected alert device yet.</p>
+           <md-content ng-if="package.alertDeviceIds.length != 0" style="background-color:white;max-height:250px; min-height:100px">
+               <md-list>
+                   <md-list-item layout="row" class="no_padding" layout-align="center center">
+                       <div layout="row" flex="40" layout-align="start center">
+                           <b>Device name</b>
+                       </div>
+                       <md-divider></md-divider>
+                       <div layout="row" flex="40" layout-align="start center">
+                           <b>Device owner</b>
+                       </div>
+                       <md-divider></md-divider>
+                       <div layout="row" flex="30" layout-align="center center">
+                           <b>Remove</b>
+                       </div>
+                   </md-list-item>
+                   <md-divider></md-divider>
+
+                   <md-list-item layout="row" layout-align="center center" ng-click="nop()" ng-repeat="deviceId in package.alertDeviceIds">
+                       <div layout="row" flex="40" layout-align="start center">
+                           <p class="grtnl-break-word">{{getDeviceNameFromId(deviceId)}}  </p>
+                       </div>
+                       <div layout="row" flex="40" layout-align="start center">
+                           <p class="grtnl-break-word">{{getDeviceOwnerFromId(deviceId)}}  </p>
+                       </div>
+                       <div layout="row" flex="30" layout-align="center center">
+                           <!-- <md-button ng-disabled="package.owner!=null && package.owner != currentUser" ng-click="package.alertDeviceIds.splice($index, 1)">
+                               <md-tooltip ng-if="package.owner!=null && package.owner != currentUser">Only the owner can alter this property.</md-tooltip>
+                               <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                           </md-button>-->
+                           <md-button ng-click="package.alertDeviceIds.splice($index, 1)">
+                               <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                           </md-button>
+                       </div>
+                       <md-divider></md-divider>
+                   </md-list-item>
+               </md-list>
+           </md-content>
+       </div>
+       <div layout="row" layout-align="start center">
+           <b style="margin-right: 20px;">Force device alerts</b>
+           <md-switch class="no_padding no_margin" md-theme="green" ng-model="package.forcedDeviceAlert" aria-label="Forced device alert switch"></md-switch>
+           <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('If you check this, your phone will ring until you snooze the alert.')"></div></md-tooltip>
+
+       </div>
+   </div>
+   <div  layout-align="start strech" layout="column">
+      <b>Alert emails</b>
+      <div layout="row" layout-align="space-between center">
+         <md-input-container flex="70" md-no-float ng-form name="emailForm">
+            <input type="email" name="email" placeholder="Enter emails as alert receivers" ng-model="newMail" ng-minlength="5" class="input_contrast top_padding_medium">
+            <span style="color: red" ng-show="emailForm.email.$error.minlength">Too short email!</span>
+            <span style="color: red" ng-show="emailForm.email.$error.email">Invalid email format!</span>
+         </md-input-container>
+         <md-button flex="15" style="text-transform: none; margin: 0px;" class="md-primary md-raised " ng-disabled="!emailForm.email.$valid ||!newMail" ng-click="onAddNewAlertEmail()">Add</md-button>
+      </div>
+      <p class="md-caption" ng-if="package.alertEmails.length == 0">No email address is selected!</p>
+      <md-content ng-if="package.alertEmails.length != 0" style=" margin:0px;background-color:white;max-height:250px; min-height:100px">
+         <md-list ng-if="package.alertEmails.length != 0">
+            <md-list-item layout="row" class="no_padding" layout-align="center center">
+               <div layout="row" flex="50" layout-align="start center">
+                  <b>Email</b>
+               </div>
+               <md-divider></md-divider>
+               <div layout="row" flex="25" layout-align="center center">
+                  <b>Remove</b>
+               </div>
+               <div layout="row" flex="25" layout-align="center center">
+                  <b>Validity</b>
+               </div>
+
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item class="no_padding" layout="row" layout-align="start center" ng-click="nop()" ng-repeat="email in package.alertEmails">
+               <p flex="50" class="grtnl-break-word">{{email}}</p>
+
+               <div flex="25" layout="row" layout-align="center center">
+                  <md-button style="min-width:0px; margin:0px;" ng-click="package.alertEmails.splice($index, 1)">
+                     <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                  </md-button>
+               </div>
+
+               <md-button layout="row" flex="25" style="min-width:0px; margin:0px;" layout-align="center center" ng-disabled="isEmailValidationInProgress" ng-click="testEmail(package.alertEmails[$index])">
+                  <div ng-if="!isValidated(package.alertEmails[$index]) || isEmailValidationInProgress">
+                     <md-tooltip class="md-caption">Email is not validated yet</md-tooltip>
+                     <ng-md-icon icon="autorenew" style="fill: yellow"></ng-md-icon>
+                  </div>
+
+                  <div ng-if="!isEmailValidationInProgress && getValidationResult(package.alertEmails[$index])">
+                     <md-tooltip class="md-caption">Email is valid</md-tooltip>
+                     <ng-md-icon icon="done" style="fill: green"></ng-md-icon>
+                  </div>
+                  <div ng-if="!isEmailValidationInProgress &&  isValidated(package.alertEmails[$index])&& !getValidationResult(package.alertEmails[$index])">
+                     <md-tooltip class="md-caption">Email is invalid</md-tooltip>
+                     <ng-md-icon icon="warning" style="fill: orange"></ng-md-icon>
+                  </div>
+               </md-button>
+            </md-list-item>
+         </md-list>
+      </md-content>
+      <div layout="row" layout-align="start center">
+         <b style="margin-right: 55px;">Email format</b>
+         <md-switch class="no_padding no_margin" md-theme="green" ng-model="package.usePlainAlertEmail" aria-label="Package status switch"></md-switch>
+      </div>
+      <div layout="row">
+         <p class="no_margin" ng-if="package.usePlainAlertEmail">Plain unformatted text</p>
+         <p class="no_margin" ng-if="!package.usePlainAlertEmail">Rich HTML</p>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('If you check this, we will remove HTML formatting from your alert emails.')"></div></md-tooltip>
+      </div>
+   </div>
+
+</div>

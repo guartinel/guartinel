@@ -1,0 +1,111 @@
+﻿<md-card ng-controller="managementServerCardController"
+         class="dashboard_card md-whiteframe-z1" layout="column">
+
+   <md-card-title class="title" layout layout-align="center center">
+      <md-card-title-text>
+         <span class="md-headline">{{managementServerStatus.properties.name}}</span>
+         <span class="md-subhead">Management Server</span>
+      </md-card-title-text>
+
+      <md-menu class="more_menu">
+         <md-button class="expand_button md-icon-button" ng-click="$mdOpenMenu(ev)" aria-label="more">
+            <ng-md-icon md-menu-origin icon="more_vert"></ng-md-icon>
+         </md-button>
+         <md-menu-content width="3">
+            <md-menu-item>
+               <md-button ng-click="showEditDialog(managementServer)">
+                  <ng-md-icon icon="edit" md-menu-align-target style="fill: grey"></ng-md-icon>
+                  Edit
+               </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+               <md-button ng-click="showRemoveDialog(managementServer)">
+                  <ng-md-icon icon="remove" style="fill: red"></ng-md-icon>
+                  Remove
+               </md-button>
+            </md-menu-item>
+         </md-menu-content>
+      </md-menu>
+
+   </md-card-title>
+   <md-divider></md-divider>
+
+
+   <md-card-content ng-if="managementServerStatus.isLoading">
+      <p>Loading...</p>
+   </md-card-content>
+
+   <md-card-content ng-if="managementServerStatus.isError">
+      <p>Can't connect to management server. Check management server settings.</p>
+   </md-card-content>
+
+   <md-card-content ng-if="managementServerStatus.isPresent">
+      <md-tabs md-dynamic-height md-border-bottom>
+         <md-tab label="Stress">
+            <md-content>
+               <h4>Current performance</h4>
+               <div class="properties_container">
+                  <property name="CPU" current="managementServerStatus.status.cpu" flex></property>
+                  <property name="Memory" current="managementServerStatus.status.memory" flex></property>
+                  <property name="Storage" current="managementServerStatus.status.storage" flex></property>
+               </div>
+            </md-content>
+         </md-tab>
+         <md-tab label="DB">
+            <md-content>
+               <div>
+                  <br />
+                  <h3>Database</h3>
+                  <div layout="row" layout-align="start center">
+                     <h4>Status: </h4>
+                     <p ng-if="managementServerStatus.database.isConnected">Connected</p>
+                     <p ng-if="!managementServerStatus.database.isConnected">Disconnected</p>
+                  </div>
+                  <div layout="row" layout-align="start center">
+                     <h4>Db version: </h4>{{managementServerStatus.database.version}}
+                  </div>
+                  <div layout="row" layout-align="start center">
+                     <h4>Storage size: </h4>{{managementServerStatus.database.size}}
+                  </div>
+                  <div layout="row" layout-align="start center">
+                     <h4>URL:</h4>{{managementServerStatus.database.url}}
+                  </div>
+                  <div layout="row" layout-align="start center">
+                     <h4>User Name: </h4>{{managementServerStatus.database.userName}}
+                  </div>
+                  <h4 class="info_buttons" layout="row" layout-align="center center">
+                     <md-button class="md-primary md-raised" ng-click="showUpdateDatabaseDialog()">Edit</md-button>
+                  </h4>
+               </div>
+            </md-content>
+         </md-tab>
+         <md-tab label="Info">
+            <md-content>
+               <br />
+               <h4>Status information:</h4>
+               <p ng-if="managementServerStatus.properties.description!= null">Description: {{managementServerStatus.properties.description}}</p>
+               <p>Address: {{managementServerStatus.properties.address }}:{{managementServerStatus.properties.port }}</p>
+               <p>Management Server version: {{managementServerStatus.status.programVersion}}</p>
+               <p>Nodejs Version: {{managementServerStatus.status.nodejsVersion}}</p>
+               <p>Uptime: {{managementServerStatus.status.uptimeMs/1000/60/60 | number:1}} hour</p>
+               <p>GCMs sent: {{managementServerStatus.status.gcmsSent}}</p>
+               <p>Email sent: {{managementServerStatus.status.emailsSent}}</p>
+               <p>Alerts sent: {{managementServerStatus.status.alertsSent}}</p>
+               <p>All served requests: {{managementServerStatus.status.requests}}</p>
+
+            </md-content>
+         </md-tab>
+         <md-tab label="Actions">
+            <md-content>
+               <div class="info_buttons" layout="column" layout-align="center center">
+                  <md-button class="md-primary md-raised" ng-click="showEventsDialog()">Events</md-button>
+                  <md-button class="md-primary md-raised" ng-click="showLogDialog()">Log</md-button>
+                  <md-button class="md-primary md-raised" ng-click="showInvalidRequestsDialog()">Invalid requests</md-button>
+               </div>
+            </md-content>
+         </md-tab>
+      </md-tabs>
+   </md-card-content>
+
+</md-card>

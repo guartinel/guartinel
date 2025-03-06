@@ -1,0 +1,1 @@
+Guartinel.CLI.exe configured --commandsFile=Sample1.configured

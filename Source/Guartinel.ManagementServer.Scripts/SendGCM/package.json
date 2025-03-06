@@ -1,0 +1,19 @@
+{
+  "name": "passthefile.websiteserver",
+  "version": "1.0.0",
+  "description": "Server for the website and files",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hbs": "^4.0.1",
+    "node-gcm": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.2",
+    "@types/node-gcm": "latest"
+  }
+}

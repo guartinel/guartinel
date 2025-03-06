@@ -1,0 +1,45 @@
+﻿<form layout="column" name="editManagementForm" layout-padding loading-form
+      submit-method="updateManagementServer(managementServer.id, managementServer.name, managementServer.url, managementServer.port, 
+         managementServer.description)">
+
+   <p>Please fill in the form with your <b>Management Server</b> details.</p>
+
+   <md-input-container>
+      <label>Name</label>
+      <input required type="text" ng-model="managementServer.properties.name" name="managementNameField" class="input">
+      <div ng-messages="editManagementForm.managementNameField.$error">
+         <div ng-message="required">required</div>
+      </div>
+   </md-input-container>
+
+   <md-input-container>
+      <label>Description</label>
+      <input type="text" ng-model="managementServer.propertiesdescription" name="managementDescriptionField" class="input">
+   </md-input-container>
+
+    <div layout="row" flex>
+        <md-input-container flex="80">
+            <label>Domain or IP</label>
+            <input required type="text" ng-model="managementServer.properties.address" name="managementUrlField" class="input">
+            <div class="hint">e.g. example.azure.com or 127.0.0.1</div>
+            <div ng-messages="editManagementForm.managementUrlField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="20">
+            <label>Port</label>
+            <input required type="text" ng-model="managementServer.properties.port" name="managementPortField" class="input">
+            <div ng-messages="editManagementForm.managementPortField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+    </div>
+
+   <div class="form_actions">
+      <md-button class="md-primary md-raised" type="submit" ng-disabled="editManagementForm.$invalid">
+         Edit Management Server
+      </md-button>
+   </div>
+
+</form>

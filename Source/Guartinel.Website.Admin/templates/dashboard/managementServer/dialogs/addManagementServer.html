@@ -1,0 +1,79 @@
+﻿<form layout="column" name="addManagementForm" layout-padding loading-form
+      submit-method="addManagementServer(name, address,  description, username, password,emailProvider,emailUserName,emailPassword)">
+
+    <p>Please fill in the form with your <b>Management Server</b> details.</p>
+
+    <md-input-container>
+        <label>Name</label>
+        <input required type="text" ng-model="name" name="managementNameField" class="input">
+        <div ng-messages="addManagementForm.managementNameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Description</label>
+        <input type="text" ng-model="description" name="managementDescriptionField" class="input">
+    </md-input-container>
+
+    <div layout="row" flex>
+        <md-input-container flex="80">
+            <label>Domain or IP</label>
+            <input required type="text" ng-model="address" name="managementAddressField" class="input">
+            <div class="hint">e.g. example.azure.com or 127.0.0.1</div>
+            <div ng-messages="addManagementForm.managementAddressField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+ 
+    </div>
+
+    <md-input-container>
+        <label>Username</label>
+        <input required type="text" ng-model="username" name="managementUsernameField" class="input">
+        <div ng-messages="addManagementForm.managementUsernameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Password</label>
+        <input required type="password" ng-model="password" name="managementPasswordField" class="input">
+        <div ng-messages="addManagementForm.managementPasswordField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <label>Email sender settings</label>
+    <md-input-container>
+        <label>Email provider (e.g.: Sendgrid or Postmark)</label>
+        <input required type="text" ng-model="emailProvider" name="emailProviderField" class="input">
+        <div ng-messages="addManagementForm.emailProviderField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Email username</label>
+        <input required type="text" ng-model="emailUserName" name="emailUserNameField" class="input">
+        <div ng-messages="addManagementForm.emailUserNameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+
+    <md-input-container>
+        <label>Email Password</label>
+        <input required type="password" ng-model="emailPassword" name="emailPasswordField" class="input">
+        <div ng-messages="addManagementForm.emailPasswordField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <div class="form_actions">
+        <md-button class="md-primary md-raised" type="submit" ng-disabled="addManagementForm.$invalid">
+            Add Management Server
+        </md-button>
+    </div>
+
+</form>

@@ -1,0 +1,14 @@
+﻿using System ;
+using System.Linq ;
+using System.Text ;
+using Newtonsoft.Json.Linq ;
+
+namespace Guartinel.WatcherServer.Communication {
+   public interface IManagementServer {
+      JToken SendAlertToDevice (string alertDeviceId,
+                        string message) ;
+
+      JToken SendEmailAlert (string email,
+                        string message) ;
+   }
+}

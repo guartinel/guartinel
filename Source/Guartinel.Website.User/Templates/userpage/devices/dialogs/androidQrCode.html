@@ -1,0 +1,13 @@
+﻿<div layout="column" layout-margin layout-align="start center">
+
+   <p>Scan this QR code with your phone:</p>
+
+   <div hide-sm show-gt-sm layout layout-align="center center">
+      <qrcode layout-margin data="{{qrCodeString}}" size="200" version="20" style="display: block;"></qrcode>
+   </div>
+
+   <div hide-gt-sm show-sm layout layout-align="center center">
+      <qrcode layout-margin data="{{qrCodeString}}" size="150" version="20" style="display: block;"></qrcode>
+   </div>
+
+</div>

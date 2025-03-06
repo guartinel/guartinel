@@ -1,0 +1,12 @@
+﻿<form layout="column" name="removeUserWebServerForm" layout-padding loading-form
+      submit-method="removeUserWebServer()">
+
+    <p>Are you sure you want to remove <b>{{userWebServer.name}}</b> ?</p>
+
+    <div class="form_actions">
+        <md-button class="md-warn md-raised" type="submit" ng-disabled="removeUserWebServerForm.$invalid">
+            Remove User Web Server
+        </md-button>
+    </div>
+
+</form>

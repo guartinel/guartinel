@@ -1,0 +1,6 @@
+﻿#management_server_cards_container{
+   display: -webkit-flex; /* Safari */
+   display: flex;
+   -webkit-flex-direction: column; /* Safari */
+   flex-direction:         column;
+}

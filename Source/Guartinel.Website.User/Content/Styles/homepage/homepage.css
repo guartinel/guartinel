@@ -1,0 +1,18 @@
+﻿
+/* activate screen */
+#activate_container {
+   display: -webkit-flex; 
+   display: flex;
+   webkit-flex-grow:  1; 
+   flex-grow:         1;
+   -webkit-justify-content: center;
+   justify-content: center;
+   background-color: #dedede;
+}
+
+#activate_card {
+   -webkit-align-self: center;
+   align-self: center;
+   -webkit-align-items: center;
+   align-items: center;
+}

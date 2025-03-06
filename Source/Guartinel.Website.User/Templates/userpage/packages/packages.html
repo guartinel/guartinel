@@ -1,0 +1,45 @@
+﻿<md-content layout="row" layout-align="center start" class="grt-bg-pattern" layout-fill>
+
+
+    <!-- <div flex="grow" layout="column" layout-align="top center" ng-show="isLoading">
+        <h2 class="md-display-1">Loading... </h2>
+    </div>
+
+    <md-content layout-align="center start" layout-align-gt-md="start start" flex="grow" id="package_cards_container" ng-show="packages.length != 0" style="background: white">
+        <div ng-repeat="package in packages track by package.id" ng-include="package.cardTemplate"></div>
+    </md-content>
+
+
+    ($parent.packageSearchFilter.length > 0) &&( package.packageName == $parent.packageSearchFilter)
+    -->
+
+    <md-content layout-align="center start" class="grt-bg-pattern" layout-align-gt-md="center start" flex="grow" id="package_cards_container" ng-if="!isLoading" ng-show="packages.length != 0">
+        <div ng-if="package.canUserViewThisPackage()" ng-repeat="package in packages | filter:{packageName: $parent.packageSearchFilter} track by package.id" ng-include="package.cardTemplate"></div>
+    </md-content>
+ 
+    <div ng-if="isLoading"  flex="grow" layout="column" layout-align="start center">
+        <md-card class="md-whiteframe-3dp" flex="30" style="background: white">
+            <md-card-footer layout="row" layout-align="center center">
+                <md-progress-circular ng-if="isLoading" class="loading_element" md-mode="indeterminate"></md-progress-circular>
+            </md-card-footer>
+            <md-card-content layout="row" layout-align="center center">
+                <p layout-margin class="md-headline">Loading</p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div ng-if="packages.length === 0  && !isLoading"  flex="grow" layout="column" layout-align="start center">
+        <md-card class="md-whiteframe-3dp" flex="30" style="background: white">
+            <md-card-content layout="column" layout-align="center center">
+                <h2 flex="50" class="md-display-1 grtnl-text-justify">You have no package yet. </h2>
+                <ng-md-icon  flex="50" icon="arrow_forward" size="50" style="fill: black"></ng-md-icon>
+
+            </md-card-content>
+            <md-card-footer layout="row" layout-align="center center">
+                <p class="grtnl-text-justify">To create one select the package type from the right panel.</p>
+            </md-card-footer>
+        </md-card>
+    </div>
+
+    <div flex-xl="20" flex-lg="25" flex-xs="0" flex-md="0" flex-sm="0" ng-include="'templates/userpage/packages/packagesSidebar.html'">
+    </div>
+</md-content>

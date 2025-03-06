@@ -1,0 +1,12 @@
+﻿<form layout="column" name="removeWatcherServerForm" layout-padding loading-form
+      submit-method="removeWatcherServer(watcherServer.id)">
+
+   <p>Are you sure you want to remove <b>{{watcherServer.name}}</b> ?</p>
+
+   <div class="form_actions">
+      <md-button class="md-warn md-raised" type="submit" ng-disabled="removeWatcherServerForm.$invalid">
+         Remove Watcher server
+      </md-button>
+   </div>
+
+</form>

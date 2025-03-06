@@ -1,0 +1,14 @@
+﻿<div layout="column" layout-fill layout-margin>
+   <div ng-show="isActivationAvailable()" layout="column" layout-margin>
+      <p>You are going to activate 1 month Trial license. In this period you can try out our service as a premium user without any commitment and completly free.</p>
+      <div layout="row" layout-align="center start">
+         <md-button style="text-transform: none" class="md-button md-primary md-raised" ng-click="doActivateLicense()">Do it!</md-button>
+         <md-button style="text-transform: none" class="md-button md-warn md-raised" ng-click="cancel()">Cancel</md-button>
+      </div>
+   </div>
+
+   <div ng-hide="isActivationAvailable()" layout="column" layout-align="center center">
+      <p> You have already activated this license in the past. This license can be ativated only once.</p>
+      <md-button flex="50" class="md-button  md-primary md-raised" ng-click="cancel()">OK</md-button>
+   </div>
+</div>

@@ -1,0 +1,34 @@
+# Project information
+site_name: Guartinel Dokumentáció
+site_description: Távoli rendszer felügyeleti megoldás
+site_author: Sysment Kft.
+site_url: https://guartinel.com
+
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2018 Sysment Kft.'
+
+    
+theme:
+    name: material
+    language: 'hu'
+
+extra:
+  palette:
+    primary: 'blue'
+    accent:  'light-blue'
+
+extra_css:
+  - assets/Documenter.css
+
+markdown_extensions:
+
+extra_javascript:
+
+docs_dir: './docs'
+
+nav:
+- Kezdőlap: index.md
+- Csomagok: packages.md
+- Riasztás : alert.md
+- API: api.md
+- CLI: cli.md

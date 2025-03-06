@@ -1,0 +1,52 @@
+# Login to repository
+docker login --username sztz --password gUY54GnnKeyRrLXP5uWu
+
+# Clear up images
+docker rmi $(docker images -f "dangling=true" -q)
+
+# Create network
+docker network create --subnet=172.18.0.0/24 --gateway=172.18.0.254 guartinel
+
+# Rabbitmq
+docker pull rabbitmq:management
+docker tag rabbitmq:management guartinel1/queue.service
+docker push guartinel1/queue.service
+# docker pull guartinel1/queue.service
+# docker rm guartinel1/queue.service
+docker run -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -d --net=guartinel --ip=172.18.0.10 --hostname=queue.service --name=queue.service --restart unless-stopped guartinel1/queue.service
+
+# Selenium Standalone Chrome instance
+docker pull selenium/standalone-chrome:latest
+docker tag selenium/standalone-chrome guartinel1/selenium-chrome.service:development
+docker tag selenium/standalone-chrome guartinel1/selenium-chrome.service:test
+docker push guartinel1/selenium-chrome.service:test
+# docker stop guartinel1/selenium-chrome.service:test
+# docker pull guartinel1/selenium-chrome.service:test
+docker run -d --net=guartinel --ip=172.18.0.11 --name=selenium-chrome.service -p:4444:4444 --restart unless-stopped guartinel1/selenium-chrome.service:test
+
+# Build and run services
+docker build -f C:\SVN\Trunk\Projects\Guartinel\Source\Guartinel.Service.WebsiteChecker\docker\websitechecker.service.docker -t websitechecker.service --rm C:\SVN\Trunk\Projects\Guartinel\Build\Guartinel.Service.WebsiteChecker\linux-x64
+docker tag websitechecker.service guartinel1/websitechecker.service:development
+docker tag websitechecker.service guartinel1/websitechecker.service:test
+docker push guartinel1/websitechecker.service:development
+docker push guartinel1/websitechecker.service:test
+
+# docker pull guartinel1/websitechecker.service:test
+# docker stop guartinel1/websitechecker.service:test
+# docker rm guartinel1/websitechecker.service:development
+# docker rm guartinel1/websitechecker.service:test
+# docker run -d --net=guartinel --ip=172.18.0.12 --add-host=queue.service:172.18.0.10 --name=websitechecker.service --restart unless-stopped -e GUARTINEL_CONFIGURATION_NAME='Test' -e GUARTINEL_CONFIGURATION_TOKEN='5cc78182-4353-4b6d-a479-55e663b97e4f' guartinel1/websitechecker.service:development
+docker run -d --net=guartinel --ip=172.18.0.12 --add-host=queue.service:172.18.0.10 --name=websitechecker.service --restart unless-stopped -e GUARTINEL_CONFIGURATION_NAME='SzTZDevelopment' -e GUARTINEL_CONFIGURATION_TOKEN='68e13ac4-3ac8-4f6a-a75a-e147a579d89c' guartinel1/websitechecker.service:test
+# docker run -d --net=guartinel --ip=172.18.0.12 --add-host=queue.service:172.18.0.10 --name=websitechecker.service --restart unless-stopped -e GUARTINEL_CONFIGURATION_NAME='Test' -e GUARTINEL_CONFIGURATION_TOKEN='5cc78182-4353-4b6d-a479-55e663b97e4f' guartinel1/websitechecker.service:test
+
+#Install something in the docker image
+#docker exec guartinel.websitechecker "apt-get -y install openssl"
+
+docker-compose -f ./docker/websitechecker.service.docker.compose.json build
+docker-compose -f /root/DockerCompose/websitechecker.service.docker.compose.json pull
+
+cd DockerCompose
+docker stack rm queue-stack
+docker stack rm websitecheck-stack
+docker stack deploy --with-registry-auth -c queue.docker-compose.json -c queue.test.docker-compose.json queue-stack
+docker stack deploy --with-registry-auth -c websitechecker.service.docker-compose.json -c websitechecker.service.docker-compose.test.json websitecheck-stack

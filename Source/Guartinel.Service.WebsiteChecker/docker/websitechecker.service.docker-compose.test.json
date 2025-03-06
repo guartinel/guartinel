@@ -1,0 +1,19 @@
+{
+   "version": "3.5", 
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-test"
+         }
+      }
+    }, 
+   "services": {     
+      "websitechecker-service": {
+      "image": "guartinel1/websitechecker.service:test",            
+         "environment": [
+            "GUARTINEL_CONFIGURATION_NAME=Test",
+            "GUARTINEL_CONFIGURATION_TOKEN=5efd4a7f-bbd4-411c-9bbf-c0a417dfb0a4"
+         ]
+      }
+   }   
+}

@@ -1,0 +1,155 @@
+﻿body, html {
+   /*might not need these two*/
+   width: 100%;
+   height: 100%;
+
+   font-family: 'Roboto', sans-serif;
+}
+
+.grtnl-login-page-background {
+   background-image: url(Images/login_background.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+   width: 100%;
+   height: 100%;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,*/
+select,
+textarea {
+   max-width: 500px; /*default: 280px;*/
+}
+
+md_input_container .hint {
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    color: grey;
+}
+
+md_input_container .hint.ng-leave.ng-leave-active {
+    bottom: 26px;
+    opacity: 0; }
+
+md_input_container .hint.ng-enter.ng-enter-active {
+    bottom: 7px;
+    opacity: 1;
+
+}
+
+.input_contrast.md-input {
+   border-width: 0 0 1px;
+   font-size: 50px
+}
+
+.input_contrast.md-input:focus {
+   border-width: 0 0 1px;
+}
+
+.input_contrast.md-input.ng-invalid.ng-dirty {
+   border-width: 0 0 1px;
+}
+
+.input_contrast.md-input.ng-valid.ng-dirty {
+   border-width: 0 0 4px;
+   border-color: #1ec81e;
+   border-color: rgba(30, 200, 30, 1);
+}
+
+.input_contrast.md-input.ng-valid {
+   border-color: #1ec81e;
+   border-color: rgba(30, 200, 30, 1);
+}
+
+.input_contrast.md-input.ng-invalid {
+   border-color: #646464;
+   border-color: rgba(100, 100, 100, 1);
+}
+
+
+md-grid-tile-header figcaption {
+  width: 100%;
+}
+
+md-grid-tile-footer figcaption {
+   width: 100%;
+}
+
+.tile_multiline {
+  -webkit-flex-wrap: wrap; /* Safari */
+  flex-wrap:         wrap;
+}
+
+.md-option_smaller {
+   height: 35px;
+}
+
+.md-option_smaller .md-text {
+   font-size: 15px;
+}
+
+.md-option_narrow {
+   height: 35px;
+}
+
+.md-option_narrow .md-text {
+   font-size: 15px;
+}
+
+
+
+.noncaption-text {
+   text-transform: none;
+}
+
+.deviceSideBarButton {
+   height: 250px;
+}
+
+.deviceSideBarButton:hover {
+   opacity: 0.8;
+}
+
+.input_contrast.md-input.has-no-value {
+   /*border-width: 0 0 3px;*/
+}
+ 
+
+.agent_screenshot {
+   /*background-image: url(Images/agent_screenshot.png);
+   background-repeat: no-repeat;
+   
+   background-position: center center;*/
+   
+   height: 100%;
+   width: auto;
+}
+
+#features {
+   width: 100%;
+}
+
+ng-md-icon {
+   line-height: 1;
+   vertical-align: middle;
+   display: inline-block;
+}

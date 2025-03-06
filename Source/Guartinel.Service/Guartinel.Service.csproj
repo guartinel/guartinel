@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+     <OutputType>Library</OutputType>
+    <TargetFrameworks>net462;netcoreapp2.1</TargetFrameworks>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Kernel.Network\Guartinel.Kernel.Network.csproj" />
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

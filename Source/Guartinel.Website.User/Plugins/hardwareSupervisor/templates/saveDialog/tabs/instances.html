@@ -1,0 +1,389 @@
+﻿<div ng-controller="hardwareSupervisorInstancesTabController" layout="column" class="tab_content" layout-margin>
+<div ng-if="availableInstances.length == 0 && window.android == null">
+    <p>Download our mobile app from Play store then open devices and add new hardware sensor!</p>
+</div>
+<div ng-if="availableInstances.length == 0 && window.android != null">
+    <p>Navigate to devices page open the right side menu and select add new hardware sensor to register your sensors!</p>
+</div>
+<div ng-if="availableInstances.length != 0" layout-align="start strech" layout="column">
+<b>Available hardware sensors</b>
+<div layout="row" layout-align="space-between center">
+    <md-input-container md-no-float flex="75">
+        <md-select placeholder="Click here to select!" ng-model="instanceToAdd">
+            <md-option ng-repeat="availableInstance in availableInstances | notInArray: package.configuration.instances: 'instance_id'" value="{{availableInstance}}">{{availableInstance.name}}</md-option>
+        </md-select>
+    </md-input-container>
+    <md-button flex="15" style="text-transform: none" class="md-primary md-raised" ng-disabled="!instanceToAdd" ng-click="addInstance(instanceToAdd)">Add</md-button>
+</div>
+<b>Added hardware sensors</b>
+<div layout="column" layout-align="start stretch">
+    <p class="md-caption" ng-if="package.configuration.instances.length == 0">Add a hardware sensor first!</p>
+    <md-content ng-if="package.configuration.instances.length != 0" style="background-color: white; max-height: 250px; min-height: 100px">
+        <md-list>
+            <md-list-item  ng-style="instance.instance_id == selectedInstance.instance_id && {'background-color':'gainsboro'} || {'background-color': 'white'}" layout="row" layout-align="center center" ng-click="onInstanceSelected(instance)" ng-repeat="instance in package.configuration.instances">
+                <div layout="column" flex="70">
+                    <p style="margin-bottom: 0px;">{{getInstanceName(instance.name)}}</p>
+                    <p class="grtnl-text-xs">{{instance.summary}}</p>
+                </div>
+
+                <div layout="row" flex="30" layout-align="center center">
+                    <md-button ng-click="package.configuration.instances.splice($index, 1)">
+                        <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                    </md-button>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
+<div layout="column" layout-align="space-between stretch">
+<b ng-if="selectedInstance != null" style="margin-bottom: 35px;">Configuration</b>
+<b ng-if="selectedInstance == null">Select an instance from the list to configure it!</b>
+
+
+<div layout="row" layout-align="center center">
+<div layout="row" layout-align="start center" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_CURRENT_LEVEL_MAX_30A">
+    <div layout="row" layout-align="start center">
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Min A</label>
+            <div layout="column" layout-align="start start">
+                <input name="min_threshold" placeholder=" " ng-model="selectedInstance.min_threshold" type="number" min="0" max="30" step="0.1" smaller="selectedInstance.max_threshold">
+                <div ng-messages="savePackageForm.min_threshold.$error">
+                    <div ng-message="min">Minimum 0A!</div>
+                    <div ng-message="max">Maximum 30A!</div>
+                    <div ng-message="required">Value is missing!</div>
+                    <div ng-message="smaller">Value must be smaller then {{selectedInstance.max_threshold}}!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Max A</label>
+            <div layout="column" layout-align="start start">
+                <input name="max_threshold" placeholder=" " id="selectedInstance_max_threshold" ng-model="selectedInstance.max_threshold" type="number" min="0" max="30" step="0.1">
+                <div ng-messages="savePackageForm.max_threshold.$error">
+                    <div ng-message="min">Minimum 0A!</div>
+                    <div ng-message="max">Maximum 30A!</div>
+                    <div ng-message="required">Value is missing!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/current.svg"></md-icon>
+        <div layout="column" layout-align="center start">
+            <md-checkbox name="checkMinMax" style="margin: 0px; min-width: 150px;" ng-model="selectedInstance.check_min_max">
+                Sensitive alert <md-tooltip class="md-caption">Check short time changes in values.</md-tooltip>
+            </md-checkbox>
+        </div>
+    </div>
+</div>
+
+<div layout="row" layout-align="start center" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_CURRENT_LEVEL_MAX_100A">
+    <div layout="row" layout-align="start center">
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Min A</label>
+            <div layout="column" layout-align="start start">
+                <input name="min_threshold" placeholder=" " ng-model="selectedInstance.min_threshold" type="number" min="0" max="100" step="0.1" smaller="selectedInstance.max_threshold">
+                <div ng-messages="savePackageForm.min_threshold.$error">
+                    <div ng-message="min">Minimum 0A!</div>
+                    <div ng-message="max">Maximum 100A!</div>
+                    <div ng-message="required">Value is missing!</div>
+                    <div ng-message="smaller">Value must be smaller then {{selectedInstance.max_threshold}}!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Max A</label>
+            <div layout="column" layout-align="start start">
+                <input name="max_threshold" placeholder=" " ng-model="selectedInstance.max_threshold" type="number" min="0" max="100" step="0.1">
+                <div ng-messages="savePackageForm.max_threshold.$error">
+                    <div ng-message="min">Minimum 0A!</div>
+                    <div ng-message="max">Maximum 100A!</div>
+                    <div ng-message="required">Value is missing!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/current.svg"></md-icon>
+        <div layout="column" layout-align="center start">
+            <md-checkbox name="checkMinMax" style="margin: 0px; min-width: 150px;" ng-model="selectedInstance.check_min_max">
+                Sensitive alert <md-tooltip class="md-caption">Check short time changes in values.</md-tooltip>
+            </md-checkbox>
+        </div>
+    </div>
+</div>
+
+<div layout="row" layout-align="start center" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_VOLTAGE_LEVEL_MAX_230V_ONE_CHANNEL">
+    <div layout="row" layout-align="start center">
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Min V</label>
+            <div layout="column" layout-align="start start">
+                <input name="min_threshold" placeholder=" " ng-model="selectedInstance.min_threshold" type="number" min="0" max="250" step="1" smaller="selectedInstance.max_threshold">
+                <div ng-messages="savePackageForm.min_threshold.$error">
+                    <div ng-message="min">Minimum 0V!</div>
+                    <div ng-message="max">Maximum 250V!</div>
+                    <div ng-message="required">Value is missing!</div>
+                    <div ng-message="smaller">Value must be smaller then {{selectedInstance.max_threshold}}!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+        <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+            <label>Max V</label>
+            <div layout="column" layout-align="start start">
+                <input name="max_threshold" placeholder=" " ng-model="selectedInstance.max_threshold" type="number" min="0" max="250" step="1">
+                <div ng-messages="savePackageForm.max_threshold.$error">
+                    <div ng-message="min">Minimum 0V!</div>
+                    <div ng-message="max">Maximum 250V!</div>
+                    <div ng-message="required">Value is missing!</div>
+                </div>
+            </div>
+        </md-input-container>
+        <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/voltage.svg"></md-icon>
+        <div layout="column" layout-align="center start">
+            <md-checkbox name="checkMinMax" style="margin: 0px; min-width: 150px;" ng-model="selectedInstance.check_min_max">
+                Sensitive alert <md-tooltip class="md-caption">Check short time changes in values.</md-tooltip>
+            </md-checkbox>
+        </div>
+    </div>
+</div>
+<div layout="column" layout-align="start stretch" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_VOLTAGE_LEVEL_MAX_230V_THREE_CHANNEL">
+    <div layout="column">
+        <div layout="row">
+            <md-input-container flex="100" md-no-float class="no_margin">
+                <label>Channel 1 Name</label>
+                <input name="channel1Name" placeholder="Enter the name of this channel!" ng-model="selectedInstance.channel_1.name" required type="text">
+                <div ng-messages="savePackageForm.channel1Name.$error">
+                    <div ng-message="required">Channel1 name is requiered!</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center" style="min-height: 80px;">
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Min V</label>
+                <div layout="column" layout-align="start start">
+                    <input name="ch1_min_threshold" placeholder=" " ng-model="selectedInstance.channel_1.min_threshold" type="number" min="0" max="250" step="1" smaller="selectedInstance.channel_1.max_threshold">
+                    <div ng-messages="savePackageForm.ch1_min_threshold.$error">
+                        <div ng-message="min">Minimum 0V!</div>
+                        <div ng-message="max">Maximum 250V!</div>
+                        <div ng-message="required">Value is missing!</div>
+                        <div ng-message="smaller">Value must be smaller then {{selectedInstance.channel_1.max_threshold}}!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Max V</label>
+                <div layout="column" layout-align="start start">
+                    <input name="ch1_max_threshold" placeholder=" " ng-model="selectedInstance.channel_1.max_threshold" type="number" min="0" max="250" step="1">
+                    <div ng-messages="savePackageForm.ch1_max_threshold.$error">
+                        <div ng-message="min">Minimum 0V!</div>
+                        <div ng-message="max">Maximum 250V!</div>
+                        <div ng-message="required">Value is missing!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/voltage.svg"></md-icon>
+            <div layout="column" layout-align="center start">
+                <md-checkbox name="checkMinMax" style="margin: 0px; min-width: 150px;" ng-model="selectedInstance.check_min_max">
+                    Sensitive alert <md-tooltip class="md-caption">Check short time changes in values.</md-tooltip>
+                </md-checkbox>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row">
+            <div layout="column">
+                <label class="grtnl-text-xs">Channel 2 Name</label>
+                <md-input-container md-no-float class="no_margin">
+                    <input name="channel2Name" placeholder="Enter the name of this channel!" ng-model="selectedInstance.channel_2.name" required type="text">
+                    <div ng-messages="savePackageForm.channel2Name.$error">
+                        <div ng-message="required">Channel2 name is requiered!</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="column">
+                <label class="grtnl-text-xs">Alert settings</label>
+                <md-input-container class="no_margin" layout="row" layout-align="start start" md-no-float>
+                    <md-select ng-model="selectedInstance.channel_2.expected_state" ng-init="selectedInstance.channel_2.expected_state = selectedInstance.channel_2.expected_state || 'any'">
+                        <md-option ng-value="'on'">Alert if off</md-option>
+                        <md-option ng-value="'off'">Alert if on</md-option>
+                        <md-option ng-value="'any'">Do not check this</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row">
+            <div layout="column">
+                <label class="grtnl-text-xs">Channel 3 Name</label>
+                <md-input-container md-no-float class="no_margin">
+                    <input name="channel3Name" placeholder="Enter the name of this channel!" ng-model="selectedInstance.channel_3.name" required type="text">
+                    <div ng-messages="savePackageForm.channel3Name.$error">
+                        <div ng-message="required">Channel3 name is requiered!</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="column">
+                <label class="grtnl-text-xs">Alert settings</label>
+                <md-input-container class="no_margin" layout="row" layout-align="start start" md-no-float>
+                    <md-select ng-model="selectedInstance.channel_3.expected_state">
+                        <md-option ng-value="'on'" ng-init="selectedInstance.channel_3.expected_state = selectedInstance.channel_3.expected_state || 'any'">Alert if off</md-option>
+                        <md-option ng-value="'off'">Alert if on</md-option>
+                        <md-option ng-value="'any'">Do not check this</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</div>
+<div flex-xs="100" flex-sm="80" flex="50" layout="column" layout-align="start stretch" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_TEMPERATURE_DHT11">
+    <!--   TEMPERATURE-->
+    <div style="min-height: 80px;" layout="column">
+        <div layout="row" layout-align="start center">
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Min ℃</label>
+                <div layout="column" layout-align="start start">
+                    <input name="temp_min_threshold" placeholder=" " ng-model="selectedInstance.temperature_celsius.min_threshold" type="number" min="0" max="50" step="1" smaller="selectedInstance.temperature_celsius.max_threshold">
+                    <div ng-messages="savePackageForm.temp_min_threshold.$error">
+                        <div ng-message="min">Minimum 0℃!</div>
+                        <div ng-message="max">Maximum 50℃!</div>
+                        <div ng-message="required">Value is missing!</div>
+                        <div ng-message="smaller">Value must be smaller then {{selectedInstance.temperature_celsius.max_threshold}}!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <ng-md-icon icon="compare_arrows" style="fill: gray"></ng-md-icon>
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Max ℃</label>
+                <div layout="column" layout-align="start start">
+                    <input name="temp_max_threshold" placeholder=" " ng-model="selectedInstance.temperature_celsius.max_threshold" type="number" min="0" max="50" step="1">
+                    <div ng-messages="savePackageForm.temp_max_threshold.$error">
+                        <div ng-message="min">Minimum 0℃!</div>
+                        <div ng-message="max">Maximum 50℃!</div>
+                        <div ng-message="required">Value is missing!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/temperature.svg"></md-icon>
+        </div>
+    </div>
+
+    <!--   HUMIDITY-->
+    <div style="min-height: 80px;" layout="column">
+        <div layout="row" layout-align="start center">
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Min RH%</label>
+                <div layout="column" layout-align="start start">
+                    <input name="humidity_min_threshold" placeholder=" " ng-model="selectedInstance.relative_humidity_percent.min_threshold" type="number" min="20" max="80" step="5" smaller="selectedInstance.relative_humidity_percent.max_threshold">
+                    <div ng-messages="savePackageForm.humidity_min_threshold.$error">
+                        <div ng-message="min">Minimum 20%!</div>
+                        <div ng-message="max">Maximum 80%!</div>
+                        <div ng-message="required">Value is missing!</div>
+                        <div ng-message="smaller">Value must be smaller then {{selectedInstance.relative_humidity_percent.max_threshold}}!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <ng-md-icon icon="compare_arrows" style="fill: gray"></ng-md-icon>
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Max RH%</label>
+                <div layout="column" layout-align="start start">
+                    <input name="humidity_max_threshold" placeholder=" " ng-model="selectedInstance.relative_humidity_percent.max_threshold" type="number" min="20" max="80" step="5">
+                    <div ng-messages="savePackageForm.humiditythreshold.$error">
+                        <div ng-message="min">Minimum 20%!</div>
+                        <div ng-message="max">Maximum 80%!</div>
+                        <div ng-message="required">Value is missing!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/humidity.svg"></md-icon>
+        </div>
+    </div>
+</div>
+<div layout="column" flex-xs="100" flex-sm="80" flex="50" layout-align="start stretch" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_TEMPERATURE_DHT22">
+    <!--   TEMPERATURE-->
+    <div style="min-height: 80px;" layout="column">
+        <div layout="row" layout-align="start center">
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Min ℃</label>
+                <div layout="column" layout-align="start start">
+                    <input name="temp_min_threshold" placeholder=" " ng-model="selectedInstance.temperature_celsius.min_threshold" type="number" min="-40" max="80" step="0.5" smaller="selectedInstance.temperature_celsius.max_threshold">
+                    <div ng-messages="savePackageForm.temp_min_threshold.$error">
+                        <div ng-message="min">Minimum -40℃!</div>
+                        <div ng-message="max">Maximum 80℃!</div>
+                        <div ng-message="required">Value is missing!</div>
+                        <div ng-message="smaller">Value must be smaller then {{selectedInstance.temperature_celsius.max_threshold}}!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Max ℃</label>
+                <div layout="column" layout-align="start start">
+                    <input name="temp_max_threshold" placeholder=" " ng-model="selectedInstance.temperature_celsius.max_threshold" type="number" min="-40" max="80" step="0.5">
+                    <div ng-messages="savePackageForm.temp_max_threshold.$error">
+                        <div ng-message="min">Minimum -40℃!</div>
+                        <div ng-message="max">Maximum 80℃!</div>
+                        <div ng-message="required">Value is missing!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/temperature.svg"></md-icon>
+        </div>
+    </div>
+    <!--   HUMIDITY-->
+    <div style="min-height: 80px;" layout="column">
+        <div layout="row" layout-align="start center">
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Min RH%</label>
+                <div layout="column" layout-align="start start">
+                    <input name="humidity_min_threshold" placeholder=" " ng-model="selectedInstance.relative_humidity_percent.min_threshold" type="number" min="0" max="100" step="2" smaller="selectedInstance.relative_humidity_percent.max_threshold">
+                    <div ng-messages="savePackageForm.humidity_min_threshold.$error">
+                        <div ng-message="min">Minimum 0%!</div>
+                        <div ng-message="max">Maximum 100%!</div>
+                        <div ng-message="required">Value is missing!</div>
+                        <div ng-message="smaller">Value must be smaller then {{selectedInstance.relative_humidity_percent.max_threshold}}!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <ng-md-icon icon="compare_arrows" flex="10" style="fill: gray"></ng-md-icon>
+            <md-input-container flex="40" class="no_margin" layout-align="start layout-fill" md-no-float>
+                <label>Max RH%</label>
+                <div layout="column" layout-align="start start">
+                    <input name="humidity_max_threshold" placeholder=" " ng-model="selectedInstance.relative_humidity_percent.max_threshold" type="number" min="0" max="100" step="2">
+                    <div ng-messages="savePackageForm.humidity_max_threshold.$error">
+                        <div ng-message="min">Minimum 0%!</div>
+                        <div ng-message="max">Maximum 100%!</div>
+                        <div ng-message="required">Value is missing!</div>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-icon flex="10" style="margin-left: 5px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" md-svg-src="content/images/input_icons/humidity.svg"></md-icon>
+
+        </div>
+    </div>
+</div>
+<div layout="column" layout-align="start stretch" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_GAS_MQ135">
+    <div layout="column">
+        <label class="grtnl-text-xs">Alert settings</label>
+        <md-input-container class="no_margin" layout="row" layout-align="start start" md-no-float>
+            <md-select ng-model="selectedInstance.expected_state" ng-init="selectedInstance.expected_state = selectedInstance.expected_state || 'any'">
+                <md-option ng-value="'on'">Alert if not present</md-option>
+                <md-option ng-value="'off'">Alert if present</md-option>
+                <md-option ng-value="'any'">Do not check this</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+<div layout="column" layout-align="start stretch" ng-if="selectedInstance.hardware_type == pluginConstants.HARDWARE_TYPE_WATER_PRESENCE">
+    <div layout="column">
+        <label class="grtnl-text-xs">Alert settings</label>
+        <md-input-container class="no_margin" layout="row" layout-align="start start" md-no-float>
+            <md-select ng-model="selectedInstance.expected_state" ng-init="selectedInstance.expected_state = selectedInstance.expected_state || 'any'">
+                <md-option ng-value="'on'">Alert if not present</md-option>
+                <md-option ng-value="'off'">Alert if present</md-option>
+                <md-option ng-value="'any'">Do not check this</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>

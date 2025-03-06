@@ -1,0 +1,46 @@
+﻿<div layout="row" layout-align="center center">
+   <div ng-controller="loginHelperController" id="loginHelper">
+   </div>
+
+   <md-card class="top_padding_medium md-whiteframe-z2" layout-align="start stretch" layout="column" flex-xs="95" flex-sm="85" flex-md="50" flex-gt-md="40">
+          <div layout="column" layout-align="center center">
+            <span layout-margin class="grtnl-text-xl">Login</span>
+            <span layout-margin class="grtnl-text-s">New to Guartinel? <a ui-sref='homepage.register'>Register</a></span>
+         </div>
+      <div layout="row" layout-align="center stretch" flex-xs="100" flex-sm="95" flex-md="90" flex-gt-md="40">
+         <form class="top_padding_big" layout-align="start stretch" flex-xs="100" flex-sm="95" flex-md="70" flex-gt-md="50" layout-margin layout="column"  name="loginForm" autocomplete="on" md-no-cache="false"
+               submit-method="login(email, password)" loading-form>
+            <md-input-container md-no-float>
+               <label class="grtnl-text-l">E-mail</label>
+               <input required type="email" placeholder="" ng-model="email" id="inputEmail" name="emailField" autocomplete="on">
+               <div ng-messages="loginForm.emailField.$error">
+                  <div ng-message="required">Required</div>
+                  <div ng-message="email">Invalid email</div>
+               </div>
+            </md-input-container>
+            <br/>
+            <md-input-container md-no-float>
+               <label class="grtnl-text-l">Password</label>
+               <input required type="password" placeholder="" ng-model="password" id="password" name="passwordField" autocomplete="on" ng-minlength="6">
+               <div ng-messages="loginForm.passwordField.$error">
+                  <div ng-message="required">required</div>
+                  <div ng-message="minlength">Password is minimum 6 characters long</div>
+               </div>
+            </md-input-container>
+
+            <div layout-align="center center" class="form_actions">
+               <md-button flex="60" class="md-primary md-raised" style="text-transform: none" type="submit" ng-disabled="loginForm.$invalid">
+                  <div layout="row" layout-align="center center">
+                     <p layout-padding class="no_margin grtnl-text-m">Login</p>
+                  </div>
+               </md-button>
+            </div>        
+         </form>
+      </div>
+      <label class="md-button" style="text-transform: none" ng-click="forgotYourPasswordClicked(email)">{{forgotButtonText}}</label>
+      <!-- <a href="https://manage.guartinel.com:8888/GuartinelPrivacyPolicy.pdf" class="md-primary" style="text-align:center;" target="_blank">Privacy Policy</a>-->
+      <a href="  https://manage.guartinel.com:8888/GuartinelGDPR.pdf" class="md-primary" style="text-align:center;" target="_blank">Privacy Policy</a>
+    
+      <br />
+    </md-card>
+</div>

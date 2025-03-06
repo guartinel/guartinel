@@ -1,0 +1,4 @@
+#!/bin/bash
+docker-compose -f configuration-service-compose  down
+docker pull guartinel1/configuration.service
+docker-compose -f configuration-service-compose  up -d

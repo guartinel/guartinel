@@ -1,0 +1,41 @@
+﻿<div ng-controller="applicationSupervisorInstancesTabController" layout="column" class="tab_content" layout-margin>
+   <md-content style="max-height:400px" layout="column" layout-margin layout-align="start stretch">
+      <!--//TODO APPLICATION_SUPERVISOR_CONSTANTS-->
+      <md-list>
+         <!--//TODO APPLICATION_SUPERVISOR_CONSTANTS-->
+         <md-list-item layout="row" class="no_padding" layout-align="center center">
+            <div layout="row" flex="50"  layout-align="start center">
+               <b>Name</b>
+            </div>
+            <md-divider></md-divider>
+            <div layout="row" flex="25" layout-align="start center">
+               <b>Status</b>
+            </div>
+            <md-divider></md-divider>
+
+            <div layout="row" flex="25" layout-align="center center">
+               <b>Remove</b>
+            </div>
+         </md-list-item>
+         <md-divider></md-divider>
+
+         <md-list-item layout="row" layout-align="center center" ng-click="nop()" ng-repeat="instance in package.configuration.instances">
+            <div layout="row" flex="50" layout-align="start center">
+               <p>{{instance.name}} </p>
+            </div>
+
+            <div layout="row" flex="25" layout-align="start center">
+               <ng-md-icon icon="donut_large" size="25" layout-margin ng-style="getInstanceIconStyle(instance)"></ng-md-icon>
+               <md-tooltip  class="md-caption"> <div ng-bind-html="insertLineBreak(getInstanceStateMessage(instance))"></div></md-tooltip>
+            </div>
+            
+            <div layout="row" flex="25" layout-align="center center">
+               <md-button ng-click="package.configuration.instances.splice($index, 1)">
+                  <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+               </md-button>
+            </div>
+            <md-divider></md-divider>
+         </md-list-item>
+      </md-list>
+   </md-content>
+</div>

@@ -1,0 +1,16 @@
+FROM microsoft/dotnet:sdk AS build-env
+WORKDIR /app
+
+COPY ./ ./
+RUN ls
+
+RUN dotnet publish ./Guartinel.Service.WebsiteChecker/  -c Release -o  /app/out -r linux-x64 -f netcoreapp2.1
+
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+RUN apt-get update
+
+ENTRYPOINT ["dotnet", "Guartinel.Service.WebsiteChecker.dll"]

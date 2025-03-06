@@ -1,0 +1,23 @@
+{
+  "common": {
+    "address":"https://backend2.guartinel.com:9091/applicationSupervisor/registerMeasurement",
+    "token": "6BqG3E7WJHVAErsdov1lwDnBQ",
+    "logFolder":"C:\\Temp\\GLog",
+    "send":true
+  },
+  "commands": [
+    {
+      "id": "id1",
+      "name": "Test1",
+      "command": "ping",
+      "target": "index.hu"
+    },
+    {
+      "id": "id2",
+      "name": "Test2",
+      "command": "checkFileExists",
+      "folder": "c:\\temp",
+      "pattern": "Ehune.txt"
+    }
+  ]
+}

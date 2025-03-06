@@ -1,0 +1,88 @@
+﻿<div ng-controller="hostSupervisorCheckTabController" layout="column" class="tab_content" layout-margin>
+   <div layout="row" layout-align="start start" ng-include="'plugins/common/templates/saveDialog/blocks/packageName.html'"></div>
+   <div layout="column" layout-align="start stretch">
+      <b>Retry count</b>
+      <md-input-container md-no-float layout="column" type="url" class="md-icon-float md-icon-left md-block" layout-align="center center">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('How many times should we try it before alerting you?')"></div></md-tooltip>
+         <md-icon md-svg-src="content/images/input_icons/retry.svg"></md-icon>
+         <input flex="70"
+                type="number"
+                ng-model="package.configuration.retryCount"
+                placeholder="Enter how many times should we retry in case of failure."
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                id="retryCount"
+                name="retryCount"
+                max="5"
+                min="1">
+         <div ng-messages="savePackageForm.retryCount.$error">
+            <div ng-message="max">Maximum 5 times.</div>
+            <div ng-message="min">Minimum 1 times.</div>
+         </div>
+      </md-input-container>
+   </div>
+   <br />
+   <div layout="row" layout-align="space-between center">
+      <div layout="column" flex="35" layout-align="start stretch">
+         <md-input-container md-no-float layout-filltype="url" class="md-block">
+            <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Enter the friendly name of your host.')"></div></md-tooltip>
+            <b>Host name</b>
+            <input typeof="url" layout-fill ng-model="newHostCaption" placeholder="Enter the name  of your host." style="overflow-y: auto;max-height:130px ;" rows="1" id="newHostCaption" name="newHostCaption" class="input_contrast" ng-maxlength="100" />
+         </md-input-container>
+         <span style="color: red" ng-show="savePackageForm.newHostCaption.$error.maxlength">Maximum 100 characters long!<br></span>
+         </div>
+         <div layout="column" flex="35" layout-align="start stretch">
+            <md-input-container md-no-float layout-fill type="url" class="md-block">
+               <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Enter the addresses of your host. If the address is without port like 8.8.8.8 or domain.com we execute an ICMP check to determine the availability. If the address ends with a port number like mydomain.com:88 then we try to establish a TCP channel to it.')"></div></md-tooltip>
+               <b>Host address</b>
+               <input typeof="url" layout-fill ng-model="newHostAddress" ng-change="ipChanged()" placeholder="Enter the IP address of your host." style="overflow-y: auto;max-height:130px ;" rows="1" id="newHostAddress" name="newHostAddress" class="input_contrast" ng-maxlength="100" />
+            </md-input-container>
+            <label style="color: red" ng-show="savePackageForm.newHostAddress.$error.invalidIP">Invalid ip. Must be longer then 5 characters.<br></label>
+            <label style="color: red" ng-show="savePackageForm.newHostAddress.$error.required">You cannot add an empty address!<br></label>
+            <label style="color: red" ng-show="savePackageForm.newHostAddress.$error.maximumPackagePartCountReached">You cannot add more package part because of your license!<br></label>
+            <label style="color: red" ng-show="savePackageForm.newHostAddress.$error.maxlength">Maximum 100 characters long!<br></label>
+         </div>
+         <div flex="20" layout="row" layout-align="center center">
+            <md-button style="text-transform: none; margin: 0px;" class="md-primary md-raised " ng-disabled="!savePackageForm.newHostAddress.$valid || newHostAddress.length == 0" ng-click="pushHost(newHostAddress,newHostCaption)">
+               Add
+            </md-button>
+         </div>
+      </div>
+      <p style="text-align:center; color:red" class="md-caption" ng-show="package.configuration.detailed_hosts.length == 0">Add a host first!</p>
+
+      <md-content style="background-color:white;max-height:250px">
+         <md-list ng-show="package.configuration.detailed_hosts.length != 0">
+            <md-list-item layout="row" class="no_padding" layout-align="center center">
+               <div layout="row" flex="30" layout-align="start center">
+                  <b>Host name</b>
+               </div>
+               <md-divider></md-divider>
+               <div layout="row" flex="50" layout-align="start center">
+                  <b>Host address</b>
+               </div>
+               <md-divider></md-divider>
+               <div layout="row" flex="20" layout-align="center center">
+                  <b>Remove</b>
+               </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item layout="row" layout-align="center center" ng-click="nop()" ng-repeat="host in package.configuration.detailed_hosts">
+               <div layout="row" flex="30" layout-align="start center">
+                  <p style="word-wrap: break-word">{{host.caption}} </p>
+               </div>
+               <div layout="row" flex="50" layout-align="start center">
+                  <p style="word-wrap: break-word">{{host.address}} </p>
+               </div>
+               <div layout="row" flex="20" layout-align="center center">
+                  <md-button ng-click="deleteHost($index)">
+                     <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                  </md-button>
+               </div>
+               <md-divider></md-divider>
+            </md-list-item>
+         </md-list>
+      </md-content>
+
+      <div layout="column" layout-align="start stretch" ng-include="'plugins/common/templates/saveDialog/blocks/checkInterval.html'" />
+   </div>

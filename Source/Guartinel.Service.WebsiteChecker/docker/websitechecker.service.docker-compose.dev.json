@@ -1,0 +1,19 @@
+{
+   "version": "3.5",
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-dev"
+         }
+      }
+   },   
+   "services": {     
+      "websitechecker-service": {    
+      "image": "guartinel1/websitechecker.service:dev",
+         "environment": [
+            "GUARTINEL_CONFIGURATION_NAME=Dev",
+            "GUARTINEL_CONFIGURATION_TOKEN=5efd8a7f-bbd4-5421-9bbf-c0a41pdfb0a4"
+         ]
+      }
+   }   
+}

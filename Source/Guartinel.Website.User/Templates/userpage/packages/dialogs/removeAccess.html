@@ -1,0 +1,12 @@
+﻿<form layout="column" submit-method="confirmRemove(package.id)" layout-margin loading-form>
+
+   <p style="text-align:center">
+      Are you sure you want to remove your access from this package: <b>{{package.packageName}}</b>
+   </p>
+
+   <div class="form_actions">
+      <md-button style="text-transform: none" class="md-warn md-raised" type="submit">Remove access</md-button>
+      <md-button style="text-transform: none" class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+   </div>
+
+</form>

@@ -1,0 +1,21 @@
+FROM microsoft/dotnet:sdk AS build-env
+WORKDIR /app
+
+COPY ./ ./
+RUN ls
+
+RUN dotnet publish ./Guartinel.Service.Configuration/  -c Release -o  /app/out -r linux-x64 -f netcoreapp2.1
+
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+RUN apt-get update
+RUN apt-get -y install md5deep
+
+ENTRYPOINT ["dotnet", "Guartinel.Service.Configuration.dll"]
+
+
+
+

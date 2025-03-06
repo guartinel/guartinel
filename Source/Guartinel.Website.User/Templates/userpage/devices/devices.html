@@ -1,0 +1,33 @@
+﻿<md-content layout="row" layout-align="center start" class="grt-bg-pattern" layout-fill>
+
+
+    <md-content ng-if="!isLoading && devices.length != 0"  layout-align="center center" class="grt-bg-pattern" layout-align-gt-md="center start" flex="grow" id="device_cards_container">
+        <div ng-repeat="device in devices track by device.id" ng-include="'templates/userpage/devices/deviceCard.html'"></div>
+    </md-content>
+
+    <div ng-if="isLoading" flex="grow" layout="column" layout-align="start center">
+        <md-card class="md-whiteframe-3dp" flex="30" style="background: white">
+            <md-card-footer layout="row" layout-align="center center">
+                <md-progress-circular ng-if="isLoading" class="loading_element" md-mode="indeterminate"></md-progress-circular>
+            </md-card-footer>
+            <md-card-content layout="row" layout-align="center center">
+                <p layout-margin class="md-headline">Loading</p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div ng-if="devices.length === 0  && !isLoading" flex="grow" layout="column" layout-align="center center">
+        <md-card class="md-whiteframe-3dp" flex="30" style="background: white">
+            <md-card-content layout="column" layout-align="center center">
+                <h2 flex="50" class="md-display-1 grtnl-text-justify">You have no registered device yet.</h2>
+                <ng-md-icon flex="50" icon="arrow_forward" size="50" style="fill: black"></ng-md-icon>
+
+            </md-card-content>
+            <md-card-footer layout="row" layout-align="center center">
+                <p class="grtnl-text-justify">To create one select the device type from the right panel.</p>
+            </md-card-footer>
+        </md-card>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div flex-xl="20" flex-lg="25" flex-xs="0" flex-md="0" flex-sm="0" ng-include="'templates/userpage/devices/devicesSidebar.html'"></div>
+</md-content>

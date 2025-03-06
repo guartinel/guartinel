@@ -1,0 +1,32 @@
+{
+   "version": "3.2",   
+   "volumes":{
+      "portainer_data":{}
+   },
+   "services": {   
+      "reverse-proxy": {
+         "image": "traefik",         
+         "ports": [
+             "9000:9000"                  
+         ],   
+         "volumes": [
+            "/var/run/docker.sock:/var/run/docker.sock",
+            "/root/docker/certs/:/cert/"
+         ],         
+         "networks": {
+            "default": null
+         }                     
+      },
+      "portainer": {      
+         "image": "portainer/portainer",      
+         "command": "-H unix:///var/run/docker.sock"   ,   
+         "networks": {
+               "default": null
+            },         
+         "volumes": [
+            "/var/run/docker.sock:/var/run/docker.sock",
+            "portainer_data:/data"
+            ]         
+         }
+   }
+}

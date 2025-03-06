@@ -1,0 +1,101 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="3dp"
+    android:theme="@style/GuartinelTheme"
+    card_view:cardBackgroundColor="@color/White"
+    card_view:cardCornerRadius="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="3dp">
+
+        <ImageView
+            android:id="@+id/card_view_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/header"
+            android:padding="5dp"
+            android:src="@drawable/alert_icon" />
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/card_view_image_view"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/card_view_package_name_text_view"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.60"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/card_view_time_text_view"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                android:padding="3dp"
+                android:textSize="10sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/card_view_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/header"
+            android:layout_toEndOf="@+id/card_view_image_view"
+            android:foregroundGravity="left|center_vertical"
+            android:gravity="left|center_vertical"
+            android:padding="5dp"
+            android:text="asdasdasd"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/card_view_alert_details_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/card_view_image_view"
+            android:layout_below="@+id/card_view_title_text_view"
+            android:gravity="left|center_vertical"
+            android:padding="5dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/card_view_package_status_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_view_alert_details_text_view"
+             android:layout_toEndOf="@+id/card_view_image_view"
+            android:gravity="left|center_vertical"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:text="Package is still alerted!"
+            android:textColor="@color/IndianRed"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

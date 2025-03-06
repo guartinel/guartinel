@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Guartinel.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "heartbeat --token:ngBkh5ofxqqte1ImFyAJinyoP --id:102 --name:VMGmail --write --send --address:https://backend2.guartinel.com:9091/applicationSupervisor/registerMeasurement --logFolder:c:\\temp\\CLILog"
+    }
+  }
+}

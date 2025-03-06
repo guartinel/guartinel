@@ -1,0 +1,16 @@
+﻿<form layout="column" submit-method="confirmDisconnect(device.id)" layout-margin loading-form>
+
+    <!-- device is not used in any package -->
+    <div layout="column">
+        <p>
+            Are you sure you want to disconnect device: <b>{{device.name}}</b> from the wifi? After that you have to configure it again.
+        </p>
+        <div class="form_actions">
+            <md-button style="text-transform: none" class="md-warn md-raised" type="submit">
+                Disconnect Device
+            </md-button>
+            <md-button style="text-transform: none" class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+        </div>
+    </div>
+
+</form>

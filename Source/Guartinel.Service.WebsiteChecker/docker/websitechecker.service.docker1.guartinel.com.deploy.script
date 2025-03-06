@@ -1,0 +1,1 @@
+docker stack deploy --with-registry-auth -c websitechecker.service.docker-compose.json -c websitechecker.service.docker1.guartinel.com.docker-compose.json websitecheck-stack

@@ -1,0 +1,75 @@
+﻿#dashboard_cards_container {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-wrap: wrap; 
+   flex-wrap:         wrap;
+   webkit-flex-grow:  1; 
+   flex-grow:         1;
+   background-color: #eeeeee;
+}
+
+.dashboard_card {
+   min-width: 300px;
+   width: 350px;
+}
+
+
+.dashboard_card .more_menu {
+   padding: 0;
+   height: 100%;
+   top: 0;
+   right: 0;
+}
+
+.dashboard_card .expand_button {
+   line-height: 1;
+   height: 100%;
+   margin: 0;
+}
+
+
+.properties_container {
+   display: -webkit-flex; 
+   display: flex;
+   -webkit-flex-direction: row; 
+   flex-direction:         row;
+   -webkit-flex-grow:  1;
+   flex-grow: 1;   
+}
+
+.properties_container .property_container  {
+   margin-left: 5px;
+   margin-right: 5px;
+   flex: inherit;
+   -webkit-flex-direction: row; 
+   flex-direction:         row;
+   position: relative;
+}
+
+.property {
+   height: 100px;
+   width: 100px;
+}
+
+
+.property_container .value_text {
+   position: absolute;
+   transform: translateX(-50%);
+   top: 25%;
+   left: 50%;
+   bottom: auto;
+   color: #bbb;
+   font-weight: 100;
+   font-size: 20px;
+   z-index: 10 !important;
+}
+
+.property_container .property_name {
+   margin-top: 10px;
+   display: -webkit-flex; 
+   display: flex;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+

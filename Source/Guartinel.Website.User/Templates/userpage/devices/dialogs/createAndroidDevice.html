@@ -1,0 +1,67 @@
+﻿<form layout="column" name="qrcodeForm" layout-align="start center" autocomplete="off" layout-margin>
+   <p>
+      Android Client is responsible to provide you instant alerts for free on you mobile phone. You can download it from the picture below.
+   </p>
+   <a href="https://play.google.com/store/apps/details?id=sysment.android.guartinel"><img src="../../Content/Images/play_store_badge.png"></a>
+
+
+   <div hide show-gt-sm layout="column" layout-align="start stretch">
+      <p>If you already downloaded and started the application you can save time with filling the form on it with QR code.</p>
+      <p>Fill the form below and after you clicked 'Show QR Code' , tap on the camera icon inside the android application to read the code.</p>
+
+      <!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
+      <input style="display: none" type="text" name="fakeusernameremembered" />
+      <input style="display: none" type="password" name="fakepasswordremembered" />
+
+      <p>Choose a name to your new device: </p>
+      <br>
+    <!-- <md-input-container md-no-float flex>
+         <label class="grtnl-text-m">Device name</label>
+         <input required ng-model="deviceName" name="deviceNameField" autocomplete="off" class="input_contrast">
+         <div ng-messages="qrcodeForm.deviceNameField.$error">
+            <div ng-message="required">Required</div>
+         </div>
+      </md-input-container>--> 
+      <div layout-padding  layout="row"layout-align="center start">
+         <md-input-container md-no-float flex="50">
+            <label style="font-weight: bold" class="grtnl-text-m">Device name</label>
+            <input placeholder="Type your device name here" ng-model="deviceName"
+                   required name="deviceNameField"  ng-minlength="4"
+                   class="input_contrast" ng-change="qrcodeForm.deviceNameField.$dirty = true">
+            <div ng-messages="qrcodeForm.deviceNameField.$error">
+               <div ng-message="required">Required</div>
+               <div ng-message="minlength">Device name is minimum 4 characters long</div>
+            </div>
+         </md-input-container>
+      </div>
+
+      <p>Type in the password for this account: </p>
+      <br>
+      <!--<md-input-container md-no-float flex>
+         <label class="grtnl-text-m">Password</label>
+         <input required   type="password" ng-model="password" ng-minlength="6" name="passwordField" autocomplete="off" class="input_contrast">
+         <div ng-messages="qrcodeForm.passwordField.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="minlength">Minimum 6 characters long</div>
+         </div>
+      </md-input-container>-->
+
+      <div layout-padding layout="row" layout-align="center start">
+         <md-input-container  flex="50" md-no-float  >
+            <label style="font-weight: bold" class="grtnl-text-m">Password</label>
+            <input placeholder="Type your password here" autocomplete="off" type="password" ng-minlength="6"
+                   ng-model="password" name="passwordField" 
+                   class="input_contrast" ng-change="qrcodeForm.passwordField.$dirty = true">
+            <div ng-messages="qrcodeForm.passwordField.$error">
+               <div ng-message="minlength">Password is minimum 6 characters long</div>
+               <div ng-message="required">Required</div>
+            </div>
+         </md-input-container>
+      </div>
+
+      <div class="form_actions">
+         <md-button style="text-transform: none" ng-disabled="qrcodeForm.$invalid" class="md-raised md-primary" ng-click="showQrCode(deviceName,password)">Show QR Code</md-button>
+      </div>
+   </div>
+
+</form>

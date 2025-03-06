@@ -1,0 +1,30 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="watcherApp">
+<head>
+    <base href="/" /> <!-- required by HTML5 routing -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Guartinel Admin 0.9.0.2</title>
+
+    @Styles.Render("~/styles/mainStyles")
+
+</head>
+
+<body ng-controller="applicationController">
+
+    @Scripts.Render("~/bundles/libraries")
+    @Scripts.Render("~/bundles/components")
+
+    <!-- script files that has no regular version (without minification) are ignored by bundling and must be included through a CDN -->
+    <!-- insert them here -->
+    @* loading custom scripts written by developers *@
+    @Scripts.Render("~/bundles/customScripts")
+  <!--  <script src="~/Content/Scripts/Components/ngclipboard/clipboard.min.js"></script>
+    <script src="~/Content/Scripts/Components/ngclipboard/ngclipboard.js"></script>
+    <script src="~/Content/Scripts/Libraries/crypto-js/crypto-js-sha512-3.1.2.js"></script>-->
+    @RenderBody()
+</body>
+</html>

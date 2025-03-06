@@ -1,0 +1,115 @@
+﻿<div ng-controller="accessTabController" layout="column">
+   <p style="padding-left:20px;"><b>Here you can grant access other users to monitor and change your packages.</b></p>
+   <md-list hide-xs hide-sm ng-if="package.access.length >= 1">
+      <md-list-item layout="row" class="no_padding" layout-align="center center">
+         <div layout="row" flex="25" layout-align="center center">
+            <p>User Email</p>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <p>View</p>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <p>Edit</p>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <p>Disable</p>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <p>Delete</p>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <p>Remove</p>
+         </div>
+      </md-list-item>
+      <md-divider></md-divider>
+
+      <md-list-item ng-hide="accessItem.shouldHide" layout="row" layout-align="center center" ng-click="nop()" ng-repeat="accessItem in package.access">
+         <div flex="25" layout-align="center center">
+            <md-input-container md-no-float ng-form name="accessUserEmailForm">
+               <input type="email" name="email" placeholder="User email" ng-model="accessItem.packageUserEmail" ng-minlength="5" class="input_contrast" ng-change="validateAccessEmail(accessUserEmailForm)">
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.minlength">Too short email!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.required">You cannot add an empty email!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.email">Invalid email format!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.ownerEmail">You cannot modify access for your own email!<br></span>
+            </md-input-container>
+         </div>
+         <md-divider></md-divider>
+         <div layout="row" flex="15" layout-align="center center">
+            <md-checkbox ng-model="accessItem.canRead" flex="15">
+            </md-checkbox>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <md-checkbox name="canEdit" ng-model="accessItem.canEdit" ng-change="onAccessRuleChanged(accessItem)" flex="15">
+            </md-checkbox>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <md-checkbox name="canDisable" ng-model="accessItem.canDisable" ng-change="onAccessRuleChanged(accessItem)" flex="15">
+            </md-checkbox>
+         </div>
+         <div layout="row" flex="15" layout-align="center center">
+            <md-checkbox name="canDelete" ng-model="accessItem.canDelete" ng-change="onAccessRuleChanged(accessItem)" flex="15">
+            </md-checkbox>
+         </div>
+
+         <div layout="row" flex="15" layout-align="center center">
+            <md-button style="margin-top:0px;" ng-click="package.access.splice($index, 1)">
+               <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+            </md-button>
+         </div>
+      </md-list-item>
+   </md-list>
+   <md-list hide-md hide-lg hide-xl ng-if="package.access.length >= 1" layout="column" layout-align="start stretch">
+      <div ng-hide="accessItem.shouldHide" layout="column" layout-align="start stretch" ng-click="nop()" ng-repeat="accessItem in package.access">
+         <div layout="row" layout-align="center center">
+            <md-input-container flex="90" md-no-float ng-form name="accessUserEmailForm">
+               <label>User Email</label>
+               <input type="email" name="email" placeholder="User email" ng-model="accessItem.packageUserEmail" ng-minlength="5" class="input_contrast" ng-change="validateAccessEmail(accessUserEmailForm)">
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.minlength">Too short email!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.required">You cannot add an empty email!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.email">Invalid email format!<br></span>
+               <span style="color: red" ng-show="accessUserEmailForm.email.$error.ownerEmail">You cannot modify access for your own email!<br></span>
+            </md-input-container>
+         </div>
+         <div layout="row" layout-align="center center">
+            <p flex="25" style="text-align:center">View</p>
+            <p flex="25" style="text-align:center">Edit</p>
+            <p flex="25" style="text-align:center">Disable</p>
+            <p flex="25" style="text-align:center">Delete</p>
+         </div>
+         <div layout="row" layout-align="center center">
+
+            <div flex="25" layout="row" layout-align="center center">
+               <md-checkbox ng-model="accessItem.canRead">
+               </md-checkbox>
+            </div>
+            <div flex="25" layout="row" layout-align="center center">
+               <md-checkbox name="canEdit" ng-model="accessItem.canEdit" ng-change="onAccessRuleChanged(accessItem)">
+               </md-checkbox>
+
+            </div>
+            <div flex="25" layout="row" layout-align="center center">
+               <md-checkbox name="canDisable" ng-model="accessItem.canDisable" ng-change="onAccessRuleChanged(accessItem)">
+               </md-checkbox>
+            </div>
+            <div flex="25" layout="row" layout-align="center center">
+               <md-checkbox name="canDelete" ng-model="accessItem.canDelete" ng-change="onAccessRuleChanged(accessItem)">
+               </md-checkbox>
+            </div>
+         </div>
+
+         <div layout="row" flex="15" layout-align="center center">
+            <md-button style="margin-top:0px;" ng-click="package.access.splice($index, 1)">
+               <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+            </md-button>
+         </div>
+         <md-divider></md-divider>
+      </div>
+   </md-list>
+   <div layout="row" layout-align="center start">
+      <md-button ng-click="addNewEmptyRule()">
+         Add new access rule
+      </md-button>
+   </div>
+
+
+</div>

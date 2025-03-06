@@ -1,0 +1,29 @@
+﻿<div layout="column">
+   <!-- <div layout="column" layout-align="center center">
+        <p>
+            <span class="md-subhead">Alerts:</span>
+        </p>
+    </div>-->
+
+   <div ng-repeat="deviceId in package.alertDeviceIds" layout-align="start center" layout="column">
+      <div layout="row" layout-fill layout-align="space-between center">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Device owner: ' +  getDeviceOwnerFromId(deviceId)  + ' This is the device that will get the immediate notification about the problems.')"></div></md-tooltip>
+         <ng-md-icon flex="20" icon="android" size="25" layout-margin style="fill: yellowgreen"></ng-md-icon>
+         <div layout="row" flex="80" layout-align="center center">
+            <label class="md-caption grtnl-break-word" layout-margin>{{ getDeviceNameFromId(deviceId) }}</label>          
+         </div>
+      </div>
+   </div>
+
+   <div ng-repeat="email in package.alertEmails" layout-align="start center" layout="column">
+      <div layout="row" layout-fill layout-align="space-between center">
+          <md-tooltip class="md-caption">
+              <div ng-bind-html="insertLineBreak('This email address will receive the notification email about the problems.')"></div>
+          </md-tooltip>
+         <ng-md-icon flex="20" icon="mail" size="25" layout-margin style="fill: orange"></ng-md-icon>
+         <div layout="row" flex="80" layout-align="center center">
+            <label class="md-caption" layout-margin>{{email}}</label>
+         </div>
+      </div>
+   </div>
+</div>

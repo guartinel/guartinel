@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Guartinel.Website.Common.Properties" GeneratedClassName="Config">
+  <Profiles />
+  <Settings>
+    <Setting Name="DEFAULT_ADMIN_USERNAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">guartadmin</Value>
+    </Setting>
+    <Setting Name="DEFAULT_ADMIN_PASSWORD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">guar!tadminX12</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

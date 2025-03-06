@@ -1,0 +1,58 @@
+﻿<md-card ng-controller="emailSupervisorPackageCardController"
+         class="package_card md-whiteframe-z2" layout="column" id="{{package.id}}" name="{{package.id}}" ng-attr-id="{{package.id}}">
+
+   <md-card-title class="package_card_header" layout="column" flex="25" ng-style="getCardStyle()" layout-align="center stretch">
+      <div  flex="100" ng-include="'plugins/common/templates/card/cardHeaderControlsAndMenu.html'" />
+      <!--<div layout="column" layout-align="center">
+      <span style="color: white" class="md-subhead">Email Supervisor Package</span>
+      <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('With this package you can monitor your email server.')"></div></md-tooltip>
+   </div>-->
+   </md-card-title>
+
+   <md-card-content flex="75" class="cardContentStyle" layout-align="center center" layout-wrap>
+      <md-tabs layout-fill>
+         <md-tab label="Check" layout-fill layout="row">
+            <md-tab-content layout="column" layout-align="start stretch" layout-fill>
+               <!-- CHECK INTERVAL -->
+               <div layout="row" flex="10" layout-align="start center">
+                  <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('We check your email server availability according this time interval in this package.')"></div></md-tooltip>
+                  <ng-md-icon layout-margin icon="schedule" style="fill: royalblue" size="25"></ng-md-icon>
+                  <label class="md-subhead">Check interval: {{package.checkIntervalLabel}}</label>
+               </div>
+               <div flex="10" ng-if="package.owner!= null && package.owner != currentUserEmail" layout="row" layout-align="start center">
+                  <md-tooltip class="md-caption">The owner of this package.</md-tooltip>
+                  <ng-md-icon icon="assignment_ind" size="25" layout-margin style="fill: royalblue"></ng-md-icon>
+                  <label> {{package.owner}}</label>
+               </div>
+
+               <div flex="10" layout="row" layout-align="start center">
+                  <ng-md-icon icon="file_upload" size="25" layout-margin style="fill: royalblue"></ng-md-icon>
+                  <div>
+                     <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your SMTP server for outgoing emails')"></div></md-tooltip>
+                     <p>{{package.configuration.smtp.serverAddress + ":" +package.configuration.smtp.serverPort}} </p>
+                  </div>
+                  <ng-md-icon ng-if="package.configuration.smtp.useSSL" icon="security" size="25" layout-margin style="fill: royalblue"><md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Using SSL')"></div></md-tooltip></ng-md-icon>
+
+               </div>
+               <div flex="10" layout="row" layout-align="start center">
+                  <ng-md-icon icon="file_download" size="25" layout-margin style="fill: royalblue"></ng-md-icon>
+                  <div>
+                     <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your IMAP server for incoming emails')"></div></md-tooltip>
+                     <p>{{package.configuration.imap.serverAddress + ":" +package.configuration.imap.serverPort }}</p>
+                  </div>
+                  <ng-md-icon ng-if="package.configuration.imap.useSSL" icon="security" size="25" layout-margin style="fill: royalblue"><md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Using SSL')"></div></md-tooltip></ng-md-icon>
+               </div>
+               <md-divider></md-divider>
+               <div layout="column" flex="grow" layout-align="center center" ng-include="'plugins/common/templates/card/cardState.html'" />
+            </md-tab-content>
+         </md-tab>
+         <!-- ALERT -->
+         <md-tab layout-fill label="Alert">
+            <div ng-include="'plugins/common/templates/card/cardAlertTab.html'" />
+         </md-tab>
+         <md-tab label="More">
+            <div ng-include="'plugins/common/templates/card/cardDetailsTab.html'" />
+         </md-tab>
+      </md-tabs>
+   </md-card-content>
+</md-card>

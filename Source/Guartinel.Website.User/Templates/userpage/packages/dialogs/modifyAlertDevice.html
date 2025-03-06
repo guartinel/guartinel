@@ -1,0 +1,30 @@
+﻿<form name="updateAlertDeviceForm" ng-submit="updateAlertDevice()" layout-margin flex>
+   
+   <div layout="column" layout layout-align="center center" flex>
+
+      <p>Warning! The following alert devices will be replaced: </p>
+
+      <ul ng-repeat="removeAlertDevice in removeAlertDevices">
+         <li> {{removeAlertDevice}}</li>
+      </ul>
+
+   </div>
+
+   <div layout="row">
+      <span layout layout-align="center center">New Alert device:</span>
+      <md-select required layout layout-align="center center" placeholder="Alert device" ng-model="newAlertDeviceId">
+         <md-option class="md-option_smaller"
+                    ng-repeat="device in devices | filter : {deviceType : 'android_device'}" value="{{device.id}}">{{device.name}}</md-option>
+      </md-select>
+   </div>
+
+   <div align="center">
+      <md-progress-circular ng-if="loading" md-mode="indeterminate"></md-progress-circular>
+      <md-button style="text-transform: none" ng-if="!loading"
+                 ng-disabled="updateAlertDeviceForm.$invalid"
+                 type="submit" class="md-primary md-raised">Update</md-button>
+   </div>
+
+
+
+</form>

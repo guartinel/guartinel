@@ -1,0 +1,41 @@
+{
+  "version": "3.1",
+  "services": {
+    "proxy": {
+      "container_name": "letsencrypt-proxy",
+      "image": "sashee/letsencrypt-proxy-docker",
+      "ports": [
+        "80:80",
+        "443:443"
+      ],
+      "depends_on": [
+        "Guartinel.Service.Configuration"
+      ],
+      "networks": [
+        "proxy"
+      ],
+      "environment": [
+        "PORT=5000",
+        "HOST=config8215.guartinel.com",
+        "EMAIL=david.tapai@sysment.hu",
+        "MODE=PRODUCTION"
+      ],
+      "links": [
+        "Guartinel.Service.Configuration"
+      ]
+    },
+    "Guartinel.Service.Configuration": {
+      "image": "guartineldtap/guartinel.service.configuration",
+      "networks": [
+        "proxy"
+      ],
+      "ports": [ "5000:5000" ]
+    }
+  },
+  "networks": {
+    "proxy": {
+      "driver": "bridge"
+    }
+  }
+}
+

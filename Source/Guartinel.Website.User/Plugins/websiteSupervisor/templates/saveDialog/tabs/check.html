@@ -1,0 +1,86 @@
+﻿<div ng-controller="websiteSupervisorCheckTabController" layout="column" class="tab_content" layout-margin>
+   <div layout="row" layout-align="start start" ng-include="'plugins/common/templates/saveDialog/blocks/packageName.html'"></div>
+   <div layout="column" layout-align="start stretch">
+      <b>Retry count</b>
+      <md-input-container md-no-float layout="column" type="url" class="md-icon-float md-icon-left md-block" layout-align="center center">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('How many times should we try it before alerting you?')"></div></md-tooltip>
+         <md-icon md-svg-src="content/images/input_icons/retry.svg"></md-icon>
+         <input flex="70"
+                type="number"
+                ng-model="package.configuration.retryCount"
+                placeholder="Enter how many times should we retry in case of failure."
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                id="retryCount"
+                name="retryCount"
+                max="5"
+                min="1">
+         <div ng-messages="savePackageForm.retryCount.$error">
+            <div ng-message="max">Maximum 5 times.</div>
+            <div ng-message="min">Minimum 1 times.</div>
+         </div>
+      </md-input-container>
+   </div>
+   <div layout="row" layout-align="space-between center">
+      <md-input-container flex="35" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <b>Site name</b>
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Enter your website friendly name here.')"></div></md-tooltip>
+         <input typeof="url" layout-fill ng-model="newWebsiteCaption" placeholder="Enter name of your website." style="overflow-y: auto;max-height:130px ;" rows="1" id="newWebsiteCaption" name="newWebsiteCaption" class="input_contrast" />
+      </md-input-container>
+      <div layout="column" layout-align="start stretch">
+
+      </div>
+
+      <div layout="column" layout-align="start stretch">
+
+      </div>
+      <md-input-container flex="35" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Enter your website address here(e.g.:http://mysite.com)')"></div></md-tooltip>
+         <b>Site address</b>
+         <input typeof="url" layout-fill ng-model="newWebsiteAddress" ng-change="urlChanged()" placeholder="Enter the address of your website." style="overflow-y: auto;max-height:130px ;" rows="1" id="newWebsiteAddress" name="newWebsiteAddress" class="input_contrast" />
+         <span style="color: red" ng-show="savePackageForm.newWebsiteAddress.$error.invalidURL">Invalid url. It must contain 'www'.<br></span>
+         <span style="color: red" ng-show="savePackageForm.newWebsiteAddress.$error.required">You cannot add an empty url!<br></span>
+         <span style="color: red" ng-show="savePackageForm.newWebsiteAddress.$error.maximumPackagePartCountReached">You cannot add more package part because of your license!<br></span>
+      </md-input-container>
+      <div flex="20" layout="row" layout-align="center center">
+         <md-button style="text-transform: none; margin: 0px;" class="md-primary md-raised " ng-disabled="!savePackageForm.newWebsiteAddress.$valid || newWebsiteAddress.length ==0" ng-click="pushWebsite(newWebsiteAddress,newWebsiteCaption)">
+            Add
+         </md-button>
+      </div>
+   </div>
+   <p style="text-align:center; color:red" class="md-caption" ng-show="package.configuration.detailed_websites.length == 0">Add some website first!</p>
+
+   <md-content ng-show="package.configuration.detailed_websites.length != 0" style="background-color:white;max-height:250px">
+      <md-list>
+         <md-list-item layout="row" class="no_padding" layout-align="center center">
+            <div layout="row" flex="30" layout-align="start center">
+               <p>Caption</p>
+            </div>
+            <div layout="row" flex="30" layout-align="start center">
+               <p>URL</p>
+            </div>
+            <md-divider></md-divider>
+            <div layout="row" flex="20" layout-align="center center">
+               <p>Remove</p>
+            </div>
+         </md-list-item>
+         <md-divider></md-divider>
+         <md-list-item layout="row" layout-align="center center" ng-click="nop()" ng-repeat="website in package.configuration.detailed_websites">
+            <div layout="row" flex="30" layout-align="start center">
+               <p style="word-wrap: break-word">{{website.caption}} </p>
+            </div>
+            <div layout="row" flex="30" layout-align="start center">
+               <p style="word-wrap: break-word">{{website.address}} </p>
+            </div>
+            <div layout="row" flex="20" layout-align="center center">
+               <md-button ng-click="deleteWebsite($index)">
+                  <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+               </md-button>
+            </div>
+            <md-divider></md-divider>
+         </md-list-item>
+      </md-list>
+   </md-content>
+
+   <div layout="column" layout-align="start stretch" ng-include="'plugins/common/templates/saveDialog/blocks/checkInterval.html'" />
+</div>

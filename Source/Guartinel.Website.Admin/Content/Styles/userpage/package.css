@@ -1,0 +1,58 @@
+﻿#package_cards_container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    webkit-flex-grow: 1;
+    flex-grow: 1;  
+}
+
+.package_card {
+    min-width: 300px;
+    width: 300px;
+}
+
+    .package_card .more_menu {
+        padding: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .package_card .expand_button {
+        line-height: 1;
+        height: 100%;
+        margin: 0;
+    }
+
+.package_header {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.package_title {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.progress_bar {
+    margin-left: 15px;
+    margin-right: 23px;
+}
+
+
+.packageSideBarButton:hover {
+    opacity: 0.8;
+}
+
+.hover_icon:hover {
+    opacity: 0.5;
+    color: blue;
+    fill: blue;
+}
+
+.package_grid_tile_footer {
+    background: transparent;
+}

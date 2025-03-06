@@ -1,0 +1,28 @@
+﻿<form layout="column" name="updateUserWebServerForm" layout-padding loading-form
+      submit-method="updateUserWebServer(userWebServer.address,userWebServer.name)">
+
+   <md-input-container flex>
+      <label>Name</label>
+      <input required type="text" ng-model="userWebServer.name" name="nameField">
+      <div ng-messages="updateUserWebServerForm.nameField.$error">
+         <div ng-message="required">required</div>
+      </div>
+   </md-input-container>
+
+    <div layout="row" flex>
+        <md-input-container flex="80">
+            <label>Address</label>
+            <input required type="text" ng-model="userWebServer.address" name="urlField">
+            <div ng-messages="updateUserWebServerForm.urlField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+    </div> 
+
+    <div class="form_actions">
+      <md-button class="md-primary md-raised" type="submit" ng-disabled="updateUserWebServerForm.$invalid">
+         Edit User Web Server
+      </md-button>
+   </div>
+
+</form>

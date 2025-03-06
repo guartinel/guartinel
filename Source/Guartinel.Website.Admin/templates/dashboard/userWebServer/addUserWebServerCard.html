@@ -1,0 +1,29 @@
+﻿<md-card ng-controller="addUserWebServerCardController" class="dashboard_card md-whiteframe-z1">
+
+    <md-card-title class="title" layout-align="center center">
+        <md-card-title-text>
+            <div layout="row" layout-align="center center">
+                <span class="md-headline">User Web Server</span>
+            </div>
+        </md-card-title-text>
+    </md-card-title>
+    <md-divider></md-divider>
+
+    <md-card-content ng-if="!userWebServerStatus.isPresent">
+        <div layout="row" layout-align="center center">
+            <p>Please add User Web Server.</p>
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-button class="md-primary md-raised" ng-click="showAddDialog()">Add User Web Server</md-button>
+        </div>
+    </md-card-content>
+
+   <md-card-content ng-if="userWebServerStatus.isPresent">
+      <div layout="row" layout-align="center center">
+         <p>User webserver already added</p>
+      </div>
+      <div layout="row" layout-align="center center">
+         <md-button ng-disabled="userWebServerStatus.isPresent"  class="md-primary md-raised" ng-click="showAddDialog()">Add User Web Server</md-button>
+      </div>
+   </md-card-content>
+</md-card>

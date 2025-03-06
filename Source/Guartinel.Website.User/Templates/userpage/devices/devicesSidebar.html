@@ -1,0 +1,30 @@
+﻿<md-sidenav layout="column"
+            layout-fill
+            class="md-sidenav-right"
+            md-component-id="right"
+            layout-margin
+            md-is-locked-open="$mdMedia('gt-md')">
+
+   <div>
+       <md-content class="md-whiteframe-z2" layout="column" flex>
+           <md-toolbar layout="row" class="{{dialog.headerStyle}}" flex>
+               <div layout="row" layout-align="center center" flex>
+                   <p align="center" class="md-title">Add New Device</p>
+               </div>
+           </md-toolbar>
+
+           <md-divider></md-divider>
+           <md-button ng-click="createAndroidDevice($event)" layout-fill class="no_margin" md-ink-ripple layout="row" layout-align="start center">
+               <md-tooltip class="md-caption">Download our android app to get free instant alerts on your phone!</md-tooltip>
+               <img layout-margin layout-align="start center" src="Content/Images/device_icons/android.png" flex="30">
+               <span flex="grow" style="color: dimgray; word-wrap: break-word;white-space:normal;text-align:center; text-transform: uppercase;" ng-class="getRightSideBarClass()">Android Client</span>
+           </md-button>
+           <md-divider></md-divider>
+           <md-button ng-if="isAndroidApp()" ng-click="startAddingHardwareSensor()" layout-fill class="no_margin" md-ink-ripple layout="row" layout-align="start center">
+               <md-tooltip class="md-caption">Add new hardware sensor!</md-tooltip>
+               <img layout-margin layout-align="start center" src="Content/Images/device_icons/sensor.png" flex="30">
+               <span flex="grow" style="color: dimgray; word-wrap: break-word;white-space:normal;text-align:center; text-transform: uppercase;" ng-class="getRightSideBarClass()">Hardware Sensor</span>
+           </md-button>
+       </md-content>
+   </div>
+</md-sidenav>

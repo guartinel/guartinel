@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/addServer"
+        android:icon="@drawable/refresh"
+        android:title="Add Server" />
+    <item android:id="@+id/settings"
+        android:icon="@drawable/shield"
+        android:title="Settings" />
+    <item android:id="@+id/checkNow"
+        android:icon="@drawable/shield"
+        android:title="Check Now!" />
+</menu>

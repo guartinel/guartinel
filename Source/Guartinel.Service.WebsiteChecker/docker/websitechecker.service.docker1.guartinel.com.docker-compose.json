@@ -1,0 +1,19 @@
+{
+   "version": "3.6",
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-prod"
+         }
+      }
+   },   
+   "services": {     
+      "websitechecker-service": {    
+      "image": "guartinel1/websitechecker.service:prod",
+         "environment": [
+            "GUARTINEL_CONFIGURATION_NAME=Production",
+            "GUARTINEL_CONFIGURATION_TOKEN=cbbefe44-ecd7-44eb-b5ee-3ab9bdd1ed68"
+         ]
+      }
+   }   
+}

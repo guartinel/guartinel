@@ -1,0 +1,17 @@
+﻿<form layout="column" submit-method="kickUser()" layout-margin loading-form>
+
+    <p class="mddisplay-1">There is a communication error in our system. Sorry for the inconvience, please try again later.</p>
+
+    <div layout="row">
+        <p class="mddisplay-1">Error code:</p>
+        <input id="errorUUID" value="{{errorUUID}}">
+        <md-button class="btn" ngclipboard data-clipboard-target="#errorUUID">
+            <ng-md-icon icon="content_copy" style="fill: gray" alt="Copy to clipboard"></ng-md-icon>
+            <md-tooltip>Copy to clipboard</md-tooltip>
+        </md-button>
+    </div>
+    
+    <div class="form_actions">
+      <md-button class="md-warn md-raised" type="submit">Continue</md-button>
+   </div>
+</form>

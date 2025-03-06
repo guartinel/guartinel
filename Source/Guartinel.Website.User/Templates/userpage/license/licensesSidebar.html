@@ -1,0 +1,51 @@
+﻿<md-sidenav layout="column"
+            layout-fill
+            class="md-sidenav-right"
+            md-component-id="right"
+            layout-margin
+            md-is-locked-open="$mdMedia('gt-md')">
+    <div>
+        <md-content class="md-whiteframe-z2" layout="column" flex>
+            <md-toolbar layout="row" class="{{dialog.headerStyle}}" flex>
+                <div layout="row" layout-align="center center" flex>
+                    <p align="center" class="md-title">Add New License</p>
+                </div>
+            </md-toolbar>
+            <md-divider></md-divider>
+            <div layout="column" layout-align="start stretch" class="no_margin no_padding" ng-if="availableLicense.name != 'trial'" ng-repeat="availableLicense in allLicenses">
+                <md-tooltip class="md-caption">{{availableLicense.description}}</md-tooltip>
+                <md-card layout="column" layout-align="start stretch" class="licenseSideBarButton" ng-style="{'background-image': 'url(Content/Images/licenses/{{availableLicense.name}}.png)',  'background-size':'cover','padding-bottom':'10px'}">
+                    <div ng-click="selectLicenseIndex($index)" layout="column" layout-align="start stretch" style="padding-left:20px">
+                        <p class="white_text md-headline grtnl-text-justify ">{{availableLicense.caption}}</p>
+                       <div layout="row" layout-align="start center">
+                          <ng-md-icon flex="20" icon="alarm" size="25" style="fill: white;padding-right:8px"></ng-md-icon>
+                          <p class="white_text no_margin"> Check in every <b>{{ availableLicense.minimumCheckIntervalSec/60 }}</b> min</p>
+                          <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('The smallest check interval.')"></div></md-tooltip>
+                       </div> 
+                        <div layout="row" layout-align="start center">
+                            <ng-md-icon flex="20" icon="devices" size="25" style="fill: white;padding-right:8px"></ng-md-icon>
+                            <p class="white_text no_margin"><b>{{ availableLicense.maximumPackagePartCount }}</b> package parts</p>
+                            <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Maximum registered devices/packages parts for your account.')"></div></md-tooltip>
+                        </div>
+                        <div layout="row" layout-align="start center">
+                            <ng-md-icon flex="20" icon="border_all" size="25" style="fill: white;padding-right:8px"></ng-md-icon>
+                            <p class="white_text no_margin"><b>{{ availableLicense.maximumPackages }}</b> packages</p>
+                            <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Maximum packages count.')"></div></md-tooltip>
+                        </div>
+                    </div>
+                    <div ng-show="$index== selectedLicenseIndex" layout="column" layout-align="start stretch" style="padding-left:20px">                       
+                       <div layout="row" layout-align="start center">
+                          <ng-md-icon flex="20" icon="attach_money" size="25" style="fill: white;padding-right:8px"></ng-md-icon>
+                          <p class="white_text no_margin "> Price <b>{{ getLicensePriceText(availableLicense) }}</b></p>
+                          <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('Price for a month.')"></div></md-tooltip>
+                       </div>                
+                        <md-button class="white_text"  ng-click="doLicenseAction(availableLicense)">
+                              <b class="white_text"> BUY NOW</b>  
+                        </md-button>
+                    </div>
+                </md-card>
+                <md-divider></md-divider>
+            </div>
+        </md-content>
+    </div>
+</md-sidenav>

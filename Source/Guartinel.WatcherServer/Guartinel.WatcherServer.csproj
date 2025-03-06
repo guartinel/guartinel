@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBFA14D0-B442-4ACA-9269-F89782A954B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Guartinel.WatcherServer</RootNamespace>
+    <AssemblyName>Guartinel.WatcherServer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_ATTACH_DEBUGGER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Guartinel.WatcherServer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.1.20.0\lib\net451\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=1.20.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\net451\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts\Alert.cs" />
+    <Compile Include="Alerts\AlertInfo.cs" />
+    <Compile Include="Alerts\AlertKind.cs" />
+    <Compile Include="Alerts\DeviceAlert.cs" />
+    <Compile Include="Alerts\MailAlert.cs" />
+    <Compile Include="Alerts\NoAlert.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Checkers\MeasurementChecker.cs" />
+    <Compile Include="Checkers\Checker.cs" />
+    <Compile Include="Checkers\Network\PingChecker.cs" />
+    <Compile Include="Communication\Routes\PackageRoute.cs" />
+    <Compile Include="InstanceData\InstanceData.cs" />
+    <Compile Include="InstanceData\InstanceRegisterDataMessage.cs" />
+    <Compile Include="InstanceData\InstanceDataMessage.cs" />
+    <Compile Include="InstanceData\InstanceDataListsPackage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedules.cs" />
+    <Compile Include="CheckResults\CheckNotification.cs" />
+    <Compile Include="CheckResults\CheckResult.cs" />
+    <Compile Include="CheckResults\CheckResultKind.cs" />
+    <Compile Include="Communication\HttpRequestHandler.cs" />
+    <Compile Include="Communication\HttpServer.cs" />
+    <Compile Include="Communication\ManagementServer\IManagementServerPackage.cs" />
+    <Compile Include="Communication\ManagementServer\IManagementServer.cs" />
+    <Compile Include="Communication\ManagementServer\ManagementServerBase.cs" />
+    <Compile Include="Communication\ManagementServer\ManagementServer.cs" />
+    <Compile Include="Communication\Parameters.cs" />
+    <Compile Include="Communication\Routes\DeletePackageRoute.cs" />
+    <Compile Include="Communication\Routes\GetEventsRoute.cs" />
+    <Compile Include="Communication\Routes\GetPackageTimestampsRoute.cs" />
+    <Compile Include="Communication\Routes\ConfirmDeviceAlertRoute .cs" />
+    <Compile Include="Communication\Routes\GetStatusRoute.cs" />
+    <Compile Include="Communication\Routes\GetVersionRoute.cs" />
+    <Compile Include="Communication\Routes\LoginRoute.cs" />
+    <Compile Include="Communication\Routes\RegisterServerRoute.cs" />
+    <Compile Include="Communication\Routes\Route.cs" />
+    <Compile Include="Communication\Routes\SavePackageRoute.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="Communication\ManagementServer\MeasuredData.cs" />
+    <Compile Include="Instances\InstanceList.cs" />
+    <Compile Include="Instances\Instance.cs" />
+    <Compile Include="Instances\InstanceState.cs" />
+    <Compile Include="Instances\InstanceStateList.cs" />
+    <Compile Include="Instances\Timeouts.cs" />
+    <Compile Include="Packages\PackageState.cs" />
+    <Compile Include="InstanceData\InstanceDataChecker.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareCheckResult.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareCheckRange.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\IHardwareCheck.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\CurrentSensor.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\LiquidSensor.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\GasChecker.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\TemperatureSensor.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\VoltageSensor.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\VoltageSensor230V3Phase.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensors\VoltageSensor230V.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\RegisterMeasuredDataRoute.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareCheckOnOff.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareCheckThreshold.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareInstanceDataChecker.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSensor.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\HardwareSupervisorPackage.cs" />
+    <Compile Include="Supervisors\HardwareSupervisor\Registration.cs" />
+    <Compile Include="Supervisors\ApplicationSupervisor\RegisterResultRoute.cs" />
+    <Compile Include="Supervisors\ApplicationSupervisor\ApplicationInstanceDataLists.cs" />
+    <Compile Include="Supervisors\ApplicationSupervisor\ApplicationInstanceDataChecker.cs" />
+    <Compile Include="Supervisors\ApplicationSupervisor\ApplicationSupervisorPackage.cs" />
+    <Compile Include="Supervisors\ApplicationSupervisor\Registration.cs" />
+    <Compile Include="Supervisors\EmailSupervisor\EmailChecker.cs" />
+    <Compile Include="Supervisors\EmailSupervisor\Emailer.cs" />
+    <Compile Include="Supervisors\EmailSupervisor\EmailServerConfiguration.cs" />
+    <Compile Include="Supervisors\EmailSupervisor\EmailSupervisorPackage.cs" />
+    <Compile Include="Supervisors\EmailSupervisor\Registration.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\WebsiteCheckSender.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\IWebsiteCheckSender.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\RegisterResultRoute.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\WebsiteCheckCache.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\WebsiteCheckMessage.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\WebsiteChecker.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\WebsiteSupervisorPackage.cs" />
+    <Compile Include="Supervisors\WebsiteSupervisor\Registration.cs" />
+    <Compile Include="Supervisors\HostSupervisor\HostChecker.cs" />
+    <Compile Include="Supervisors\HostSupervisor\HostSupervisorPackage.cs" />
+    <Compile Include="Supervisors\HostSupervisor\Registration.cs" />
+    <Compile Include="Messages\AlertMessage.cs" />
+    <Compile Include="Packages\PackageController.cs" />
+    <Compile Include="Packages\CheckExecuter.cs" />
+    <Compile Include="Packages\FailPackage.cs" />
+    <Compile Include="Packages\Package.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerException.cs" />
+    <Compile Include="Tokens.cs" />
+    <Compile Include="WatcherServer.cs" />
+    <Compile Include="WatcherService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WatcherService.Designer.cs">
+      <DependentUpon>WatcherService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="WindowsEventLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Checkers\Disk\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Communication\Guartinel.Communication.csproj">
+      <Project>{2adeda9f-809a-41ab-abb0-f03f908687d9}</Project>
+      <Name>Guartinel.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Kernel.Network\Guartinel.Kernel.Network.csproj">
+      <Project>{b7bc9474-c25e-4113-a96f-77a635cf5bf0}</Project>
+      <Name>Guartinel.Kernel.Network</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj">
+      <Project>{3194ff1e-65cf-4c80-be3a-7796e2d539fe}</Project>
+      <Name>Guartinel.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Service.WebsiteChecker\Guartinel.Service.WebsiteChecker.csproj">
+      <Project>{01c6218e-a28f-47dd-bd72-6be297bbb381}</Project>
+      <Name>Guartinel.Service.WebsiteChecker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Service\Guartinel.Service.csproj">
+      <Project>{DCE7D8B3-C69E-4273-A71B-2D4E917E63C5}</Project>
+      <Name>Guartinel.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

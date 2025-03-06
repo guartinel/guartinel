@@ -1,0 +1,93 @@
+﻿<div layout="column" ng-cloak layout-fill>
+   <div layout="row" flex="10">
+      <md-toolbar class="md-warn md-whiteframe-z2" layout="row"  layout-align="start center">
+         <div flex class="md-toolbar-tools">
+            <md-button flex="15" layout-align="center center" hide-gt-md class="md-icon-button" style="padding: 5px; margin: 0px" ng-click="toggleLeftSideNav()" aria-label="Menu">
+               <ng-md-icon icon="menu" style="fill: white"></ng-md-icon>
+            </md-button>
+            <img hide-sm hide-xs hide-md flex-sm="50" flex-xs="35" flex-gt-md="15" layout-align="center" src="Content/Images/guartinel-logo500x106.png" style="width: 100%; height: 100%;">
+            <h1 class="md-display-1">ADMINISTRATION</h1>
+            </div>
+      </md-toolbar>
+   </div>
+   <div layout="row" flex="grow" style="background: #eeeeee" class="top_padding_big">
+      <div layout-margin >
+         <md-content class="md-whiteframe-z2" layout-align="center center">
+            <md-list  style="padding: 0px" layout-fill class="no_padding">
+               <md-list-item class="md-3-line" ui-sref="{{menuItem.link}}" md-ink-ripple ng-repeat="menuItem in menu" ng-click="toggleLeftSideNav()">
+                  <div layout="row" layout-align="start center" layout-margin>
+                     <img layout-align="start center" src="{{menuItem.image}}" height="100" width="100">
+                     <h1 class="md-headline">{{menuItem.title}}</h1>
+                  </div>
+                  <md-divider ng-hide="menuItem.isExit" />
+               </md-list-item>
+            </md-list>
+         </md-content>
+         </div>
+      <md-content layout="column" flex flex-xs="100" flex-md="100" ui-view></md-content>
+   </div>
+
+   <!--
+   <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z1" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex>
+
+      <md-toolbar class="md-warn">
+         <div align="center"><h3>Guartinel Administration</h3></div>
+      </md-toolbar>
+
+     
+      <md-list>
+         <md-item ng-repeat="item in menu">
+            <div ui-sref="{{item.link}}" ng-click="toggleSidenav('left')">
+               <md-item-content layout="row" layout-align="start center" flex>
+                  <md-content layout="row" md-ink-ripple flex>
+                     <div class="inset">
+                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                     </div>
+                     <div class="inset">
+                        {{item.title}}
+                     </div>
+                  </md-content>
+               </md-item-content>
+            </div>
+            <md-divider></md-divider>
+         </md-item>
+      </md-list>
+
+      <md-item>
+         <div ng-click="logout()">
+            <md-item-content layout="row" layout-align="start center" flex>
+               <md-content layout="row" md-ink-ripple flex>
+                  <div class="inset">
+                     <ng-md-icon icon="logout"></ng-md-icon>
+                  </div>
+                  <div class="inset">
+                     Logout
+                  </div>
+               </md-content>
+            </md-item-content>
+         </div>
+      </md-item>
+
+   </md-sidenav>
+
+   <div layout="column" flex>
+   
+      <md-toolbar class="md-warn" layout="row">
+         <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+               <ng-md-icon icon="menu" style="fill: white"></ng-md-icon>
+            </md-button>
+
+
+            <h3>{{screen}}</h3>
+            <span flex></span>
+
+            <div ng-click="logout()">
+               <ng-md-icon icon="logout"></ng-md-icon>
+            </div>
+         </div>
+      </md-toolbar>
+      <md-content ui-view layout="column" flex md-scroll-y></md-content>
+   </div>
+</div>
+ -->

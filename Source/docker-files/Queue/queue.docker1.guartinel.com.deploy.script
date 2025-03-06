@@ -1,0 +1,2 @@
+docker network create --subnet=192.168.11.0/24 --gateway=192.168.11.1 --scope=swarm --driver=overlay --attachable guartinel-prod
+docker stack deploy --with-registry-auth -c queue.docker-compose.json -c queue.docker1.guartinel.com.docker-compose.json queue-stack 

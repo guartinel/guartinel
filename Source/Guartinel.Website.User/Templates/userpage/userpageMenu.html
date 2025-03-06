@@ -1,0 +1,70 @@
+﻿<md-sidenav flex
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')" >
+   <md-content layout-margin>
+      <div class="md-whiteframe-z2" layout-align="center center">
+         <md-list layout="column" class="no_padding no_margin">
+            <md-list-item layout="row" class="md-3-line" flex="20" layout-align="start center" ui-sref="userpage.devices" md-ink-ripple ng-click="toggleLeftSideNav()">
+               <img layout-margin layout-align="start center" src="../../Content/Images/devices.png" flex="40">
+               <h1 class="md-headline" flex="60">Devices</h1>
+               <md-divider />
+            </md-list-item>
+            <md-list-item layout="row" class="md-3-line" flex="20" layout-align="start center" ui-sref="userpage.packages" md-ink-ripple ng-click="toggleLeftSideNav()">
+               <img layout-margin layout-align="start center" class="no_margin" src="../../Content/Images/packages.png" flex="40">
+               <h1 class="md-headline" flex="60">Packages</h1>
+               <md-divider />
+            </md-list-item>
+            <md-list-item layout="row" class="md-3-line" flex="20" layout-align="start center"  ui-sref="userpage.account" md-ink-ripple ng-click="toggleLeftSideNav()">
+               <img layout-margin layout-align="start center" class="no_margin" src="../../Content/Images/myaccount.png" flex="40">
+               <h1 class="md-headline" flex="60">Account</h1>
+               <md-divider />
+            </md-list-item>
+            <md-list-item layout="row" class="md-3-line" flex="20" layout-align="start center" ui-sref="userpage.license" md-ink-ripple ng-click="toggleLeftSideNav()">
+               <img layout-margin layout-align="start center" class="no_margin" src="../../Content/Images/mylicenses.png" flex="40">
+               <h1 class="md-headline" flex="60">My Licenses</h1>
+               <md-divider />
+            </md-list-item>
+            <md-list-item layout="row" class="md-3-line" flex="20" layout-align="start center" ui-sref="userpage.logout" md-ink-ripple ng-click="toggleLeftSideNav()">
+               <img layout-margin layout-align="start center" class="no_margin" src="../../Content/Images/exit.png" flex="40">
+               <h1 class="md-headline" flex="60">Exit</h1>
+            </md-list-item>
+         </md-list>
+      </div>
+   </md-content>
+</md-sidenav>
+
+<!--
+ {
+              link: 'userpage.devices',
+              title: 'Devices',
+              icon: 'devices',
+              image: "Content/Images/devices.png"
+
+          },
+          {
+              link: 'userpage.packages',
+              title: 'Packages',
+              icon: 'layers',
+              image: "Content/Images/packages.png"
+          },
+          {
+              link: 'userpage.account',
+              title: 'Account',
+              icon: 'person_outline',
+              image: "Content/Images/myaccount.png"
+          },
+          {
+              link: 'userpage.license',
+              title: 'My License',
+              icon: 'attach_money',
+              image: "Content/Images/mylicenses.png"
+          },
+          {
+              link: 'userpage.logout',
+              title: 'Exit',
+              icon: 'logout',
+              image: "Content/Images/exit.png",
+              isExit: true
+          }
+
+-->

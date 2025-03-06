@@ -1,0 +1,69 @@
+﻿<div layout="column" layout-align="space-between stretch" layout-fill>
+   <div flex="50" layout="row" layout-align="center center">
+      <p flex="90" ng-class="package.ui.packageNameStyle" style="word-wrap: break-word; line-height:1.0;">{{ package.ui.packageName }}</p>
+      <md-tooltip ng-show="shouldShowPackageNameToolTip()" class="md-caption">{{package.packageName}}</md-tooltip>
+   </div>
+
+   <div flex="50" layout="row" style="color: white" layout-align="space-between center">
+      <div layout="row" layout-align="start center">
+         <ng-md-icon icon="{{packageDefinition.icon}}" size="25" layout-margin style="fill:white; margin-left:0px"></ng-md-icon>
+         <p>{{packageDefinition.shortName}}</p>   
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak(packageDefinition.description)"></div></md-tooltip>
+
+      </div>
+   
+      <div layout="row" layout-align="end center">
+         <div layout-margin ng-show="package.isEnabled">
+            <md-tooltip class="md-caption">Package is enabled</md-tooltip>
+            <label class="md-caption">ON</label>
+         </div>
+         <div layout-margin ng-show="!package.isEnabled">
+            <md-tooltip class="md-caption">Package is disabled.</md-tooltip>
+            <label class="md-caption">OFF </label>
+         </div>
+         <md-tooltip ng-hide="package.ui.canUserDisableThisPackage" class="md-caption">You don't have permission to disable this package.</md-tooltip>
+
+         <md-switch ng-disabled="!package.ui.canUserDisableThisPackage" ng-model="package.isEnabled" md-theme="green" ng-change="savePackage()" aria-label="isEnabled">
+         </md-switch>
+
+         <md-menu layout-fill class="more_menu no_padding">
+            <md-button class="expand_button md-icon-button" ng-click="$mdOpenMenu(ev)" aria-label="more">
+               <md-tooltip class="md-caption">Click here to get the available actions with this package.</md-tooltip>
+               <ng-md-icon md-menu-origin icon="more_vert" style="fill: white"></ng-md-icon>
+            </md-button>
+            <md-menu-content class="no_padding" width="3">
+               <md-menu-item>
+                  <md-tooltip ng-hide="package.ui.canUserEditThisPackage" class="md-caption">You don't have permission to edit this package.</md-tooltip>
+                  <md-button ng-disabled="!package.ui.canUserEditThisPackage" layout-align="start center" layout="row" ng-click="showEditDialog(package)">
+                     <ng-md-icon icon="edit" md-menu-align-target style="fill: gray"></ng-md-icon>
+                     <label>Edit</label>
+                  </md-button>
+               </md-menu-item>
+               <md-menu-divider ng-hide="isAndroidApp()"class="no_margin" style="margin: 0px;"></md-menu-divider>
+               <md-menu-item ng-hide="isAndroidApp()">
+                  <md-button layout-align="start center" layout="row" ng-click="showPackageStatisticsDialog(package)">
+                     <ng-md-icon icon="trending_up" md-menu-align-target style="fill: gray"></ng-md-icon>
+                     <label>Package statistics</label>
+                  </md-button>
+               </md-menu-item>
+               <md-menu-divider ng-hide="package.ui.isThisUserTheOwner" class="no_margin" style="margin: 0px;"></md-menu-divider>
+               <md-menu-item  ng-hide="package.ui.isThisUserTheOwner">
+                  <md-button layout-align="start center" layout="row" ng-click="showRemoveAccessDialog(package)">
+                     <ng-md-icon icon="delete" md-menu-align-target style="fill: red"></ng-md-icon>
+                     <label>Remove my access</label>
+                  </md-button>
+               </md-menu-item>
+               
+               <md-menu-divider class="no_margin" style="margin: 0px;"></md-menu-divider>
+               <md-menu-item>
+                  <md-tooltip ng-hide="package.ui.canUserDeleteThisPackage" class="md-caption">You don't have permission to delete this package.</md-tooltip>
+                  <md-button ng-disabled="!package.ui.canUserDeleteThisPackage" layout-align="start center" layout="row" ng-click="showDeleteDialogFromPackageController(package)">
+                     <ng-md-icon icon="delete" style="fill: red"></ng-md-icon>
+                     <label>Delete</label>
+                  </md-button>
+               </md-menu-item>
+            </md-menu-content>
+         </md-menu>
+      </div>
+   </div>
+</div>

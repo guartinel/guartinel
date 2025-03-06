@@ -1,0 +1,24 @@
+FROM selenium/node-chrome:latest
+
+RUN sudo apt-get update
+RUN sudo apt-get install -y cron
+RUN sudo service cron start
+
+COPY kill.sh /home/kill.sh
+RUN sudo chmod 777 /home/kill.sh
+
+RUN sudo touch /etc/cron.d/kill.sh
+RUN sudo chmod 777 /etc/cron.d/kill.sh
+RUN sudo touch /var/log/kill.log
+RUN sudo chmod 777 /var/log/kill.log
+
+RUN sudo printf "0 * * * * /home/kill.sh >> /var/log/kill.log 2>&1\n" >> /etc/cron.d/kill.sh 
+RUN sudo crontab /etc/cron.d/kill.sh
+RUN sudo touch /etc/supervisor/conf.d/cron.conf
+RUN sudo chmod 777 /etc/supervisor/conf.d/cron.conf
+RUN sudo printf "[program:cron]\npriority=15\ncommand=sudo service cron start\nautostart=true\nautorestart=false\nstartsecs=0\nstartretries=0\n" >> /etc/supervisor/conf.d/cron.conf
+
+RUN sudo apt-get install -y curl
+HEALTHCHECK CMD curl --fail http://`awk 'END{print $1}' /etc/hosts`:5555/ || exit 1
+EXPOSE 9515
+EXPOSE 5555

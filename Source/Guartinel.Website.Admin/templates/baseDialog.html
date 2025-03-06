@@ -1,0 +1,26 @@
+﻿<md-dialog flex-gt-lg="30" flex-sm="85" flex="40" flex-md="60" style="background-color:#fefefe">
+
+   <md-toolbar layout="row" class="{{dialog.headerStyle}}" flex>
+
+      <div layout="row" layout layout-align="center center" flex>
+
+         <p layout-margin style="font-size: 20px">{{dialog.title}}</p>
+
+         <span flex></span>
+         
+         <md-button ng-if="!dialog.forced" class="md-icon-button" ng-click="cancel()" aria-label="close">
+            <ng-md-icon icon="close" style="fill: white;vertical-align: top"></ng-md-icon>
+         </md-button>
+
+      </div>
+
+   </md-toolbar>
+
+   <md-dialog-content>
+
+      <!-- inject template, based on current dialog -->
+      <dialogcontent template="{{dialog.template}}"></dialogcontent>
+
+   </md-dialog-content>
+
+</md-dialog>

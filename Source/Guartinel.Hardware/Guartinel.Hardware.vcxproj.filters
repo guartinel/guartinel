@@ -1,0 +1,1229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{5714e4b1-46a0-4d15-bddc-3eca1165b4b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly">
+      <UniqueIdentifier>{363e2f0f-8c4d-41d7-984c-694601b8f26a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\core">
+      <UniqueIdentifier>{040beb7c-349c-4c2c-b49f-d973c6adf865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\core\avr">
+      <UniqueIdentifier>{f8f10d95-c674-4a46-8b71-e61b0b67608c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\core\libb64">
+      <UniqueIdentifier>{38bf7839-a563-40d0-bc4f-60dcd0574550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\core\spiffs">
+      <UniqueIdentifier>{5fb15723-237e-45c9-b7a8-943e11bedcd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\core\umm_malloc">
+      <UniqueIdentifier>{6dae1ab3-4145-499e-adf4-ace7cc4c26c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries">
+      <UniqueIdentifier>{df668fd9-8408-4a18-aea9-e787a200105a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ArduinoJson-master">
+      <UniqueIdentifier>{ea96fd14-5edb-4587-ab80-9b47cead02f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ESP8266WiFi">
+      <UniqueIdentifier>{bf08fb4f-3b11-4bcf-b4f4-d0d225b65b45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\EmonLib-master">
+      <UniqueIdentifier>{d81c3b12-f813-4c0b-b19d-816480357f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\DHT-sensor-library-master">
+      <UniqueIdentifier>{e240cacf-13a5-4ef1-9e5e-8d777e3cdcb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\Adafruit_Sensor-master">
+      <UniqueIdentifier>{34641341-0043-4546-b22b-d1efb16e6e5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master">
+      <UniqueIdentifier>{d77c540d-212f-47ee-8865-fc64ffe6be3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\OneWire-master">
+      <UniqueIdentifier>{c74965dc-f814-4768-8780-920316945cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ESP8266HTTPClient">
+      <UniqueIdentifier>{3d590bf0-ed6d-480c-850b-7b5ca0b1b494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ESP8266httpUpdate">
+      <UniqueIdentifier>{456b5beb-505d-420c-b6fe-272930341e3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ESP8266mDNS">
+      <UniqueIdentifier>{7b66069b-b8eb-47aa-8c72-5f5e4808f5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\Hash">
+      <UniqueIdentifier>{78050ef8-f426-4695-b3c5-81e49719341c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\_micro-api-readonly\libraries\ESP8266WebServer">
+      <UniqueIdentifier>{0c8f8d83-4698-48bf-a7be-c367c25f479f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.Guartinel.Hardware.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuartinelConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IChecker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kernel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LedDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LOG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagementServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WifiManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WifiWebServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FirmwareUpdater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerGeneral.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerCurrent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerTemperature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerGas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GasSensorMG811.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GasSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GasSensorMQ135.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerConstansts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckerWaterPresence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Arduino.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\base64.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\binary.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\cbuf.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Client.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\cont.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\coredecls.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\core_esp8266_features.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\core_esp8266_waveform.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\core_version.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\debug.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\eboot_command.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Esp.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\esp8266_peri.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\flash_utils.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\FS.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\FSImpl.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\FunctionalInterrupt.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\gdb_hooks.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\HardwareSerial.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\i2s.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\interrupts.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\IPAddress.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\md5.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\MD5Builder.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\pgmspace.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Print.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Printable.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Schedule.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\ScheduledFunctions.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Server.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\sigma_delta.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs_api.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\stdlib_noniso.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Stream.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\StreamString.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\twi.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\uart.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Udp.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Updater.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\user_config.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\WCharacter.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\wiring_private.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\WString.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\avr\pgmspace.h">
+      <Filter>src\_micro-api-readonly\core\avr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\libb64\cdecode.h">
+      <Filter>src\_micro-api-readonly\core\libb64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\libb64\cencode.h">
+      <Filter>src\_micro-api-readonly\core\libb64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs\spiffs.h">
+      <Filter>src\_micro-api-readonly\core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs\spiffs_config.h">
+      <Filter>src\_micro-api-readonly\core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs\spiffs_nucleus.h">
+      <Filter>src\_micro-api-readonly\core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\umm_malloc\umm_malloc.h">
+      <Filter>src\_micro-api-readonly\core\umm_malloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\umm_malloc\umm_malloc_cfg.h">
+      <Filter>src\_micro-api-readonly\core\umm_malloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\variants\d1_mini\pins_arduino.h">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\ArduinoJson.h">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson.h">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Configuration.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\DynamicJsonBuffer.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonArray.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonArrayImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonArraySubscript.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonBuffer.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonBufferBase.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonBufferImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonObject.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonObjectImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonObjectSubscript.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonPair.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariant.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantBase.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantCasts.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantComparisons.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantOr.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\JsonVariantSubscripts.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\RawJson.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StaticJsonBuffer.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\version.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\Encoding.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonBufferAllocated.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonFloat.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonInteger.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonVariantAs.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonVariantContent.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonVariantDefault.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\JsonVariantType.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\List.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\ListConstIterator.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\ListIterator.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\ListNode.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\NonCopyable.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\ReferenceType.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Data\ValueSaver.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Deserialization\Comments.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Deserialization\JsonParser.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Deserialization\JsonParserImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Deserialization\StringWriter.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\attributes.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\ctype.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\isFloat.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\isInteger.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\math.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\parseFloat.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Polyfills\parseInteger.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\DummyPrint.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\DynamicStringBuilder.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\FloatParts.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\IndentedPrint.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\JsonPrintable.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\JsonSerializer.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\JsonSerializerImpl.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\JsonWriter.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\Prettyfier.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\StaticStringBuilder.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\Serialization\StreamPrintAdapter.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\ArduinoStream.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\CharPointer.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\FlashString.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\StdStream.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\StdString.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\StringTraits\StringTraits.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\EnableIf.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\FloatTraits.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsArray.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsBaseOf.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsChar.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsConst.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsFloatingPoint.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsIntegral.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsSame.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsSignedIntegral.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsUnsignedIntegral.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\IsVariant.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\RemoveConst.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\src\ArduinoJson\TypeTraits\RemoveReference.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\third-party\catch\catch.hpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\BearSSLHelpers.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\CertStoreBearSSL.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFi.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiAP.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiScan.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiType.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClient.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClientSecure.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClientSecureAxTLS.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClientSecureBearSSL.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServer.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServerSecure.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServerSecureAxTLS.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServerSecureBearSSL.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiUdp.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\ClientContext.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\DataSource.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\slist.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\ssl.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\UdpContext.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\include\wl_definitions.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\EmonLib.h">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\DHT.h">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\DHT_U.h">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Adafruit_Sensor-master\Adafruit_Sensor.h">
+      <Filter>src\_micro-api-readonly\libraries\Adafruit_Sensor-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Arduino-Temperature-Control-Library-master\DallasTemperature.h">
+      <Filter>src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\OneWire-master\OneWire.h">
+      <Filter>src\_micro-api-readonly\libraries\OneWire-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266HTTPClient\src\ESP8266HTTPClient.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266HTTPClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266httpUpdate\src\ESP8266httpUpdate.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266httpUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266mDNS\ESP8266mDNS.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266mDNS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\Hash\src\Hash.h">
+      <Filter>src\_micro-api-readonly\libraries\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\Hash\src\sha1\sha1.h">
+      <Filter>src\_micro-api-readonly\libraries\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServer.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServerSecure.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServerSecureAxTLS.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServerSecureBearSSL.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\detail\mimetable.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\detail\RequestHandler.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\detail\RequestHandlersImpl.h">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Guartinel.Hardware.ino" />
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\cont.S">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\library.json">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\library.json">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Adafruit_Sensor-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\Adafruit_Sensor-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Arduino-Temperature-Control-Library-master\library.json">
+      <Filter>src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Arduino-Temperature-Control-Library-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\OneWire-master\library.json">
+      <Filter>src\_micro-api-readonly\libraries\OneWire-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\OneWire-master\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\OneWire-master</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266HTTPClient\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266HTTPClient</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266httpUpdate\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266httpUpdate</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\Hash\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\Hash</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\library.properties">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileSystemManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LedDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LOG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagementServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WifiManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WifiWebServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FirmwareUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckerGeneral.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckerCurrent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckerTemperature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckerGas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GasSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GasSensorMG811.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GasSensorMQ135.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckerWaterPresence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\abi.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\base64.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\cbuf.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\core_esp8266_main.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\debug.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Esp-version.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Esp.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\FS.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\FunctionalInterrupt.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\HardwareSerial.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\IPAddress.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\MD5Builder.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\pgmspace.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Print.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Schedule.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\ScheduledFunctions.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs_api.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\spiffs_hal.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Stream.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\StreamString.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Tone.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\Updater.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\WMath.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\cores\esp8266\WString.cpp">
+      <Filter>src\_micro-api-readonly\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\fuzzing\fuzzer.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\alloc.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\createArray.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\createObject.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\no_memory.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\size.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\startString.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\IntegrationTests\gbathree.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\IntegrationTests\round_trip.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\add.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\basics.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\copyFrom.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\copyTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\invalid.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\iterator.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\prettyPrintTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\printTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\remove.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\set.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\size.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\subscript.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\nested.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\nestingLimit.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\parse.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\parseArray.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\parseObject.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\basics.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\containsKey.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\get.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\invalid.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\iterator.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\prettyPrintTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\printTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\remove.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\set.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\size.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\subscript.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\as.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\compare.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\copy.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\is.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\or.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\printTo.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\set_get.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\subscript.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\success.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\undefined.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonWriter\writeFloat.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonWriter\writeString.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\deprecated.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\FloatParts.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\std_stream.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\std_string.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\StringBuilder.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\StringTraits.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\TypeTraits.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\unsigned_char.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\version.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\vla.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Polyfills\isFloat.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Polyfills\isInteger.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Polyfills\parseFloat.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Polyfills\parseInteger.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\alloc.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\createArray.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\createObject.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\parseArray.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\parseObject.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\size.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\startString.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\third-party\catch\catch.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\BearSSLHelpers.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\CertStoreBearSSL.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFi.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiAP.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiScan.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClient.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClientSecureAxTLS.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiClientSecureBearSSL.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServer.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServerSecureAxTLS.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiServerSecureBearSSL.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\src\WiFiUdp.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\EmonLib.cpp">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\DHT.cpp">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\DHT_U.cpp">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Arduino-Temperature-Control-Library-master\DallasTemperature.cpp">
+      <Filter>src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\OneWire-master\OneWire.cpp">
+      <Filter>src\_micro-api-readonly\libraries\OneWire-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266HTTPClient\src\ESP8266HTTPClient.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266HTTPClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266httpUpdate\src\ESP8266httpUpdate.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266httpUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266mDNS\ESP8266mDNS.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266mDNS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\Hash\src\Hash.cpp">
+      <Filter>src\_micro-api-readonly\libraries\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\Hash\src\sha1\sha1.c">
+      <Filter>src\_micro-api-readonly\libraries\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServer.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServerSecureAxTLS.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\ESP8266WebServerSecureBearSSL.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\Parsing.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\src\detail\mimetable.cpp">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\DynamicJsonBuffer\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\IntegrationTests\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonArray\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonBuffer\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonObject\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonVariant\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\JsonWriter\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Misc\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\Polyfills\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\test\StaticJsonBuffer\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\ArduinoJson-master\third-party\catch\CMakeLists.txt">
+      <Filter>src\_micro-api-readonly\libraries\ArduinoJson-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WiFi\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WiFi</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\LICENSE.txt">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\EmonLib-master\Readme.txt">
+      <Filter>src\_micro-api-readonly\libraries\EmonLib-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\DHT-sensor-library-master\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\DHT-sensor-library-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\Arduino-Temperature-Control-Library-master\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\Arduino-Temperature-Control-Library-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\Documents\Arduino\libraries\OneWire-master\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\OneWire-master</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266mDNS\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266mDNS</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Users\DTAP\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.4.2\libraries\ESP8266WebServer\keywords.txt">
+      <Filter>src\_micro-api-readonly\libraries\ESP8266WebServer</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

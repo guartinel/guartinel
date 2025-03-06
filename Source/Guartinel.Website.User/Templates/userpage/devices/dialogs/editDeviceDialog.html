@@ -1,0 +1,41 @@
+﻿<form layout="column" submit-method="submitEdit()" name="editDeviceForm" layout-margin loading-form>
+    <md-input-container style="margin-top:20px;"md-no-float layout="column" layout-align="center center">
+        <label style="font-weight: bold" class="grtnl-text-m">Name of the device</label>
+        <input required ng-model="device.name" name="deviceNameField" class="input_contrast" ng-maxlength="20">
+        <div ng-messages="editDeviceForm.deviceNameField.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="maxlength">Device name is too long. Maximum 20 characters!</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container ng-hide="device.device_type == 'android_device' || device.device_type == 'hardware_sensor'" md-no-float>
+        <label style="font-weight: bold" class="grtnl-text-m">Categories</label>
+        <md-chips ng-model="chipCategoriesForDevice"
+                  md-max-chips="1"
+                  md-autocomplete-snap
+                  md-transform-chip="transformChip($chip)"
+                  md-require-match="false">
+            <md-autocomplete md-selected-item="selectedItem"
+                             md-search-text="searchText"
+                             md-items="item in querySearch(searchText)"
+                             md-item-text="item"
+                             placeholder="Add device category">
+                <span md-highlight-text="searchText">{{item}}</span>
+            </md-autocomplete>
+            <md-chip-template>
+                <span>
+                    <strong>{{$chip.name}}</strong>
+                </span>
+            </md-chip-template>
+        </md-chips>
+    </md-input-container>
+
+
+    <div class="form_actions">
+        <md-button ng-disabled="editDeviceForm.$invalid" style="text-transform: none" class="md-warn md-raised" type="submit">
+            Edit Device
+        </md-button>
+        <md-button style="text-transform: none" class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+    </div>
+
+</form>

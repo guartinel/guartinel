@@ -1,0 +1,75 @@
+﻿<div ng-controller="websiteSupervisorAdditionalCheckTabController" layout="column" class="tab_content" layout-margin>
+
+   <div layout="row" layout-align="space-between center">
+      <b>Check text presence in webpage</b>
+      <md-switch class="no_padding no_margin" md-theme="green" ng-model="package.configuration.checkTextPatternIsEnabled" aria-label="Check certificate"></md-switch>
+   </div>
+   <div layout="row" ng-if="package.configuration.checkTextPatternIsEnabled">
+      <md-input-container flex="100" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('You can enter search patterns which must be included in your webpage')"></div></md-tooltip>
+         <input layout-fill
+                ng-disabled="!package.configuration.checkTextPatternIsEnabled"
+                ng-model="package.configuration.checkTextPattern"
+                placeholder="Enter a text which should be included in the webpage"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="checkTextPattern"
+                name="checkTextPattern" 
+                ng-maxlength="30" 
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.checkTextPattern.$error">
+             <div ng-message="maxlength">The pattern has to be less than 30 characters long.</div>
+             <div ng-message="minlength">The pattern has to be at least 3 characters long.</div>
+             <div ng-message="required">Required!</div>
+         </div>
+      </md-input-container>
+   </div>
+
+
+   <div layout="row" layout-align="space-between center">
+      <b>Check website's certificate validity</b>
+      <md-switch class="no_padding no_margin" md-theme="green" ng-model="package.configuration.checkCertificateMinimumDaysIsEnabled" aria-label="Check certificate"></md-switch>
+   </div>
+   <div layout="row" ng-show="package.configuration.checkCertificateMinimumDaysIsEnabled">
+      <md-input-container flex="100" class="md-block" layout="column">
+         <label>Minimum remaining valid days</label>
+         <input type="number"  required
+             ng-disabled="!package.configuration.checkCertificateMinimumDaysIsEnabled"
+                name="checkCertificateMinimumDays"
+                ng-model="package.configuration.checkCertificateMinimumDays"
+                placeholder="Enter the minimum license validity in days!"
+                min="1"
+                max="600">
+
+         <div ng-messages="savePackageForm.checkCertificateMinimumDays.$error" role="alert" multiple>
+             <div ng-message="min">Minimum 1 day!</div>
+             <div ng-message="max">Maximum 600 days!</div>
+             <div ng-message="required">Required!</div>
+         </div>
+      </md-input-container>
+   </div>
+
+
+   <div layout="row" layout-align="space-between center">
+      <b>Check webpage load time</b>
+      <md-switch class="no_padding no_margin" md-theme="green" ng-model="package.configuration.checkLoadTimeSecondsIsEnabled" aria-label="Check webpage latency"></md-switch>
+   </div>
+   <div layout="row" ng-if="package.configuration.checkLoadTimeSecondsIsEnabled">
+      <md-input-container flex="100" layout="column">
+         <label>Maximum latency in seconds</label>
+         <input type="number" required ng-disabled="!package.configuration.checkLoadTimeSecondsIsEnabled"
+                name="checkLoadTimeSeconds"
+                ng-model="package.configuration.checkLoadTimeSeconds"
+                placeholder="Enter the maximum load time in seconds!"
+                min="10"
+                max="300">
+         <div ng-messages="savePackageForm.checkLoadTimeSeconds.$error">
+             <div ng-message="required">Required!</div>
+             <div ng-message="min">Minimum 10 seconds!</div>
+             <div ng-message="max">Maximum 300 seconds!</div>
+         </div>
+      </md-input-container>
+   </div>
+
+</div>

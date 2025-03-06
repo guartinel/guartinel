@@ -1,0 +1,21 @@
+﻿<div layout="column" flex="100" layout-align="start stretch">
+   <!--  <div flex="100" layout="row" layout-align="space-between start">
+         <md-switch flex="20" class="no_padding no_margin" md-theme="green" ng-model="package.isEnabled" aria-label="Package status switch"></md-switch>
+          <b flex="20" ng-if="package.isEnabled">Enabled</b>
+          <b flex="20" ng-if="!package.isEnabled">Disabled</b>
+
+   </div> -->
+   <b flex="50">Package Name</b>
+
+   <md-input-container class="md-icon-float md-icon-left md-block" md-no-float layout="column" layout-align="center center">
+      <md-tooltip class="md-caption">You can identify your package easily with this name later.</md-tooltip>
+      <md-icon md-svg-src="content/images/input_icons/box.svg"></md-icon>
+      <input required ng-model="package.packageName" placeholder="Type your package name here" name="packageField" class="input_contrast" ng-maxlength="60">
+      <div ng-messages="savePackageForm.packageField.$error">
+         <div ng-message="required">Package name is required</div>
+         <div ng-message="maxlength">Package name is too long. Maximum 60 characters!</div>
+      </div>
+   </md-input-container>
+</div>
+
+

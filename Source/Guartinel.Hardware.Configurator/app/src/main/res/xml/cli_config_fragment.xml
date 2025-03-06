@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="Device settings"
+        app:icon="@color/OliveDrab">
+        <EditTextPreference
+            android:defaultValue="false"
+            android:key="applicationToken"
+            android:summary="The token which helps you connect this device to a package."
+            android:title="Application Token" />
+        <EditTextPreference
+            android:defaultValue="false"
+            android:key="deviceName"
+            android:summary="This name helps you identify this device in alert emails and on the website."
+            android:title="Device name" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Device wifi connection settings"
+        app:icon="@color/OliveDrab">
+        <ListPreference
+            android:defaultValue="-1"
+            android:key="wifiSSIDs"
+            android:summary="The token which helps you connect this device to a package."
+            android:title="Wifi SSID" />
+        <EditTextPreference
+            android:defaultValue="false"
+            android:key="wifiPassword"
+            android:summary="The password of the selected wifi network."
+            android:title="Wifi password" />
+    </PreferenceCategory>
+    <Preference android:title="Save!"
+        android:key="saveButton"
+        android:summary="Click here to save!"/>
+</PreferenceScreen>

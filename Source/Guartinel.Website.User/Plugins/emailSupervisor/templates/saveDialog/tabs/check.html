@@ -1,0 +1,199 @@
+﻿<div ng-controller="emailSupervisorCheckTabController" layout="column" class="tab_content" layout-margin>
+   <div layout="row" layout-align="start start" ng-include="'plugins/common/templates/saveDialog/blocks/packageName.html'"></div>
+   <br />
+   <div layout="row">
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is an existing email address account on your server. We will send test emails here.')"></div></md-tooltip>
+         <b>Email Address</b>
+         <input layout-fill
+                ng-model="package.configuration.testEmailAddress"
+                placeholder="testAccount@yourserver.com"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                id="testEmailAddress"
+                name="testEmailAddress"
+                required
+                ng-maxlength="50"
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.testEmailAddress.$error">
+            <div ng-message="maxlength">The email address to be less than 50 characters long.</div>
+            <div ng-message="minlength">The email address has to be at least 3 characters long.</div>
+         </div>
+      </md-input-container>  </div>
+
+   <div layout="row" layout-align="space-between start">
+      <b flex="30"  flex-xs="50" flex-sm="50">IMAP server settings</b>
+      <md-switch flex="30" class="no_padding no_margin" md-theme="green" ng-model="package.configuration.imap.useSSL" aria-label="Use SSL">Use SSL</md-switch>
+   </div>
+
+   <div layout="row" layout-align="space-between start">
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your IMAP server address.')"></div></md-tooltip>
+         <label>Address</label>
+         <input layout-fill
+                ng-model="package.configuration.imap.serverAddress"
+                placeholder="Enter your IMAP server address"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="imapServerAddress"
+                name="imapServerAddress"
+                ng-maxlength="50"
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.imapServerAddress.$error">
+            <div ng-message="maxlength">The server address to be less than 50 characters long.</div>
+            <div ng-message="minlength">The server address has to be at least 3 characters long.</div>
+         </div>
+      </md-input-container>
+
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your IMAP server port.')"></div></md-tooltip>
+         <label>Port</label>
+         <input layout-fill
+                type="number"
+                ng-model="package.configuration.imap.serverPort"
+                placeholder="Enter your IMAP server port"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="imapServerPort"
+                name="imapServerPort"
+                ng-maxlength="5"
+                ng-minlength="1">
+         <div ng-messages="savePackageForm.imapServerPort.$error">
+            <div ng-message="maxlength">The server port to be less than 5 characters long.</div>
+            <div ng-message="minlength">The server port has to be at least 1 characters long.</div>
+         </div>
+      </md-input-container>
+   </div>
+   <br />
+   <div layout="row" layout-align="space-between start">
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your IMAP server test user\'s account. The account name of IMAP user.')"></div></md-tooltip>
+         <label>User name</label>
+         <input layout-fill
+                ng-model="package.configuration.imap.user"
+                placeholder="Enter your test user's account"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="imapServerUser"
+                name="imapServerUser"
+                ng-maxlength="50"
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.imapServerUser.$error">
+            <div ng-message="maxlength">The user name has to be less than 50 characters long.</div>
+            <div ng-message="minlength">The user name has to be at least 3 characters long.</div>
+         </div>
+      </md-input-container>
+
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your IMAP server test user\'s account.')"></div></md-tooltip>
+         <label>Password</label>
+         <input layout-fill
+                type="password"
+                ng-model="package.configuration.imap.password"
+                placeholder="Enter your test user's account password"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="imapServerPassword"
+                name="imapServerPassword"
+                ng-maxlength="50"
+                ng-minlength="1">
+         <div ng-messages="savePackageForm.imapServerPassword.$error">
+            <div ng-message="maxlength">The password has to be less than 50 characters long.</div>
+            <div ng-message="minlength">The password has to be at least 1 characters long.</div>
+         </div>
+      </md-input-container>
+   </div>
+
+   <div layout="row" layout-align="space-between start">
+      <b flex="30" flex-xs="50" flex-sm="50">SMTP server settings</b>
+      <md-switch flex="30" class="no_padding no_margin" md-theme="green" ng-model="package.configuration.smtp.useSSL" aria-label="Use SSL">Use SSL</md-switch>
+   </div>
+
+   <div layout="row" layout-align="space-between start">
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your SMTP server address.')"></div></md-tooltip>
+         <label>Address</label>
+         <input layout-fill
+                ng-model="package.configuration.smtp.serverAddress"
+                placeholder="Enter your SMTP server address"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="smtpServerAddress"
+                name="smtpServerAddress"
+                ng-maxlength="50"
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.smtpServerAddress.$error">
+            <div ng-message="maxlength">The server address to be less than 50 characters long.</div>
+            <div ng-message="minlength">The server address has to be at least 3 characters long.</div>
+         </div>
+      </md-input-container>
+
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your SMTP server port.')"></div></md-tooltip>
+         <label>Port</label>
+         <input layout-fill
+                type="number"
+                ng-model="package.configuration.smtp.serverPort"
+                placeholder="Enter your SMTP server port"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="smtpServerPort"
+                name="smtpServerPort"
+                ng-maxlength="5"
+                ng-minlength="1">
+         <div ng-messages="savePackageForm.smtpServerPort.$error">
+            <div ng-message="maxlength">The server port to be less than 5 characters long.</div>
+            <div ng-message="minlength">The server port has to be at least 1 characters long.</div>
+         </div>
+      </md-input-container>
+   </div>
+   <br />
+   <div layout="row" layout-align="space-between start">
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your SMTP server test user\'s account. The account name of SMTP user.')"></div></md-tooltip>
+         <label>User name</label>
+         <input layout-fill
+                ng-model="package.configuration.smtp.user"
+                placeholder="Enter your test user's account"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="smtpServerUser"
+                name="smtpServerUser"
+                ng-maxlength="50"
+                ng-minlength="3">
+         <div ng-messages="savePackageForm.smtpServerUser.$error">
+            <div ng-message="maxlength">The user name has to be less than 50 characters long.</div>
+            <div ng-message="minlength">The user name has to be at least 3 characters long.</div>
+         </div>
+      </md-input-container>
+
+      <md-input-container flex="45" md-no-float layout-fill layout="column" type="url" class="md-block" layout-align="start start">
+         <md-tooltip class="md-caption"> <div ng-bind-html="insertLineBreak('This is your SMTP server test user\'s account.')"></div></md-tooltip>
+         <label>Password</label>
+         <input layout-fill
+                type="password"
+                ng-model="package.configuration.smtp.password"
+                placeholder="Enter your test user's account password"
+                style="overflow-y: auto; max-height:130px ;"
+                rows="1"
+                required
+                id="smtpServerPassword"
+                name="smtpServerPassword"
+                ng-maxlength="50"
+                ng-minlength="1">
+         <div ng-messages="savePackageForm.smtpServerPassword.$error">
+            <div ng-message="maxlength">The password has to be less than 50 characters long.</div>
+            <div ng-message="minlength">The password has to be at least 1 characters long.</div>
+         </div>
+      </md-input-container>
+   </div>
+
+   <div layout="column" layout-align="start stretch" ng-include="'plugins/common/templates/saveDialog/blocks/checkInterval.html'" />
+</div>

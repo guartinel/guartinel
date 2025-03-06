@@ -1,0 +1,45 @@
+﻿<form layout="column" name="addUserWebServerForm" layout-padding loading-form
+      submit-method="addUserWebServer(name, address,username, password)">
+
+    <p>Please fill in the form with your <b> User Web Server</b> details.</p>
+
+   <md-input-container flex>
+      <label>Name</label>
+      <input required type="text" ng-model="name" name="nameField">
+      <div ng-messages="addUserWebServerForm.nameField.$error">
+         <div ng-message="required">required</div>
+      </div>
+   </md-input-container>
+
+   <div layout="row" flex>
+      <md-input-container flex="80">
+         <label>Address</label>
+         <input required type="text" ng-model="address" name="addressField">
+         <div ng-messages="addUserWebServerForm.addressField.$error">
+            <div ng-message="required">required</div>
+         </div>
+      </md-input-container>
+   </div>
+    <md-input-container>
+        <label>User Name</label>
+        <input required type="text" ng-model="username" name="usernameField">
+        <div ng-messages="addUserWebServerForm.usernameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Password</label>
+        <input required type="password" ng-model="password" name="passwordField">
+        <div ng-messages="addUserWebServerForm.passwordField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+   <div class="form_actions">
+      <md-button class="md-primary md-raised" type="submit" ng-disabled="addUserWebServerForm.$invalid">
+         Add User Web Server
+      </md-button>
+   </div>
+
+</form>

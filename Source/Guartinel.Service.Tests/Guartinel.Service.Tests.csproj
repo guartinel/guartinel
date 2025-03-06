@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj" />
+    <ProjectReference Include="..\Guartinel.Service.WebsiteChecker\Guartinel.Service.WebsiteChecker.csproj" />
+  </ItemGroup>
+
+</Project>

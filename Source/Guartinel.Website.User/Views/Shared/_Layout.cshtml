@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="guartinelApp">
+
+<head>
+   <base href="/" /> <!-- required by HTML5 routing -->
+
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Guartinel 1.0.2.200</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment-with-locales.min.js"></script>
+   @Styles.Render("~/styles/mainStyles")
+
+   @Scripts.Render("~/bundles/libraries/jquery")
+   @Scripts.Render("~/bundles/components/barindicator")
+
+   @Scripts.Render("~/bundles/libraries/angularjs")
+   @Scripts.Render("~/bundles/libraries/angularjsplugins")
+
+   @Scripts.Render("~/bundles/libraries/angularmaterial")
+   @Styles.Render("~/bundles/libraries/angularmaterialcss")
+
+   @Scripts.Render("~/bundles/libraries/angularmaterialicons")
+   @Scripts.Render("~/bundles/libraries/crypto-js")
+   @Scripts.Render("~/bundles/libraries/ngsanitize")
+   @Scripts.Render("~/bundles/libraries/chartjs")
+   @Scripts.Render("~/bundles/libraries/angularchart")
+   @Scripts.Render("~/bundles/libraries/ngInfiniteScroll")
+
+   @Scripts.Render("~/bundles/components/carousel")
+   @Scripts.Render("~/bundles/components/easing")
+   @Scripts.Render("~/bundles/components/ngclipboard")
+   @Scripts.Render("~/bundles/components/qrcode")
+   @Scripts.Render("~/bundles/components/roundprogressbar")
+
+
+   @Scripts.Render("~/bundles/guartinel/app")
+
+   @Scripts.Render("~/bundles/guartinel/pluginScripts")
+   @Styles.Render("~/styles/pluginStyles")
+</head>
+
+<body ng-controller="applicationController" id="guartinelDialogContainer">
+
+   @RenderBody()
+
+</body>
+</html>

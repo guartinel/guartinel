@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_weight="0.4"
+            android:text="Settings"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/enabledSwitchText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
+
+        <ImageButton
+            android:id="@+id/settingsDialogCancelButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/cancel_icon" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout4"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="21dp"
+            android:text="Check enabled"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <SeekBar
+            android:id="@+id/settingsDialogCheckIntervalSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView4"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:indeterminate="false"
+            android:max="9"
+            android:paddingTop="15dp"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/settingsDialogcheckIntervalValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/settingsDialogCheckIntervalSeekBar"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/settingsDialogCheckIntervalSeekBar"
+            android:gravity="center|bottom"
+            android:text="5s"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/settingsDialogSaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/settingsDialogWatchingEnabledSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.3"
+            android:textColor="#ffffff"
+            android:textOff="Checking Enabled "
+            android:textOn="Checking Disabled "
+            android:textStyle="bold"
+            android:theme="@style/CustomSwitch"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_toEndOf="@+id/textView4"
+            android:layout_alignTop="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/settingsDialogCheckIntervalSeekBar"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="18dp"
+            android:text="Check internet"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <SeekBar
+            android:id="@+id/settingsDialogNoInternetCheckIntervalSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_below="@+id/textView9"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_toStartOf="@+id/settingsDialogNointernetCheckIntervalValueTextView"
+            android:indeterminate="false"
+            android:max="9"
+            android:paddingTop="15dp"
+            android:progress="0"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/settingsDialogNointernetCheckIntervalValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:text="5s"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_alignTop="@+id/settingsDialogNoInternetCheckIntervalSeekBar"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/settingsDialogNoInternetCheckIntervalSeekBar" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/settingsDialogInternetCheckEnabledSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.3"
+            android:textColor="#ffffff"
+            android:textOff="Checking Enabled "
+            android:textOn="Checking Disabled "
+            android:textStyle="bold"
+            android:theme="@style/CustomSwitch"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_alignStart="@+id/settingsDialogWatchingEnabledSwitch"
+            android:layout_alignTop="@+id/textView9" />
+    </RelativeLayout>
+
+</RelativeLayout>

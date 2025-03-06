@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>        
+    <UserSecretsId>fd65c0d4-d020-498f-9edd-c026a7109032</UserSecretsId>
+    <Company>Guartinel</Company>
+    <Product>Guartinel Configuration Service</Product>
+    <Authors>Guartinel</Authors>
+    <DockerTargetOS>Linux</DockerTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Kernel.Network\Guartinel.Kernel.Network.csproj" />
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj" />
+    <ProjectReference Include="..\Guartinel.Service\Guartinel.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

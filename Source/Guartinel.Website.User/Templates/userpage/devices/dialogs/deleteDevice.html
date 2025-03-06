@@ -1,0 +1,30 @@
+﻿<form layout="column" submit-method="confirmDelete(device.id)" layout-margin loading-form>
+
+   <!-- device is not used in any package -->
+   <div layout="column">
+      <p>Are you sure you want to delete device: <b>{{device.name}}</b>
+      </p>
+      <div class="form_actions">
+         <md-button style="text-transform: none" class="md-warn md-raised" type="submit">
+            Delete Device
+         </md-button>
+         <md-button style="text-transform: none" class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+      </div>
+   </div>
+
+   <!-- device is used in package(s)
+   <div layout="column" ng-show="connectedPackages.length != 0">
+
+      <p>You can't delete this device, the following packages are using it:</p>
+
+      <ul>
+         <li ng-repeat="package in connectedPackages">{{package.packageName}}</li>
+      </ul>
+
+      <div class="form_actions">
+         <md-button class="md-raised md-primary" ng-click="hide()">Ok</md-button>
+      </div>
+
+   </div>-->
+
+</form>

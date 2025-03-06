@@ -1,0 +1,65 @@
+{
+  "version": "3",
+  "services": {
+    "proxy": {
+      "image": "jwilder/nginx-proxy:alpine",
+      "labels": [
+        "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true"
+      ],
+      "ports": [
+        "80:80",
+        "443:443"
+      ],
+      "volumes": [
+        "./proxy/conf.d:/etc/nginx/conf.d:rw",
+        "./proxy/vhost.d:/etc/nginx/vhost.d:rw",
+        "./proxy/html:/usr/share/nginx/html:rw",
+        "./proxy/certs:/etc/nginx/certs:ro",
+        "/etc/localtime:/etc/localtime:ro",
+        "/var/run/docker.sock:/tmp/docker.sock:ro"
+      ],
+      "restart": "always"
+    },
+    "letsencrypt": {
+      "image": "jrcs/letsencrypt-nginx-proxy-companion:latest",
+      "depends_on": [
+        "proxy"
+      ],
+      "volumes": [
+        "./proxy/certs:/etc/nginx/certs:rw",
+        "./proxy/vhost.d:/etc/nginx/vhost.d:rw",
+        "./proxy/html:/usr/share/nginx/html:rw",
+        "/etc/localtime:/etc/localtime:ro",
+        "/var/run/docker.sock:/var/run/docker.sock:ro"
+      ],
+      "restart": "always"
+    },  
+    "app": {
+      "image": "crazymax/nextcloud:latest",
+      "domainname": "example.com",
+      "hostname": "nextcloud",
+      "depends_on": [
+        "letsencrypt",
+        "proxy"       
+      ],
+      "volumes": [
+        "./app:/data"
+      ],
+      "environment": [
+        "UID=1000",
+        "GID=1000",
+        "TZ=Europe/Paris",
+        "SITE_DOMAIN=config8215.guartinel.com",
+        "CRON_PERIOD=*/15 * * * *",
+        "MEMORY_LIMIT=256M",
+        "UPLOAD_MAX_SIZE=512M",
+        "OPCACHE_MEM_SIZE=128",
+        "APC_SHM_SIZE=128M",       
+        "VIRTUAL_HOST=config8215.guartinel.com",
+        "LETSENCRYPT_HOST=config8215.guartinel.com",
+        "LETSENCRYPT_EMAIL=david.tapai@sysment.hu"
+      ],
+      "restart": "always"
+    }
+  }
+}

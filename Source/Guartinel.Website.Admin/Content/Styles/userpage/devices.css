@@ -1,0 +1,31 @@
+﻿#device_cards_container {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-wrap: wrap; 
+   flex-wrap:         wrap;
+   /*-webkit-align-items: stretch;
+   align-items:         stretch;*/
+   webkit-flex-grow:  1; 
+   flex-grow:         1;
+
+   background-color: #eeeeee;
+}
+
+.device_card {
+   min-width: 300px;
+   width: 300px;
+}
+
+
+.device_card .more_menu {
+   padding: 0;
+   height: 100%;
+   top: 0;
+   right: 0;
+}
+
+.device_card .expand_button {
+   line-height: 1;
+   height: 100%;
+   margin: 0;
+}

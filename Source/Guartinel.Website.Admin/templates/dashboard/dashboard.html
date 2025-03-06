@@ -1,0 +1,67 @@
+﻿<md-content  id="dashboard_cards_container">
+
+   <div layout-fill flex="70" layout="column">
+      <div layout-fill layout="column">
+       
+         <div layout="row">
+            <div  ng-include="'templates/dashboard/webServer/webServerCard.html'"></div>
+            <div  ng-if="userWebServerStatus.isPresent" ng-include="'templates/dashboard/userWebServer/userWebServerCard.html'"></div>
+         </div>
+      </div>
+
+      <div  layout="column">
+         <div layout="row">
+            <div ng-if="managementServerStatus.isPresent" ng-include="'templates/dashboard/managementServer/managementServerCard.html'"></div>
+            <div ng-repeat="watcherServer in watcherServers">
+               <div  style="min-height: 200px" ng-include="'templates/dashboard/watcherServer/watcherServerCard.html'"></div>
+            </div>
+         </div>
+      </div>
+
+      <div layout-fill layout="column">
+         <div layout="row">
+           
+         </div>
+      </div>
+   </div>
+
+   <div flex="30" layout-align="start center" layout-fill layout="column">
+      <div ng-if="managementServerStatus.isLoading == false && managementServerStatus.isPresent == false " ng-include="'templates/dashboard/managementServer/addManagementServerCard.html'"></div>
+      <div ng-if="userWebServerStatus.isLoading == false && userWebServerStatus.isPresent == false " ng-include="'templates/dashboard/userWebServer/addUserWebServerCard.html'"></div>
+      <div ng-include="'templates/dashboard/watcherServer/addWatcherServerCard.html'"></div>
+   </div>
+
+   <!--
+   <div ng-repeat="dashboardCard in dashboardCards">
+      <div ng-switch="dashboardCard.type">
+
+         <div ng-switch-when="webServerCard">
+            <div ng-include="'templates/dashboard/webServer/webServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="addManagementServerCard">
+            <div ng-include="'templates/dashboard/managementServer/addManagementServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="managementServerCard">
+            <div ng-include="'templates/dashboard/managementServer/managementServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="watcherServerCard">
+            <div ng-include="'templates/dashboard/watcherServer/watcherServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="addWatcherServerCard">
+            <div ng-include="'templates/dashboard/watcherServer/addWatcherServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="addUserWebServerCard">
+            <div ng-include="'templates/dashboard/userWebServer/addUserWebServerCard.html'"></div>
+         </div>
+
+         <div ng-switch-when="userWebServerCard">
+            <div ng-include="'templates/dashboard/userWebServer/userWebServerCard.html'"></div>
+         </div>
+      </div>
+   </div>-->
+</md-content>

@@ -1,0 +1,35 @@
+﻿<div layout="column" layout-align="start center">
+   <div layout layout-align="center center">
+      <p layout-margin class="grtnl-text-m">You have successfully created a new account for free.</p>
+   </div>
+
+   <p layout-margin class="grtnl-text-s grtnl-text-justify">
+      To activate it, please follow the link that is sent to your email address or manually enter your activation code below.
+   </p>
+
+   <div layout="row" layout-fill layout-align="center center">
+      <form flex="50" flex-sm="90" flex-xs="90" name="activateAcccountForm" submit-method="" loading-form>
+         <div layout-align="start stretch" layout="column" >
+            <md-input-container flex-sm="90" flex-xs="90" flex="70" layout-align="center center">
+               <label class="grtnl-text-m">Activation Code</label>
+               <input required type="text" id="activationCode" ng-minlength="6" ng-model="activationCode" name="activationCodeField">
+               <div ng-messages="activateAcccountForm.activationCodeField.$error">
+                  <div ng-message="required">Required</div>
+                  <div ng-message="minlength">Minimum 6 characters long</div>
+               </div>
+            </md-input-container>
+         </div>
+
+         <div layout="row" class="form_actions" layout-align="center center">
+            <div layout="row" layout-fill layout-align="center center">
+               <md-button flex="50" ng-disabled="activateAcccountForm.$invalid" class="md-primary md-raised" ng-click="activateAccount(activationCode)" style="text-transform: none" type="submit">
+                  <div layout="row" layout-align="center center">
+                     <p class="no_margin grtnl-text-m">Activate Now!</p>
+                  </div>
+               </md-button>
+            </div>
+         </div>
+      </form>
+
+   </div>
+</div>

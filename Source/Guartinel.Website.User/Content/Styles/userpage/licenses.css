@@ -1,0 +1,38 @@
+﻿.allLicenseTiles .free {
+    background: #528cf7;
+}
+
+.allLicenseTiles .trial {
+    background: #26b660;
+}
+
+.allLicenseTiles .s {
+    background: #f47171;
+}
+.allLicenseTiles .m {
+    background: #b6823b;
+}
+
+.allLicenseTiles .l {
+    background: #64cccc;
+}
+
+.allLicenseTiles .xl {
+    background: #826fee;
+}
+
+.button-light-gray {
+    background: rgba(0, 0, 0, 0.10);
+    border-radius: 0;
+}
+
+.tileText {
+   font-size: 16px;
+}
+
+.licenseSideBarButton { 
+}
+
+.licenseSideBarButton:hover {
+   opacity: 0.8;
+}

@@ -1,0 +1,31 @@
+﻿<form layout="column" loading-form name="savePackageForm"
+      submit-method="savePackage()">
+
+   <md-tabs md-stretch-tabs="never" md-swipe-content="true" md-dynamic-height md-border-bottom md-selected="selectedTab">
+      <md-tab label="Check" layout="column">
+         <div ng-include="'plugins/hardwareSupervisor/templates/saveDialog/tabs/check.html'"></div>
+
+      </md-tab>
+      <md-tab label="Instances">
+         <div ng-include="'plugins/hardwareSupervisor/templates/saveDialog/tabs/instances.html'"></div>
+
+      </md-tab>
+      <md-tab label="Alert">
+         <div ng-include="'plugins/common/templates/saveDialog/tabs/alert.html'"></div>
+      </md-tab>
+
+      <md-tab label="Access" ng-if="package.owner == null || package.owner == currentUserEmail">
+         <div ng-include="'plugins/common/templates/saveDialog/tabs/access.html'"></div>
+      </md-tab>
+
+      <md-tab label="Schedule">
+         <div ng-include="'plugins/common/templates/saveDialog/tabs/schedule.html'"></div>
+      </md-tab>
+   </md-tabs>
+   <div layout="row" layout-align="center center" class="form_actions">
+      <md-button style="text-transform: none" class="md-primary md-raised" type="submit">Save</md-button>
+   </div>
+   <div layout="row" layout-fill layout-align="center start">
+      <p style="color: red"> {{formError}} </p>
+   </div>
+</form>

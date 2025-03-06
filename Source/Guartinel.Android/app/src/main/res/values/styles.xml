@@ -1,0 +1,61 @@
+<resources>
+
+    Base application theme.
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="GuartinelTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="elevation">0dp</item>
+        <item name="colorPrimary">@color/GuartinelBlue</item>
+        <item name="colorPrimaryDark">@color/GuartinelDarkBlue</item>
+        <item name="colorAccent">@color/White</item>
+        <item name="android:windowBackground">@color/White</item>
+        <item name="colorControlNormal">@color/GuartinelBlue</item>
+        <item name="colorControlActivated">@color/GuartinelDarkBlue</item>
+        <item name="colorControlHighlight">@color/RoyalBlue</item>
+        <item name="android:textColorHint">@color/Gray</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="colorButtonNormal">@color/GuartinelDarkBlue</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/GuartinelBlue</item>
+        <item name="android:textColorPrimary">@color/Black</item>
+        <item name="android:background">@color/White</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/GuartinelBlue</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/Black</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/White</item>
+    </style>
+
+    <style name="SwitchCompatTheme" >
+        <item name="colorControlActivated">@color/Green</item>
+        <item name="colorControlNormal">@color/Red</item>
+        <item name="android:colorForeground">@color/Red</item>
+        <item name="colorSwitchThumbNormal">@color/Red</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>

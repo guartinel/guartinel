@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FA72EA1-F60F-49CB-8473-B612521F973E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Guartinel.Website.User</RootNamespace>
+    <AssemblyName>Guartinel.Website.User</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\References\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\References\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.0.0, Culture=neutral, PublicKeyToken=a4aaad8bf0e05400, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PayPal\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="SzamlaAgentIntegration">
+      <HintPath>..\References\Szamlazz.hu\SzamlaAgentIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\References\WebGrease\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\References\Antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\HandleExceptionAttribute.cs" />
+    <Compile Include="Attributes\IsManagementServerAvailable.cs" />
+    <Compile Include="Attributes\ValidateWebsiteTokenAttribute.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\DeviceController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LicenseController.cs" />
+    <Compile Include="Controllers\PackageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GuartinelApp.cs" />
+    <Compile Include="IManagementServer\License.cs" />
+    <Compile Include="License\Invoicing\IInvoiceAgent.cs" />
+    <Compile Include="License\Invoicing\InvoiceManager.cs" />
+    <Compile Include="License\LicenseFactory.cs" />
+    <Compile Include="License\LicenseOrder.cs" />
+    <Compile Include="License\PaymentMethod\PaymentManager.cs" />
+    <Compile Include="Misc\ErrorMessages.cs" />
+    <Compile Include="Misc\CustomException.cs" />
+    <Compile Include="Attributes\IpAddressAttribute.cs" />
+    <Compile Include="Attributes\ValidateModelStateAttribute.cs" />
+    <Compile Include="Misc\Utils.cs" />
+    <Compile Include="License\PaymentMethod\IPayment.cs" />
+    <Compile Include="Misc\ValidatorConstants.cs" />
+    <Compile Include="Models\Account\AccountActivateModel.cs" />
+    <Compile Include="Models\Account\AccountResendActivationCodeModel.cs" />
+    <Compile Include="Models\Account\AuthenticationModel.cs" />
+    <Compile Include="Models\Account\AccountCreateModel.cs" />
+    <Compile Include="Models\Account\AccountGetStatusModel.cs" />
+    <Compile Include="Models\Account\AccountLoginModel.cs" />
+    <Compile Include="Models\Account\AccountRegisterModel.cs" />
+    <Compile Include="Models\Account\AccountUpdateModel.cs" />
+    <Compile Include="Models\Device\DeviceDeleteModel.cs" />
+    <Compile Include="Models\Device\DeviceExistingModel.cs" />
+    <Compile Include="Models\Device\DeviceTestModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\Package\PackageModel.cs" />
+    <Compile Include="Models\Package\PackageDeleteModel.cs" />
+    <Compile Include="Models\Package\PackageExistingModel.cs" />
+    <Compile Include="Models\Package\PackageRemoveModel.cs" />
+    <Compile Include="Models\Package\PackageTestEmailModel.cs" />
+    <Compile Include="License\PaymentMethod\MyPayPal\Adapters\PaymentCustomPayload.cs" />
+    <Compile Include="License\PaymentMethod\MyPayPal\Adapters\PayPalNVP.cs" />
+    <Compile Include="License\PaymentMethod\MyPayPal\Adapters\PayPalRest.cs" />
+    <Compile Include="License\PaymentMethod\MyPayPal\Adapters\PayPalResults.cs" />
+    <Compile Include="License\PaymentMethod\MyPayPal\PayPalMode.cs" />
+    <Compile Include="Persistance\GuartinelUserWebSiteSettings.cs" />
+    <Compile Include="Properties\Config.cs" />
+    <Compile Include="Properties\Config.Designer.cs">
+      <DependentUpon>Config.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="License\Invoicing\SzamlazzDotHu\DO\SzamlaRequest.cs" />
+    <Compile Include="License\Invoicing\SzamlazzDotHu\DO\SzamlaResponse.cs" />
+    <Compile Include="License\Invoicing\SzamlazzDotHu\SzamlaAgent.cs" />
+    <Compile Include="License\Invoicing\SzamlazzDotHu\SzamlazzRequester.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Icons\cpu.svg" />
+    <Content Include="Content\Images\background_pattern.png" />
+    <Content Include="Content\Images\device_covers\android.png" />
+    <Content Include="Content\Images\device_covers\linux.png" />
+    <Content Include="Content\Images\device_covers\windows.png" />
+    <Content Include="Content\Images\device_icons\android.png" />
+    <Content Include="Content\Images\device_icons\linux.png" />
+    <Content Include="Content\Images\device_icons\sensor.png" />
+    <Content Include="Content\Images\device_icons\windows.png" />
+    <Content Include="Content\Images\guartinel-logo500x106.png" />
+    <Content Include="Content\Images\Icons\SVG\email.svg" />
+    <Content Include="Content\Images\Icons\SVG\register.svg" />
+    <Content Include="Content\Images\input_icons\box.svg" />
+    <Content Include="Content\Images\input_icons\co2.svg" />
+    <Content Include="Content\Images\input_icons\current.svg" />
+    <Content Include="Content\Images\input_icons\humidity.svg" />
+    <Content Include="Content\Images\input_icons\isAboveOk.svg" />
+    <Content Include="Content\Images\input_icons\retry.svg" />
+    <Content Include="Content\Images\input_icons\temperature.svg" />
+    <Content Include="Content\Images\input_icons\voltage.svg" />
+    <Content Include="Content\Images\licenses\business-icon.png" />
+    <Content Include="Content\Images\licenses\free-icon.png" />
+    <Content Include="Content\Images\licenses\free.png" />
+    <Content Include="Content\Images\licenses\business.png" />
+    <Content Include="Content\Images\licenses\home-icon.png" />
+    <Content Include="Content\Images\licenses\home.png" />
+    <Content Include="Content\Images\licenses\premium-icon.png" />
+    <Content Include="Content\Images\licenses\trial-icon.png" />
+    <Content Include="Content\Images\licenses\trial.png" />
+    <Content Include="Content\Images\licenses\premium.png" />
+    <Content Include="Content\Images\Icons\SVG\login.svg" />
+    <Content Include="Content\Images\login_register_background.png" />
+    <Content Include="Content\Images\menu_icons\devices.png" />
+    <Content Include="Content\Images\menu_icons\exit.png" />
+    <Content Include="Content\Images\menu_icons\myaccount.png" />
+    <Content Include="Content\Images\menu_icons\mylicenses.png" />
+    <Content Include="Content\Images\menu_icons\packages.png" />
+    <Content Include="Content\Images\package_covers\application_supervisor.png" />
+    <Content Include="Content\Images\package_covers\computer_supervisor.png" />
+    <Content Include="Content\Images\package_covers\email_supervisor.png" />
+    <Content Include="Content\Images\package_covers\hardware_supervisor.png" />
+    <Content Include="Content\Images\package_covers\host_supervisor.png" />
+    <Content Include="Content\Images\package_covers\website_supervisor.png" />
+    <Content Include="Content\Images\play_store_badge.png" />
+    <Content Include="Content\Scripts\Components\barIndicator-2015_08_24\easing.js" />
+    <Content Include="Content\Scripts\Components\ngclipboard\clipboard.min.js" />
+    <Content Include="Content\Scripts\Components\ngclipboard\ngclipboard.js" />
+    <Content Include="Content\Scripts\Components\round-progressbar-0.3.9\roundProgress.js" />
+    <Content Include="Content\Scripts\Libraries\angular-chart\angular-chart.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-animate-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-aria-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-cookies-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-datetime-picker.css" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-datetime-picker.js" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-messages-1.5.3.js" />
+    <Content Include="Content\Scripts\Libraries\jQuery\jquery.easing.1.3.js" />
+    <Content Include="Content\Scripts\Libraries\AngularMaterialIcons\angular-material-icons-0.6.0.js" />
+    <Content Include="Content\Scripts\Libraries\ngInfiniteScroll\ng-infinite-scroll.js" />
+    <Content Include="Content\Scripts\Libraries\ngsanitize\ngsanitize.js" />
+    <Content Include="Content\Styles\form.css" />
+    <Content Include="Content\Styles\homepage\homepage.css" />
+    <Content Include="Content\Styles\userpage\licenses.css" />
+    <Content Include="Content\Styles\userpage\package.css" />
+    <Content Include="Content\Scripts\Libraries\AngularJs\angular-ui-router-0.2.15.js" />
+    <Content Include="Content\Scripts\Libraries\jQuery\jquery-2.1.4.js" />
+    <Content Include="Content\Styles\roboto_draft.css" />
+    <Content Include="Content\Styles\userpage\devices.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="plugins\applicationSupervisor\scripts\controllers\applicationSupervisorPackageCardController.js" />
+    <Content Include="plugins\applicationSupervisor\scripts\controllers\saveDialog\dialogController.js" />
+    <Content Include="plugins\applicationSupervisor\scripts\controllers\saveDialog\tabs\checkTab.js" />
+    <Content Include="plugins\applicationSupervisor\scripts\service\applicationSupervisorService.js" />
+    <Content Include="plugins\applicationSupervisor\templates\applicationSupervisorPackageCard.html" />
+    <Content Include="plugins\applicationSupervisor\templates\saveDialog\dialog.html" />
+    <Content Include="plugins\applicationSupervisor\templates\saveDialog\tabs\check.html" />
+    <Content Include="plugins\applicationSupervisor\templates\saveDialog\tabs\instances.html" />
+    <Content Include="plugins\common\scripts\controllers\basePackageCardController.js" />
+    <Content Include="plugins\common\scripts\controllers\saveDialog\baseSaveDialogController.js" />
+    <Content Include="plugins\common\scripts\controllers\saveDialog\tabs\accessTabController.js" />
+    <Content Include="plugins\common\scripts\controllers\saveDialog\tabs\alertTabController.js" />
+    <Content Include="plugins\common\scripts\controllers\saveDialog\tabs\checkTabController.js" />
+    <Content Include="plugins\applicationSupervisor\scripts\controllers\saveDialog\tabs\instancesTabController.js" />
+    <Content Include="plugins\common\scripts\controllers\saveDialog\tabs\scheduleTabController.js" />
+    <Content Include="plugins\common\scripts\service\pluginPackageService.js" />
+    <Content Include="plugins\common\styles\pluginStyles.css" />
+    <Content Include="plugins\common\templates\card\cardAlertTab.html" />
+    <Content Include="plugins\common\templates\card\cardHeaderControlsAndMenu.html" />
+    <Content Include="plugins\common\templates\card\cardState.html" />
+    <Content Include="plugins\common\templates\card\cardDetailsTab.html" />
+    <Content Include="plugins\common\templates\saveDialog\blocks\checkInterval.html" />
+    <Content Include="plugins\common\templates\saveDialog\blocks\packageName.html" />
+    <Content Include="plugins\common\templates\saveDialog\tabs\access.html" />
+    <Content Include="plugins\common\templates\saveDialog\tabs\schedule.html" />
+    <Content Include="plugins\common\templates\saveDialog\tabs\alert.html" />
+    <Content Include="plugins\emailSupervisor\scripts\controllers\emailSupervisorPackageCardController.js" />
+    <Content Include="plugins\emailSupervisor\scripts\controllers\saveDialog\dialogController.js" />
+    <Content Include="plugins\emailSupervisor\scripts\controllers\saveDialog\tab\checkTab.js" />
+    <Content Include="plugins\emailSupervisor\scripts\service\emailSupervisorPackageService.js" />
+    <Content Include="plugins\emailSupervisor\templates\emailSupervisorPackageCard.html" />
+    <Content Include="plugins\emailSupervisor\templates\saveDialog\dialog.html" />
+    <Content Include="plugins\emailSupervisor\templates\saveDialog\tabs\check.html" />
+    <Content Include="plugins\hardwareSupervisor\scripts\controllers\hardwareSupervisorPackageController.js" />
+    <Content Include="plugins\hardwareSupervisor\scripts\controllers\saveDialog\dialogController.js" />
+    <Content Include="plugins\hardwareSupervisor\scripts\controllers\saveDialog\tabs\checkTab.js" />
+    <Content Include="plugins\hardwareSupervisor\scripts\controllers\saveDialog\tabs\instancesTabController.js" />
+    <Content Include="plugins\hardwareSupervisor\scripts\service\hardwareSupervisorService.js" />
+    <Content Include="plugins\hardwareSupervisor\templates\hardwareSupervisorPackageCard.html" />
+    <Content Include="plugins\hardwareSupervisor\templates\saveDialog\dialog.html" />
+    <Content Include="plugins\hardwareSupervisor\templates\saveDialog\tabs\check.html" />
+    <Content Include="plugins\hardwareSupervisor\templates\saveDialog\tabs\instances.html" />
+    <Content Include="plugins\hostSupervisor\scripts\controllers\saveDialog\dialogController.js" />
+    <Content Include="plugins\hostSupervisor\scripts\controllers\hostSupervisorPackageCardController.js" />
+    <Content Include="plugins\hostSupervisor\scripts\controllers\saveDialog\tabs\checkTab.js" />
+    <Content Include="plugins\hostSupervisor\scripts\service\hostSupervisorPackageService.js" />
+    <Content Include="plugins\hostSupervisor\templates\saveDialog\dialog.html" />
+    <Content Include="plugins\hostSupervisor\templates\saveDialog\tabs\check.html" />
+    <Content Include="plugins\hostSupervisor\templates\hostSupervisorPackageCard.html" />
+    <Content Include="plugins\websiteSupervisor\scripts\controllers\saveDialog\dialogController.js" />
+    <Content Include="plugins\websiteSupervisor\scripts\controllers\saveDialog\tabs\additionalCheckTabController.js" />
+    <Content Include="plugins\websiteSupervisor\scripts\controllers\saveDialog\tabs\checkTab.js" />
+    <Content Include="plugins\websiteSupervisor\scripts\controllers\websiteSupervisorPackageCardController.js" />
+    <Content Include="plugins\websiteSupervisor\scripts\service\websiteSupervisorPackageService.js" />
+    <Content Include="plugins\websiteSupervisor\templates\saveDialog\dialog.html" />
+    <Content Include="plugins\websiteSupervisor\templates\saveDialog\tabs\additionalCheck.html" />
+    <Content Include="plugins\websiteSupervisor\templates\saveDialog\tabs\check.html" />
+    <Content Include="plugins\websiteSupervisor\templates\websiteSupervisorPackageCard.html" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Content\Scripts\Components\barIndicator-2015_08_24\css\bi-style.css" />
+    <Content Include="Content\Scripts\Components\barIndicator-2015_08_24\jquery-barIndicator.js" />
+    <Content Include="Scripts\app\notInArrayFilter.js" />
+    <Content Include="Scripts\app\STATES.js" />
+    <Content Include="Scripts\constants\clientConstants.js" />
+    <Content Include="Scripts\constants\generatedConstants.js" />
+    <Content Include="Scripts\controllers\communicationErrorController.js" />
+    <Content Include="Scripts\controllers\homepage\cookieToastController.js" />
+    <Content Include="Scripts\controllers\homepage\getVersionController.js" />
+    <Content Include="Scripts\controllers\homepage\loginHelperController.js" />
+    <Content Include="Scripts\controllers\unsubscribeAllEmailController.js" />
+    <Content Include="Scripts\controllers\unsubscribeFromPackageEmailController.js" />
+    <Content Include="Scripts\controllers\userpage\account\dialogs\updateAccountDialogController.js" />
+    <Content Include="Scripts\controllers\errorDialogController.js" />
+    <Content Include="Scripts\controllers\homepage\accountActivationController.js" />
+    <Content Include="Scripts\controllers\homepage\dialogs\accountCreatedDialogController.js" />
+    <Content Include="Scripts\controllers\homepage\dialogs\accountExpired.js" />
+    <Content Include="Scripts\controllers\invalidTokenDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\account\dialogs\deleteAccountDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\account\dialogs\freezeAccountDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\account\dialogs\activateAccountDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\devices\deviceCard.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\deleteDevice.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\disconnectHardwareSensorDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\editDeviceDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\testDevice.js" />
+    <Content Include="Scripts\controllers\baseDialogController.js" />
+    <Content Include="Scripts\app\DIALOGS.js" />
+    <Content Include="Scripts\controllers\userpage\license\dialogs\activateLicenseDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\license\dialogs\buyLicenseDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\license\licenseCardController.js" />
+    <Content Include="Scripts\controllers\userpage\license\licenseController.js" />
+    <Content Include="Scripts\controllers\userpage\logoutController.js" />
+    <Content Include="Scripts\controllers\userpage\packages\dialogs\deletePackage.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\androidQrCode.js" />
+    <Content Include="Scripts\controllers\userpage\devices\dialogs\createAndroidDevice.js" />
+    <Content Include="Scripts\controllers\userpage\packages\dialogs\removeAccess.js" />
+    <Content Include="Scripts\controllers\userpage\packages\dialogs\statisticsDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\packages\dialogs\tutorialDialogController.js" />
+    <Content Include="Scripts\controllers\userpage\packages\packagesBottomSheetController.js" />
+    <Content Include="Scripts\controllers\userpage\userpageMenuController.js" />
+    <Content Include="Scripts\directives\dialogDirective.js" />
+    <Content Include="Scripts\directives\loadingForm.js" />
+    <Content Include="Scripts\directives\progressBar.js" />
+    <Content Include="Scripts\directives\qrcode.js" />
+    <Content Include="Content\Scripts\Components\qrcode\qrcodeGenerator.js" />
+    <Content Include="Scripts\app\theme.js" />
+    <Content Include="Scripts\controllers\applicationController.js" />
+    <Content Include="Scripts\controllers\userpage\userPageController.js" />
+    <Content Include="Scripts\controllers\userpage\account\accountController.js" />
+    <Content Include="Scripts\controllers\userpage\devices\devices.js" />
+    <Content Include="Scripts\controllers\userpage\packages\packagesController.js" />
+    <Content Include="Scripts\controllers\homepage\loginController.js" />
+    <Content Include="Scripts\controllers\homepage\registerController.js" />
+    <Content Include="Scripts\app\routing.js" />
+    <Content Include="Scripts\directives\passwordCheck.js" />
+    <Content Include="Scripts\app\basepackage.js" />
+    <Content Include="Scripts\directives\smaller.js" />
+    <Content Include="Scripts\services\api\apiService.js" />
+    <Content Include="Scripts\services\toastService.js" />
+    <Content Include="Scripts\services\user\accountService.js" />
+    <Content Include="Scripts\services\user\deviceService.js" />
+    <Content Include="Scripts\services\dialogService.js" />
+    <Content Include="Scripts\services\downloadService.js" />
+    <Content Include="Scripts\services\user\licenseService.js" />
+    <Content Include="Scripts\services\user\packageService.js" />
+    <Content Include="Scripts\services\pluginService.js" />
+    <Content Include="Scripts\services\user\rootService.js" />
+    <Content Include="templates\homepage\cookieToast.html" />
+    <Content Include="templates\dialogs\connectionErrorDialog.html" />
+    <Content Include="templates\dialogs\errorDialog.html" />
+    <Content Include="templates\dialogs\invalidTokenDialog.html" />
+    <Content Include="templates\homepage\activate.html" />
+    <Content Include="templates\homepage\dialogs\accountExpired.html" />
+    <Content Include="templates\homepage\getVersion.html" />
+    <Content Include="templates\homepage\homepage.html" />
+    <Content Include="templates\homepage\unsubscribeAllEmail.html" />
+    <Content Include="templates\homepage\unsubscribeFromPackageEmail.html" />
+    <Content Include="templates\userpage\account\dialogs\activateAccountDialog.html" />
+    <Content Include="templates\userpage\account\dialogs\deleteAccountDialog.html" />
+    <Content Include="templates\userpage\account\dialogs\freezeAccountDialog.html" />
+    <Content Include="templates\userpage\devices\deviceCard.html" />
+    <Content Include="templates\userpage\devices\dialogs\disconnectHardwareSensor.html" />
+    <Content Include="templates\userpage\devices\dialogs\editDeviceDialog.html" />
+    <Content Include="templates\userpage\license\dialogs\activateLicenseDialog.html" />
+    <Content Include="templates\userpage\license\dialogs\buyLicenseDialog.html" />
+    <Content Include="templates\userpage\license\license.html" />
+    <Content Include="templates\userpage\license\licenseCard.html" />
+    <Content Include="templates\userpage\license\licensesSidebar.html" />
+    <Content Include="templates\userpage\packages\dialogs\removeAccess.html" />
+    <Content Include="templates\userpage\packages\dialogs\statisticsDialog.html" />
+    <Content Include="templates\userpage\packages\dialogs\tutorialDialog.html" />
+    <Content Include="templates\userpage\packages\packagesBottomSheet.html" />
+    <Content Include="templates\userpage\userpage.html" />
+    <Content Include="templates\userpage\account\account.html" />
+    <Content Include="templates\userpage\devices\devices.html" />
+    <Content Include="templates\userpage\devices\devicesSidebar.html" />
+    <Content Include="templates\userpage\packages\packages.html" />
+    <Content Include="templates\userpage\packages\packagesSidebar.html" />
+    <Content Include="templates\homepage\dialogs\accountCreated.html" />
+    <Content Include="templates\baseDialog.html" />
+    <Content Include="templates\userpage\devices\dialogs\androidQrCode.html" />
+    <Content Include="templates\userpage\devices\dialogs\createAndroidDevice.html" />
+    <Content Include="templates\userpage\devices\dialogs\testDevice.html" />
+    <Content Include="templates\userpage\devices\dialogs\deleteDevice.html" />
+    <Content Include="templates\userpage\packages\dialogs\deletePackage.html" />
+    <Content Include="templates\homepage\login.html" />
+    <Content Include="templates\homepage\register.html" />
+    <Content Include="Views\RedirectHTTPToHTTPS.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="plugins\common\templates\statisticsDialog\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Scripts\Libraries\crypto-js\crypto-js-sha512-3.1.2.js" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\DEV.pubxml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <None Include="Properties\Config.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="templates\dialogs\confirmDialog.html" />
+    <None Include="Properties\PublishProfiles\PROD.pubxml" />
+    <None Include="Properties\PublishProfiles\TEST.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Guartinel.Communication\Guartinel.Communication.csproj">
+      <Project>{2adeda9f-809a-41ab-abb0-f03f908687d9}</Project>
+      <Name>Guartinel.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Kernel\Guartinel.Kernel.csproj">
+      <Project>{3194ff1e-65cf-4c80-be3a-7796e2d539fe}</Project>
+      <Name>Guartinel.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guartinel.Website.Common\Guartinel.Website.Common.csproj">
+      <Project>{ad2b56f3-4ee8-4fa3-a69c-8bdb1511400d}</Project>
+      <Name>Guartinel.Website.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+    defaultConfig {
+        applicationId "sysment.android.guartinel"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 64
+        versionName "1.0.6.5"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    flavorDimensions "default"
+    productFlavors {
+        prod {
+            dimension "default"
+            applicationIdSuffix  ""
+            buildConfigField 'String', 'BACKEND_ADDRESS', '"https://backend.guartinel.com:9090"'
+            buildConfigField 'String', 'WEBSITE_ADDRESS', '"https://manage.guartinel.com"'
+            buildConfigField 'String', 'BACKEND_HOST_VALUE', '"backend.guartinel.com"'
+            buildConfigField 'String', 'BACKEND_HTTP_PORT_VALUE', '"8080"'
+            buildConfigField 'String', 'BACKEND_HTTPS_PORT_VALUE', '"9090"'
+            buildConfigField 'String', 'BACKEND_SERVER_PROTOCOL_PREFIX', '"http://"'
+        }
+
+        staging {
+            dimension "default"
+            applicationIdSuffix ".staging"
+            buildConfigField 'String', 'BACKEND_ADDRESS', '"https://test.guartinel.com:9090"'
+            buildConfigField 'String', 'WEBSITE_ADDRESS', '"https://test.guartinel.com:443"'
+            buildConfigField 'String', 'BACKEND_HOST_VALUE', '"test.guartinel.com"'
+            buildConfigField 'String', 'BACKEND_HTTP_PORT_VALUE', '"8080"'
+            buildConfigField 'String', 'BACKEND_HTTPS_PORT_VALUE', '"9090"'
+            buildConfigField 'String', 'BACKEND_SERVER_PROTOCOL_PREFIX', '"http://"'
+        }
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            buildConfigField 'String', 'BACKEND_ADDRESS', '"https://dev.guartinel.com:9090"'
+            buildConfigField 'String', 'WEBSITE_ADDRESS', '"https://dev.guartinel.com"'
+            buildConfigField 'String', 'BACKEND_HOST_VALUE', '"dev.guartinel.com"'
+            buildConfigField 'String', 'BACKEND_HTTP_PORT_VALUE', '"8080"'
+            buildConfigField 'String', 'BACKEND_HTTPS_PORT_VALUE', '"9090"'
+            buildConfigField 'String', 'BACKEND_SERVER_PROTOCOL_PREFIX', '"http://"'
+        }
+    }
+}
+
+dependencies {
+    
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation "com.google.firebase:firebase-messaging:17.3.4"
+    implementation files('libs/mint-5.2.1.jar')
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+}
+
+apply plugin: 'com.google.gms.google-services'
+

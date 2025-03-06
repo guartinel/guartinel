@@ -1,0 +1,11 @@
+﻿<form layout="column" submit-method="confirmDelete(package.id)" layout-margin loading-form>
+
+   <p style="text-align:center">Are you sure you want to delete package: <b>{{package.packageName}}</b>
+   </p>
+
+   <div class="form_actions">
+      <md-button style="text-transform: none" class="md-warn md-raised" type="submit">Delete package</md-button>
+      <md-button style="text-transform: none" class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+   </div>
+
+</form>

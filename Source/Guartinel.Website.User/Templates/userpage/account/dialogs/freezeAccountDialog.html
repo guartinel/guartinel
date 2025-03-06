@@ -1,0 +1,25 @@
+﻿<form layout="column" submit-method="freezeAccount(email,password)" name="freezeAccountForm" layout-align="start center" autocomplete="off" layout-margin loading-form>
+   <p>If you freeze your account all of your packages will be disabled.</p>
+   <br>
+   <md-input-container>
+      <label class="grtnl-text-m">Email</label>
+      <input type="email" required ng-model="email" name="emailField" class="input_contrast">
+      <div ng-messages="freezeAccountForm.emailField.$error">
+         <div ng-message="required">Required</div>
+         <div ng-message="email">Invalid email</div>
+      </div>
+   </md-input-container>
+   <label style="margin-top:10px;"></label>
+   <md-input-container flex>
+      <label class="grtnl-text-m">Password</label>
+      <input required type="password" ng-model="password" ng-minlength="6" name="passwordField" class="input_contrast">
+      <div ng-messages="freezeAccountForm.passwordField.$error">
+         <div ng-message="required">Required</div>
+         <div ng-message="minlength">Minimum 6 characters long</div>
+      </div>
+   </md-input-container>
+
+   <div class="form_actions">
+      <md-button style="text-transform: none" type="submit" ng-disabled="deletAccountForm.$invalid" class="md-raised md-primary">Freeze my account!</md-button>
+   </div>
+</form>

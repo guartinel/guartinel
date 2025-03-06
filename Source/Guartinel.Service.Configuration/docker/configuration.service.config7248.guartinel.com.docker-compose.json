@@ -1,0 +1,17 @@
+{
+   "version": "3.2",
+   "services": {
+      "guartinel-configuration-service": {         
+         "environment": ["VIRTUAL_HOST=config7248.guartinel.com",
+         "VIRTUAL_PORT=5000",
+         "VIRTUAL_PROTO=http"]
+      },      
+   },
+   "networks": {
+      "default": {
+         "external": {
+            "name": "guartinel-dev"
+         }
+      }
+   }
+}

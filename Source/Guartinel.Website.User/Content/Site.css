@@ -1,0 +1,315 @@
+﻿md-input-container .md-errors-spacer{
+ min-height: 0px !important;
+}
+.grtnl-break-word {
+   word-break: break-all;
+}
+.grt-bg-pattern {
+   background-image: url(../../Content/Images/background_pattern.png);
+}
+/* GUARTINEL FONT RELATED  START */
+.grtnl-text-xl {
+   font-size: 52px;
+   font-weight: 400;
+}
+
+.grtnl-text-l {
+   font-size: 42px;
+   font-weight: 400;
+   line-height: 32px;
+}
+
+.grtnl-text-m {
+   font-size: 24px;
+   font-weight: 400;
+   line-height: 32px;
+}
+
+.grtnl-text-s {
+   font-size: 18px;
+   font-weight: 300;
+   line-height: 32px;
+}
+
+.grtnl-text-xs {
+   font-size: 12px;
+   font-weight: 200;
+   line-height: 22px;
+}
+
+.grtnl-text-justify {
+   text-align: center;
+   text-justify: inter-word;
+}
+
+.md-headline-smaller {
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+.md-headline-smaller2 {
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+
+.md-headline-autosize {
+   font-size: 1.3vw;
+   line-height: 1.3vw;
+   
+}
+
+
+.md-headline-autosize-smaller {
+   font-size: 1.3vw;
+   line-height: 1.3vw;
+   font-weight: 300;
+}
+
+.md-headline {
+   font-size: 30px;
+   line-height: 150;
+   font-weight: 300;
+}
+/*!!!!!!!!!!!GUARTINEL FONT RELATED!!!!!!!!!!*/
+
+/* GUARTINEL PADDING AND MARGIN RELATED   */
+
+.top_padding_small {
+   padding-top: 10px;
+}
+
+.top_padding_medium {
+   padding-top: 20px;
+}
+
+.top_padding_big {
+   padding-top: 30px;
+}
+
+.no_margin {
+   margin: 0px;
+}
+
+.no_padding {
+   padding: 0px;
+}
+
+/*!!!!!!!GUARTINEL PADDING AND MARGIN RELATED !!!!!!!!!!! */
+
+
+/*GUARTINEL COLOR RELATED*/
+.blue_background {
+   background-color: #3077bd;
+}
+
+.dark_blue_background {
+   background-color: #01579b;
+}
+
+.white_text {
+   color: white;
+}
+
+.grtnl-white-fill {
+   fill: white;
+}
+/*!!!!!!!!!!!!GUARTINEL COLOR RELATED!!!!!!!!!!!!!!*/
+
+.grtnl-button-default {
+}
+
+/* GUARTINEL LOGIN/REGISTER */
+
+.grtnl-login-register-page-background {
+   background-image: url("../../Content/Images/login_register_background.png");
+   background-size: cover;
+   background-repeat: repeat-y;
+}
+
+
+.grtnl-register-page-background {
+   background-image: url(Images/bg_pattern1.png);
+   background-size: auto;
+   background-repeat: repeat;
+}
+
+/* !!!!!!!GUARTINEL LOGIN/REGISTER!!!!! */
+
+
+tr:nth-child(even) {
+   background: #CCC;
+}
+
+md-tooltip .md-content {
+   height: auto !important;
+   max-width: 400px !important;
+   font-size: 12px !important;
+   word-wrap: break-word;
+}
+
+md-tooltip {
+   height: auto !important;
+   max-width: 400px !important;
+   font-size: 12px !important;
+   overflow: visible !important;
+   white-space: normal !important;
+   word-wrap: break-word;
+}
+
+   md-tooltip ._md-content {
+      height: auto !important;
+      max-width: 400px !important;
+      font-size: 12px !important;
+      word-wrap: break-word;
+   }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+   white-space: normal;
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,*/
+select,
+textarea {
+   max-width: 500px; /*default: 280px;*/
+}
+/*
+md_input_container .hint {
+   position: absolute;
+   left: 2px;
+   right: auto;
+   bottom: 7px;
+   font-size: 12px;
+   line-height: 14px;
+   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+   color: grey;
+}
+
+   md_input_container .hint.ng-leave.ng-leave-active {
+      bottom: 26px;
+      opacity: 0;
+   }
+
+   md_input_container .hint.ng-enter.ng-enter-active {
+      bottom: 7px;
+      opacity: 1;
+   }
+
+.input_contrast.md-input {
+   border-width: 0 0 1px;
+}
+
+   .input_contrast.md-input:focus {
+      border-width: 0 0 1px;
+   }
+
+   .input_contrast.md-input.ng-invalid.ng-dirty {
+      border-width: 0 0 1px;
+   }
+
+   .input_contrast.md-input.ng-valid.ng-dirty {
+      border-width: 0 0 4px;
+      border-color: #1ec81e;
+      border-color: rgba(30, 200, 30, 1);
+   }
+
+   .input_contrast.md-input.ng-valid {
+      border-color: #1ec81e;
+      border-color: rgba(30, 200, 30, 1);
+   }
+
+   .input_contrast.md-input.ng-invalid {
+      border-color: #646464;
+      border-color: rgba(100, 100, 100, 1);
+   }
+
+
+md-grid-tile-header figcaption {
+   width: 100%;
+}
+
+md-grid-tile-footer figcaption {
+   width: 100%;
+}
+
+.tile_multiline {
+   -webkit-flex-wrap: wrap;  
+   flex-wrap: wrap;
+}
+*/
+.md-option_smaller {
+   height: 35px;
+}
+
+   .md-option_smaller .md-text {
+      font-size: 15px;
+   }
+
+.md-option_narrow {
+   height: 35px;
+}
+
+   .md-option_narrow .md-text {
+      font-size: 15px;
+   }
+
+
+
+.noncaption-text {
+   text-transform: none;
+}
+
+
+.deviceSideBarButton {
+   /* margin:5px;   border-radius:5px;*/
+}
+
+   .deviceSideBarButton:hover {
+      opacity: 0.8;
+   }
+
+.input_contrast.md-input.has-no-value {
+   /*border-width: 0 0 3px;*/
+}
+
+.button-simple {
+   text-transform: none;
+   text-decoration: none;
+}
+
+
+
+#features {
+   width: 100%;
+}
+
+ng-md-icon {
+   line-height: 1;
+   vertical-align: middle;
+   display: inline-block;
+}
+
+.tooltip {
+   position: relative;
+   display: inline-block;
+}
+
+   /* Tooltip text */
+   .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+   }

@@ -1,0 +1,52 @@
+﻿<div layout="column" layout-margin>
+   <label ng-if="package.owner!=null && package.owner == currentUserEmail" class="md-caption">ACCESS</label>
+   <md-content  ng-if="package.owner!=null && package.owner == currentUserEmail" layout-margin layout="column" layout-align="start stretch" style="max-height: 150px;overflow-x: hidden; background-color: white;">
+      <div class="cardContentRow" style="margin-top:0px;" layout="column" layout-align="start stretch" ng-repeat="access in package.access">
+         <div layout="row" layout-align="start center">
+             <ng-md-icon icon="assignment_ind" size="25" style="fill: royalblue"></ng-md-icon>
+            <p>{{access.packageUserEmail}}</p>
+         </div>
+      </div>
+   </md-content>
+   <label class="md-caption" style="margin-top:0px;margin-bottom:0px;">SCHEDULED SILENCE</label>
+   <div layout="row" ng-if="!package.disableAlerts.schedules[0].is_enabled" layout-align="start center">
+      <ng-md-icon icon="update" size="25" style="fill: gray"></ng-md-icon>
+      Schedules are disabled
+   </div>
+   <div layout-margin layout="column" ng-if="package.disableAlerts.schedules[0].is_enabled" layout-align="start stretch">
+      <div ng-if="package.disableAlerts.schedules[0].type == commonConstants.ALL_PARAMETERS.PACKAGE_SCHEDULE_WEEKLY">
+         <div layout="row" layout-align="start center">
+            <ng-md-icon icon="date_range" size="25" style="fill: royalblue"></ng-md-icon>
+            <div layout="row" layout-align="start center">
+               <span ng-if="package.disableAlerts.schedules[0].days.monday">Mon,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.tuesday">Tue,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.wednesday">Wed,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.thursday">Thu,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.friday">Fri,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.saturday">Sat,</span>
+               <span ng-if="package.disableAlerts.schedules[0].days.sunday">Sun</span>
+            </div>
+         </div>
+         <div layout="row" layout-align="start center">
+            <ng-md-icon icon="update" size="25" style="fill: royalblue"></ng-md-icon>
+            {{$parent.getLocalTimeFromDate(package.disableAlerts.schedules[0].time) | date: 'shortTime'}}
+         </div>
+      </div>
+      <div ng-if="package.disableAlerts.schedules[0].type == commonConstants.ALL_PARAMETERS.PACKAGE_SCHEDULE_DAILY">
+         <div layout="row" layout-align="start center">
+            <ng-md-icon icon="date_range" size="25" style="fill: royalblue"></ng-md-icon>
+            <span>Every day</span>
+         </div>
+         <div layout="row" layout-align="start center">
+            <ng-md-icon icon="update" size="25" style="fill: royalblue"></ng-md-icon>
+            {{$parent.getLocalTimeFromDate(package.disableAlerts.schedules[0].time) | date: 'shortTime'}}
+         </div>
+      </div>
+      <div ng-if="package.disableAlerts.schedules[0].type == commonConstants.ALL_PARAMETERS.PACKAGE_SCHEDULE_ONCE">
+         <div layout="row" layout-align="start center">
+            <ng-md-icon icon="update" size="25" style="fill: royalblue"></ng-md-icon>
+            {{package.disableAlerts.schedules[0].date_time | date:'medium'}}
+         </div>      
+      </div>
+   </div>
+</div>

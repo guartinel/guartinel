@@ -1,0 +1,164 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 data-log-level="info"></script>
+
+<md-content layout-fill layout="row" >
+
+    <md-content layout-align="center start" class="grt-bg-pattern" layout-align-gt-md="center start" ng-if="!isLoading && devices.length != 0" flex="grow" id="device_cards_container" >
+
+        <div ng-repeat="licenseItem in currentUserLicenses" ng-include="'templates/userpage/license/licenseCard.html'"></div>
+    </md-content>
+
+    <md-content layout-align="center center" class="grt-bg-pattern" layout-align-gt-md="center start" layout-fill ng-if="isLoading" id="device_cards_container" >
+        <div layout="column">
+            <br>
+            <md-progress-circular layout-margin ng-if="isLoading" class="loading_element" md-mode="indeterminate"></md-progress-circular>
+            <p layout-margin class="md-headline">Loading...</p>
+        </div>
+    </md-content>
+
+    <!-- SIDEBAR -->
+    <div  flex-xl="20"  flex-lg="25" flex-xs="0" flex-md="0" flex-sm="0" ng-include="'templates/userpage/license/licensesSidebar.html'"></div>
+</md-content>
+<!--
+<md-grid-list flex="50" md-cols-xs="1" md-cols-sm="2" md-cols-md="6" md-cols-gt-md="10"
+              md-row-height-gt-md="1:1" md-row-height="1:1"
+              md-gutter="16px" md-gutter-gt-sm="4px" class="allLicenseTiles">
+    <md-grid-tile ng-repeat="licenseItem in currentUserLicenses"
+                  md-rowspan="3"
+                  md-rowspan-sm="1"
+                  md-rowspan-xs="1"
+                  md-rowspan-md="1"
+                  md-colspan="3"
+                  md-colspan-sm="1"
+                  md-colspan-xs="1"
+                  md-colspan-md="1"
+                  style="background: cornflowerblue;">
+        <div layout-fill class="white_text" layout="column" ng-style="{'background-image': 'url(Content/Images/licenses/{{licenseItem.license.name}}.png)' ,'-webkit-background-size': 'cover','-moz-background-size': 'cover', '-o-background-size': 'cover','background-size': 'cover'}"
+             layout-margin layout-align="start start">
+            <h2 class="md-title">Start:</h2>
+            <label class="tileText"> {{licenseItem.startDate |date:'yyyy.MM.d.'}}</label>
+            <h2 class="md-title">Expiry:</h2>
+            <label class="tileText">{{licenseItem.expiryDate |date:'yyyy.MM.d.'}}</label>
+            <label class="tileText"><b>Maximum alerts per hour: </b>{{ licenseItem.license.maximumAlertsPerHour }}</label>
+            <label class="tileText"><b>Smallest check interval: </b>{{ licenseItem.license.minimumCheckIntervalSec }}</label>
+            <label class="tileText"><b>Maximum devices: </b>{{ licenseItem.license.maximumDevices }}</label>
+            <label class="tileText"><b>Maximum created packages: </b>{{ licenseItem.license.maximumPackages }}</label>
+        </div>
+        <md-grid-tile-footer>
+            <div layout="column" layout-margin layout-align="center center">
+                <h3>{{licenseItem.license.caption}}</h3>
+            </div>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>
+
+<label layout-margin class="md-headline">All Available Licenses</label>
+<md-grid-list flex="grow" md-cols-xs="1" md-cols-sm="2" md-cols-md="6" md-cols-gt-md="10"
+              md-row-height-gt-md="1:1" md-row-height="1:1"
+              md-gutter="16px" md-gutter-gt-sm="4px" class="allLicenseTiles">
+    <md-grid-tile ng-repeat="licenseItem in allLicenses"
+                  md-rowspan="3"
+                  md-rowspan-sm="1"
+                  md-rowspan-xs="1"
+                  md-rowspan-md="1"
+                  md-colspan="3"
+                  md-colspan-sm="1"
+                  md-colspan-xs="1"
+                  md-colspan-md="1"
+                  ng-class="licenseItem.name" layout="column">
+        <div layout="column" class="white_text" ng-style="{'background-image': 'url(Content/Images/licenses/{{licenseItem.name}}.png)' ,'-webkit-background-size': 'cover','-moz-background-size': 'cover', '-o-background-size': 'cover','background-size': 'cover'}"
+             layout-fill layout-align="center center">
+            <label class="tileText"><b>Maximum alerts per hour: </b>{{ licenseItem.maximumAlertsPerHour }}</label>
+            <label class="tileText"><b>Smallest check interval: </b>{{ licenseItem.minimumCheckIntervalSec }}</label>
+            <label class="tileText"><b>Maximum devices: </b>{{ licenseItem.maximumDevices }}</label>
+            <label class="tileText"><b>Maximum created packages: </b>{{ licenseItem.maximumPackages }}</label>
+            <div layout="row">
+                <md-button class="button-light-gray" style="text-transform: none" href="http://www.guartinel.com/licenses">More</md-button>
+            </div>
+        </div>
+        <md-grid-tile-footer>
+            <div layout="row" layout-align="center center">
+                <h3>{{getLicenseTitleText(licenseItem)}}</h3>
+                <md-button style="text-transform: none" class="button-light-gray" ng-click="doLicenseAction(licenseItem)">{{getActionButtonText(licenseItem)}}</md-button>
+            </div>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>
+-->
+<!--
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
+<div layout="row" flex="grow" layout-xs="column" layout-sm="column" layout-align="center start" layout-align-xs="start center" layout-align-sm="start center">
+   <div layout="column" layout-fill>
+      <label layout-margin class="md-headline">My Licenses</label>
+      <div flex="grow">
+         <md-grid-list layout-fill md-cols-xs="1" md-cols-sm="2" md-cols-md="6" md-cols-gt-md="10"
+                       md-row-height-gt-md="1:1" md-row-height="1:1"
+                       md-gutter="16px" md-gutter-gt-sm="4px" class="allLicenseTiles">
+            <md-grid-tile ng-repeat="licenseItem in currentUserLicenses"
+                          md-rowspan="3"
+                          md-rowspan-sm="1"
+                          md-rowspan-xs="1"
+                          md-rowspan-md="1"
+                          md-colspan="3"
+                          md-colspan-sm="1"
+                          md-colspan-xs="1"
+                          md-colspan-md="1"
+                          style="background: cornflowerblue;">
+               <div layout-fill class="white_text" layout="column" ng-style="{'background-image': 'url(Content/Images/licenses/{{licenseItem.license.name}}.png)' ,'-webkit-background-size': 'cover','-moz-background-size': 'cover', '-o-background-size': 'cover','background-size': 'cover'}"
+                    layout-margin layout-align="start start">
+                  <h2 class="md-title">Start:</h2>
+                  <label class="tileText"> {{licenseItem.startDate |date:'yyyy.MM.d.'}}</label>
+                  <h2 class="md-title">Expiry:</h2>
+                  <label class="tileText">{{licenseItem.expiryDate |date:'yyyy.MM.d.'}}</label>
+               </div>
+               <md-grid-tile-footer>
+                  <div layout="column" layout-margin layout-align="center center">
+                     <h3>{{licenseItem.license.caption}}</h3>
+                  </div>
+               </md-grid-tile-footer>
+            </md-grid-tile>
+         </md-grid-list>
+      </div>
+      <label layout-margin class="md-headline">All Available Licenses</label>
+
+      <md-grid-list flex="grow" md-cols-xs="1" md-cols-sm="2" md-cols-md="6" md-cols-gt-md="10"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="16px" md-gutter-gt-sm="4px" class="allLicenseTiles">
+         <md-grid-tile ng-repeat="licenseItem in allLicenses"
+                       md-rowspan="3"
+                       md-rowspan-sm="1"
+                       md-rowspan-xs="1"
+                       md-rowspan-md="1"
+                       md-colspan="3"
+                       md-colspan-sm="1"
+                       md-colspan-xs="1"
+                       md-colspan-md="1"
+                       ng-class="licenseItem.name" layout="column">
+            <div layout="column" class="white_text" ng-style="{'background-image': 'url(Content/Images/licenses/{{licenseItem.name}}.png)' ,'-webkit-background-size': 'cover','-moz-background-size': 'cover', '-o-background-size': 'cover','background-size': 'cover'}"
+                 layout-fill layout-align="center center">
+               <label class="tileText">Maximum alerts per hour: {{ licenseItem.maximumAlertsPerHour }}</label>
+               <label class="tileText">Smallest check interval: {{ licenseItem.minimumCheckIntervalSec }}</label>
+               <label class="tileText">Maximum devices: {{ licenseItem.maximumDevices }}</label>
+               <label class="tileText">Maximum created packages: {{ licenseItem.maximumPackages }}</label>
+               <div layout="row">
+                  <md-button class="button-light-gray" style="text-transform: none" href="http://www.guartinel.com/licenses">More</md-button>
+               </div>
+            </div>
+            <md-grid-tile-footer>
+               <div layout="row" layout-align="center center">
+                  <h3>{{getLicenseTitleText(licenseItem)}}</h3>
+                  <md-button style="text-transform: none" class="button-light-gray" ng-click="doLicenseAction(licenseItem)">{{getActionButtonText(licenseItem)}}</md-button>
+               </div>
+            </md-grid-tile-footer>
+         </md-grid-tile>
+      </md-grid-list>
+     </div>
+
+    </div>
+
+
+
+    -->

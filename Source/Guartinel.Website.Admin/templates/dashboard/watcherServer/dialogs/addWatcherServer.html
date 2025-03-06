@@ -1,0 +1,59 @@
+﻿<form layout="column" name="addWatcherServerForm" layout-padding loading-form
+      submit-method="addWatcherServer(name, url, port, username, password,categories)">
+
+    <p>Please fill in the form with your <b>Watcher Server</b> details.</p>
+
+    <md-input-container flex>
+        <label>Name</label>
+        <input required type="text" ng-model="name" name="nameField">
+        <div ng-messages="addWatcherServerForm.nameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <div layout="row" flex>
+        <md-input-container flex="80">
+            <label>URL</label>
+            <input required type="text" ng-model="url" name="urlField">
+            <div ng-messages="addWatcherServerForm.urlField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="20">
+            <label>Port</label>
+            <input required type="text" ng-model="port" name="portField">
+            <div ng-messages="addWatcherServerForm.portField.$error">
+                <div ng-message="required">required</div>
+            </div>
+        </md-input-container>
+    </div>
+    <md-input-container>
+        <label>Current Username</label>
+        <input required type="text" ng-model="username" name="usernameField">
+        <div ng-messages="addWatcherServerForm.usernameField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Current Password</label>
+        <input required type="password" ng-model="password" name="passwordField">
+        <div ng-messages="addWatcherServerForm.passwordField.$error">
+            <div ng-message="required">required</div>
+        </div>
+    </md-input-container>
+
+    <md-chips ng-model="categories" placeholder="Enter the categories of this server." secondary-placeholder="+Category">
+        <md-chip-template>
+            {{$chip}}
+        </md-chip-template>
+    </md-chips>
+
+    <div class="form_actions">
+        <md-button class="md-primary md-raised" type="submit" ng-disabled="addWatcherServerForm.$invalid">
+            Add Watcher server
+        </md-button>
+    </div>
+
+</form>

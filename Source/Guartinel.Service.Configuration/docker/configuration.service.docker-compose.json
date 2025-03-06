@@ -1,0 +1,25 @@
+{
+   "version": "3.2",
+   "services": {   
+      "reverse-proxy": {
+         "image": "traefik",         
+         "ports": [
+             "5558:5558"   ,
+            "1234:1234"         
+         ],   
+         "volumes": [
+            "/var/run/docker.sock:/var/run/docker.sock",
+            "/root/docker/certs/:/cert/"
+         ],         
+         "networks": {
+            "default": null
+         }                     
+      },
+      "configuration-service": {      
+         "image": "guartinel1/configuration.service",         
+         "networks": {
+               "default": null
+            }            
+         }
+   }   
+}

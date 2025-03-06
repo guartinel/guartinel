@@ -1,0 +1,80 @@
+﻿<form layout="column" layout-fill loading-form submit-method="startBuyingLicense(license)">
+   <div layout="column" layout-margin>
+      <div layout="row" layout-align="start center">
+         <p flex="30" class="md-subhead">License : </p>
+         <p flex="30" class="md-subhead"> {{license.caption}}</p>
+      </div>
+
+      <div layout="row" layout-align="start center">
+         <p flex="30" class="md-subhead">Time interval :</p>
+         <md-select ng-model="selectedInterval" ng-change="onSelectedIntervalChanged(selectedInterval)" flex="50">
+            <md-option ng-value="price.interval" ng-repeat="price in license.prices" layout="row" layout-align="start center">
+               <div ng-if="price.interval==1">{{price.interval}} month</div>
+               <div ng-if="price.interval != 1">{{price.interval}} months</div>
+            </md-option>
+         </md-select>
+      </div>
+
+      <div layout="row" layout-align="start center">
+         <p flex="10" class="md-subhead">Start:</p>
+         <md-datepicker flex="35" ng-placeholder="Select start date" ng-change="onStartDateChange(startDate)" ng-model="startDate" ng-disabled></md-datepicker>
+         <span flex="10"></span>
+         <p flex="10" class="md-subhead">Expiry:</p>
+         <md-datepicker flex="35" ng-model="expiryDate" ng-disabled="true"></md-datepicker>
+      </div>
+      <div layout="row" layout-align="start center">
+         <p ng-if="selectedInterval != null" class="md-subhead"><b>Price: {{currentPrice}} USD ({{currentPrice/selectedInterval | number:2}} USD / month)</b></p>
+         <p ng-if="selectedInterval == null" class="md-subhead">Please select a time interval for your new license</p>
+      </div>
+
+      <!--<div layout="row" layout-align="center center">
+          <div class="form_actions" layout="column">
+             <md-button style="text-transform: none" class="md-button md-primary md-raised" type="submit" ng-disabled="selectedInterval == null">Buy This License!</md-button>
+             <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" />
+          </div>
+       </div>
+       -->
+      <div layout="row" ng-hide="selectedInterval == null" layout-align="center center">
+         <div id="paypal-button"></div>
+      </div>
+
+      <script>
+         paypal.Button.render({
+            payment: function () {
+               var scope = angular.element(document.getElementById('dialog')).scope();
+
+               return scope.getLicenseService().startBuyingLicense(scope.getSelectedLicense()).then(function (redirectURL) {
+                  var token = redirectURL;
+                  debugger;
+                  return token;
+               }, function (error) {
+                  $scope.startBuyingLicenseErrorId = error.error_uuid;
+                  console.log(error);
+               });
+            },
+            onAuthorize: function (data) {
+               debugger;
+               var scope = angular.element(document.getElementById('dialog')).scope();
+
+               return scope.getLicenseService().finalizeBuyingLicense(data.payerID, data.paymentID).then(function () {
+                  var scope = angular.element(document.getElementById('dialog')).scope();
+                  scope.cancel();
+               }, function (error) {
+                  var scope = angular.element(document.getElementById('dialog')).scope();
+                  scope.cancel();
+
+                  dialogService.showDialog(DIALOGS.errorDialog, "Cannot complete paypal transaction.\n Error: " + error.error_uuid);
+               });
+
+
+            }
+         }, '#paypal-button');
+      </script>
+
+      <div layout="row" layout-fill layout-align="center center">
+         <p style="color: red" ng-if="startBuyingLicenseErrorId">An error (ID: {{startBuyingLicenseErrorId}}) occured while trying to start payment. Please try again.</p>
+
+      </div>
+   </div>
+
+</form>

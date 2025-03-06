@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "84607351691",
+    "firebase_url": "https://guartinel-test.firebaseio.com",
+    "project_id": "guartinel-test",
+    "storage_bucket": "guartinel-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84607351691:android:f5486d8e9b4a8d37",
+        "android_client_info": {
+          "package_name": "sysment.android.guartinel.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84607351691-v0udtkj55i9ki6ttatorlfpur5a7q3ka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sysment.android.guartinel.staging",
+            "certificate_hash": "38a5fb0b42d2e6c99015fd4b61f7684cf83bdc3a"
+          }
+        },
+        {
+          "client_id": "84607351691-a128t4maqh1aad0s5ekjga8fsoguvp1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJNTe6UiEoNmSJTXeq4HWB4yOYthxVhVE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84607351691-a128t4maqh1aad0s5ekjga8fsoguvp1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+﻿<div layout="row" layout-align="center center">
+    <div ng-controller="unsubscribeFromPackageEmailController" id="loginHelper">
+    </div>
+
+    <md-card class="top_padding_medium md-whiteframe-z2" layout="column" flex-xs="95" flex-sm="70" flex-md="50" flex-gt-md="40">
+        <md-card-title layout-align="center center">
+            <md-card-title-text layout="column" layout-align="center center">
+                <span layout-margin class="grtnl-text-xl">Unsubscribe</span>
+                <span layout-margin class="grtnl-text-s">Are you sure to unsubscribe from this package alert email? </span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content class="top_padding_big" layout="column" layout-align="start center">
+
+            <md-card-content class="top_padding_big" layout="row" layout-align="center center">
+                <md-button ng-click="unsubscribe()" class="md-primary">YES</md-button>
+                <a ui-sref='homepage.login'><md-button class="md-primary">NO</md-button></a>
+
+            </md-card-content>
+            <p style="text-align:center">{{message}}</p>
+            <p style="text-align:center"> {{error}}</p>
+
+        </md-card-content>
+    </md-card>
+</div>

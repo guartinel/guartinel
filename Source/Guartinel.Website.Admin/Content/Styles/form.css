@@ -1,0 +1,26 @@
+﻿.form_actions {
+   display: -webkit-flex; 
+   display: flex;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.loading_form_error_text {
+   color: red;
+   text-align:center;
+}
+
+.loading_form_response_text {
+   color: green;
+}
+
+.loading_element_container {
+   display: -webkit-flex; 
+   display: flex;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.loading_element {
+   
+}

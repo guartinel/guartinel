@@ -1,0 +1,21 @@
+﻿<div ng-controller="applicationSupervisorCheckTabController" layout="column" class="tab_content" layout-margin>
+   <div layout="row" layout-align="start start" ng-include="'plugins/common/templates/saveDialog/blocks/packageName.html'"></div>
+   <b>Token</b>
+   <div layout="row" layout-align="start center">
+      <ng-md-icon flex="10" icon="vpn_key" style="fill: grey; margin-right:8px"></ng-md-icon>
+      <input flex="40" id="configurationToken" readonly="true" value="{{package.configuration.application_token}}"><!--//TODO APPLICATION_SUPERVISOR_CONSTANTS-->
+    
+      <md-button flex="20" style="min-width:30px" ngclipboard data-clipboard-target="#configurationToken">
+         <ng-md-icon  icon="content_copy" style="fill: gray" alt="Copy to clipboard"></ng-md-icon>
+         <md-tooltip>Copy to clipboard</md-tooltip>
+      </md-button>
+      <md-button  flex="20"  style="min-width:30px" ng-click="showQR = !showQR">
+         <ng-md-icon icon="code" style="fill: gray" alt="Show QR code"></ng-md-icon>
+         <md-tooltip>Show QR code</md-tooltip>
+      </md-button>
+   </div>
+   <div ng-if="showQR" layout="row" layout-align="center center">
+      <qrcode layout-margin data="{{package.configuration.application_token}}" size="250" version="20" style="display: block;"></qrcode>
+   </div>
+   <div layout="column" layout-align="start stretch" ng-include="'plugins/common/templates/saveDialog/blocks/checkInterval.html'" />
+</div>
