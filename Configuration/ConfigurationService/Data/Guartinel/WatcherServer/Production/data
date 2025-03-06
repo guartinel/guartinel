@@ -5,11 +5,11 @@
    "WatcherServerID":"C2gWnkMhU8uZF4swQ",
    
    "RegistrationUserName":"guartadmin",
-   "RegistrationPasswordHash":"FF6340D46098C733C8CBBD3B036BC8C54DCB3DC916BF1178F59CF81CDBB5A124BA28390BD4CC921BEBB617F",
+   "RegistrationPasswordHash":"FF6340D46098C733C8C16BF1178F59CF81CDBB5A124BA28390",
    "ManagementServerID":"6fad63ca-546c-4bf1-9eb5-c69cd3697cdb",
    "ManagementServerUID":"0FABFBFF000306F2",
    "ManagementServerAddress":"https://backend.guartinel.com:9090",
-   "ManagementServerRegistrationToken":"j8L9sdYzZTQCUow",
+   "ManagementServerRegistrationToken":"j8L9sZTQCUow",
    
    "LogLevel":"Debug",
    "LogFolder":"D:\\GuartinelLogs\\WatcherServer",
